@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flora App — Juan Gomez Vara</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img logo-img--dark"  src="assets/logo-white.svg" alt="JGV" width="44" height="44" />
+      <img class="logo-img logo-img--light" src="assets/logo-dark.svg"  alt="JGV" width="44" height="44" />
+    </a>
+    <div class="nav-links">
+      <a href="projects.html" class="nav-link active"><span>Projects</span></a>
+      <a href="index.html#about" class="nav-link"><span>About</span></a>
+      <a href="index.html#footer" class="nav-link"><span>Contact</span></a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+      <a href="index.html#footer" class="btn-nav magnetic">
+        <span class="btn-text">Meet JGV</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid"></canvas>
+    <div class="hero-noise"></div>
+
+    <div class="cs-hero-inner">
+      <a href="projects.html" class="cs-back" data-animate="fade-up" data-delay="0">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to projects
+      </a>
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">Mobile</span>
+        <span class="cs-tag">Consumer</span>
+        <span class="cs-tag">AI Integration</span>
+        <span class="cs-tag">iOS & Android</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160">Flora<br/>App</h1>
+
+      <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Client</span>
+          <span class="cs-hero-meta-value">Flora Labs</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Year</span>
+          <span class="cs-hero-meta-value">2024</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Role</span>
+          <span class="cs-hero-meta-value">Product Designer</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Duration</span>
+          <span class="cs-hero-meta-value">4 months</span>
+        </div>
+      </div>
+
+      <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+        Flora is a plant care companion for people who love plants but struggle to keep them alive. We designed an AI-powered app that identifies plants by photo, diagnoses problems, and builds personalised care schedules. It hit 50,000 downloads in its first month and was featured by Apple as App of the Day.
+      </p>
+
+      <a href="#" class="btn-ghost magnetic" data-animate="fade-up" data-delay="400">
+        View on App Store
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H7M12 4v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="cs-hero-image" data-animate="fade-up" data-delay="480"
+        style="background: linear-gradient(135deg, #0a0d0a 0%, #0d1e10 50%, #132818 100%);">
+        FLORA
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE CHALLENGE ─────────────────────── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">The Challenge</span>
+          <h2 class="cs-heading">
+            A market full of<br/>plant apps, none<br/><em>built for humans.</em>
+          </h2>
+          <a href="#approach" class="btn-ghost magnetic small" style="margin-top: 8px;">See our approach</a>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            The plant care app market was crowded — but almost entirely built for people who already know what they're doing. Apps skewed toward botanical databases and latin species names. They assumed knowledge the average user didn't have, and they made caring for a plant feel like a homework assignment.
+          </p>
+          <p>
+            Flora Labs had a clear vision: a plant app for the person who keeps buying succulents and watching them die. But the early prototype read like a gardening encyclopedia. Onboarding asked users to identify their plant species before they could do anything — a wall that killed 74% of sessions on the first screen.
+          </p>
+          <p>
+            The engineering team had already built impressive AI infrastructure for plant recognition. The problem was entirely in the experience layer: how to make powerful AI feel effortless, and how to build a daily care habit that actually sticks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OUR APPROACH ──────────────────────── -->
+  <section class="cs-section cs-section--dark" id="approach" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">Our Approach</span>
+          <h2 class="cs-heading">
+            Conversational,<br/>caring, and<br/><em>actually joyful.</em>
+          </h2>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            We rebuilt onboarding around a single moment: point your phone at a plant, and Flora tells you everything. No forms, no species selection, no Latin names. The AI does the heavy lifting; the user gets an instant name, a health check, and a care schedule — in under 30 seconds.
+          </p>
+          <p>
+            The core interaction model shifted from a reference tool to a care companion. Flora messages you when a plant needs water, warns you about seasonal changes, and celebrates when your plant is thriving. The notification system was designed as a character, not a task manager — using tone, timing, and gentle humour to build a daily habit.
+          </p>
+          <p>
+            Every micro-interaction was prototyped and tested with a panel of 40 plant owners at different experience levels. We ran A/B tests on six different onboarding flows before landing on the camera-first approach. Gamification elements — streaks, collection milestones, and a "plant health score" — were validated against retention data in a two-week closed beta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE RESULTS ───────────────────────── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col cs-two-col--4060">
+        <div class="cs-results-list">
+          <div class="cs-result-item">
+            <span class="cs-result-num">01</span>
+            <p class="cs-result-text">Camera-first onboarding reducing drop-off from 74% to 11% on the first screen</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">02</span>
+            <p class="cs-result-text">AI identification flow — plant name, health status, and care schedule in under 30 seconds</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">03</span>
+            <p class="cs-result-text">Personalised care scheduling system adapting to plant species, season, and home environment</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">04</span>
+            <p class="cs-result-text">Gamified retention layer: daily streaks, collection milestones, and plant health scoring</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">05</span>
+            <p class="cs-result-text">50,000+ downloads in the first month; 4.8★ App Store rating across 2,400+ reviews</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">06</span>
+            <p class="cs-result-text">Featured by Apple as App of the Day — resulting in a 340% spike in installs over 48 hours</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="cs-eyebrow">The Results</span>
+          <h2 class="cs-heading">
+            What we<br/><em>delivered.</em>
+          </h2>
+          <div class="cs-col-body">
+            <p>
+              Flora launched on iOS and Android simultaneously in March 2024. The App Store feature drove 170,000 installs in the first 48 hours. Day-30 retention — the number that had kept Flora Labs up at night — came in at 41%, well above the category average of 24%.
+            </p>
+            <p>
+              The care notification system, designed as a character rather than an alert, achieved a 62% open rate — a number the team initially assumed was a data error. Users were opening the app not because a task demanded it, but because Flora had become a small presence in their day they actually looked forward to.
+            </p>
+            <p>
+              Flora Labs closed their Seed round at $2.4M in April 2024, citing the product's retention metrics as the primary signal for investor confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL ───────────────────────── -->
+  <section class="cs-testimonial" data-animate="fade-up">
+    <span class="cs-quote-mark">"</span>
+    <p class="cs-quote-text">
+      "Juan redesigned our entire onboarding in four weeks and fixed a problem we'd been trying to solve for eight months. He didn't just make it prettier — he changed the fundamental logic of how users meet the product. The camera-first approach was his idea. We fought it at first. It became our most-praised feature in every App Store review."
+    </p>
+    <div class="cs-quote-attr">Sofia Reyes, CEO — Flora Labs</div>
+  </section>
+
+  <!-- ── BEFORE & AFTER ────────────────────── -->
+  <section class="cs-section cs-section--alt" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Before & After</span>
+      <h2 class="cs-heading">
+        From encyclopedia<br/><em>to companion.</em>
+      </h2>
+
+      <div class="cs-ba-frames">
+        <div>
+          <p class="cs-ba-label">Before — Original prototype</p>
+          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #0d1208 100%);">Botanical database onboarding</div>
+        </div>
+        <div>
+          <p class="cs-ba-label">After — Redesigned experience</p>
+          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0a1208 0%, #162818 100%);">Camera-first care companion</div>
+        </div>
+      </div>
+
+      <div class="cs-ba-lists">
+        <div class="cs-ba-list">
+          <h3>What wasn't working</h3>
+          <ul>
+            <li><span class="cs-ba-icon">✕</span> Onboarding required species identification before any interaction — 74% drop-off</li>
+            <li><span class="cs-ba-icon">✕</span> Interface felt like a botanical reference tool, not a care app</li>
+            <li><span class="cs-ba-icon">✕</span> Notifications were generic reminders — no personality, low open rate</li>
+            <li><span class="cs-ba-icon">✕</span> No retention mechanics — users had no reason to return after initial setup</li>
+            <li><span class="cs-ba-icon">✕</span> Day-7 retention below 14%, well under the category benchmark</li>
+          </ul>
+        </div>
+        <div class="cs-ba-list">
+          <h3>What we improved</h3>
+          <ul>
+            <li><span class="cs-ba-icon">✓</span> Camera-first onboarding — plant identified, schedule built in under 30 seconds</li>
+            <li><span class="cs-ba-icon">✓</span> Conversational care companion tone across all touchpoints</li>
+            <li><span class="cs-ba-icon">✓</span> Character-driven notifications with 62% open rate</li>
+            <li><span class="cs-ba-icon">✓</span> Streaks, milestones, and health scoring driving daily habit formation</li>
+            <li><span class="cs-ba-icon">✓</span> Day-30 retention at 41% — 70% above the category average</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ───────────────────────────── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Project Gallery</span>
+      <h2 class="cs-heading">
+        Selected<br/><em>screens.</em>
+      </h2>
+      <div class="cs-gallery-grid">
+        <div class="cs-gallery-item cs-gallery-item--wide" style="background:linear-gradient(135deg,#0a1208,#162818);">Home — plant collection</div>
+        <div class="cs-gallery-item cs-gallery-item--tall" style="background:linear-gradient(135deg,#0a0f0a,#0f1c10);">Camera identify</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0c1410,#152214);">Plant profile</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#080e08,#101a10);">Care schedule</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0a1208,#142014);">Health diagnostics</div>
+        <div class="cs-gallery-item cs-gallery-item--wide" style="background:linear-gradient(135deg,#060c06,#0e1a0e);">Onboarding flow</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0c140c,#162016);">Notification design</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0a120a,#141e14);">Progress & streaks</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#080e08,#121812);">Collection milestones</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MORE WORK ─────────────────────────── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">More Work</span>
+      <h2 class="cs-heading">
+        You might also<br/><em>like these.</em>
+      </h2>
+      <div class="cs-more-grid">
+        <a href="project-nexus.html" class="cs-more-card">
+          <div class="cs-more-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">NEXUS</div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">SaaS</span>
+              <span class="cs-more-pill">B2B</span>
+              <span class="cs-more-pill">Design System</span>
+            </div>
+            <h3 class="cs-more-title">Nexus Dashboard</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+        <a href="project-velo.html" class="cs-more-card">
+          <div class="cs-more-img" style="background:linear-gradient(135deg,#0a0a0a,#1c2341,#2d3561);">VELO</div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">Fintech</span>
+              <span class="cs-more-pill">Web</span>
+            </div>
+            <h3 class="cs-more-title">Velo Finance</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label">Ready to work together?</p>
+        <h2 class="footer-cta-title">Let's connect dots<br /><span class="gradient-word">to create.</span></h2>
+        <a href="mailto:juangomezvara@gmail.com" class="btn-primary magnetic large">
+          <span class="btn-text">Meet JGV</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-graphic" aria-hidden="true">
+      <span class="footer-big-text" data-text="DESIGN">DESIGN</span>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <span class="footer-copy">© 2026 JGV, all rights reserved</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.behance.net/juangomezvara3027" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zM7.25 17.938c-.688 0-1.22-.136-1.595-.41-.376-.273-.563-.683-.563-1.228 0-.527.199-.934.598-1.22.396-.284.955-.428 1.675-.428h2.033v.459c0 .753-.209 1.347-.627 1.78-.418.432-1.015.647-1.521.647zm5.068 1.056c.135-.33.2-.742.2-1.236V12.03c0-1.167-.36-2.047-1.08-2.638-.72-.592-1.784-.888-3.192-.888H1v11.496h7.288c1.406 0 2.527-.301 3.364-.905.427-.306.77-.695 1.03-1.101h-.364zM4.5 10.5h2.27c.756 0 1.325.136 1.706.409.381.272.572.703.572 1.291 0 .554-.191.966-.575 1.235-.384.27-.97.404-1.758.404H4.5V10.5z"/></svg>
+          <span>Behance</span>
+        </a>
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

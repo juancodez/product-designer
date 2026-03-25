@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Dashboard — Juan Gomez Vara</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img logo-img--dark"  src="assets/logo-white.svg" alt="JGV" width="44" height="44" />
+      <img class="logo-img logo-img--light" src="assets/logo-dark.svg"  alt="JGV" width="44" height="44" />
+    </a>
+    <div class="nav-links">
+      <a href="projects.html" class="nav-link active"><span>Projects</span></a>
+      <a href="index.html#about" class="nav-link"><span>About</span></a>
+      <a href="index.html#footer" class="nav-link"><span>Contact</span></a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+      <a href="index.html#footer" class="btn-nav magnetic">
+        <span class="btn-text">Meet JGV</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid"></canvas>
+    <div class="hero-noise"></div>
+
+    <div class="cs-hero-inner">
+      <a href="projects.html" class="cs-back" data-animate="fade-up" data-delay="0">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to projects
+      </a>
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">SaaS</span>
+        <span class="cs-tag">B2B</span>
+        <span class="cs-tag">Enterprise UX</span>
+        <span class="cs-tag">Design System</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160">Nexus<br/>Dashboard</h1>
+
+      <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Client</span>
+          <span class="cs-hero-meta-value">Nexus Analytics GmbH</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Year</span>
+          <span class="cs-hero-meta-value">2024</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Role</span>
+          <span class="cs-hero-meta-value">Lead Product Designer</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Duration</span>
+          <span class="cs-hero-meta-value">6 months</span>
+        </div>
+      </div>
+
+      <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+        Nexus Analytics provides data intelligence for mid-market enterprises. Their legacy dashboard had grown organically over five years — three layers of navigation, 60+ widget types, and zero mobile support. We redesigned it from the ground up, reducing cognitive load by 40% and cutting average task completion time in half.
+      </p>
+
+      <a href="#" class="btn-ghost magnetic" data-animate="fade-up" data-delay="400">
+        View live product
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H7M12 4v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="cs-hero-image" data-animate="fade-up" data-delay="480"
+        style="background: linear-gradient(135deg, #0a0f1e 0%, #0f2552 50%, #1a3a6e 100%);">
+        NEXUS
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE CHALLENGE ─────────────────────── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">The Challenge</span>
+          <h2 class="cs-heading">
+            Where five years<br/>of growth became<br/><em>a usability debt.</em>
+          </h2>
+          <a href="#approach" class="btn-ghost magnetic small" style="margin-top: 8px;">See our approach</a>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            The Nexus platform had been built incrementally by a rotating engineering team with no dedicated design ownership. Every new feature was bolted onto the existing interface — a third navigation tier here, a new widget type there. Five years in, the cognitive load was crippling user adoption.
+          </p>
+          <p>
+            Power users had developed workarounds: bookmarks to specific drill-down URLs, custom browser scripts to hide panels they never used. The onboarding funnel showed that 68% of new users never reached the core analytics view in their first session.
+          </p>
+          <p>
+            The engineering team had the data to understand what was wrong. What they lacked was a framework to fix it without disrupting the power users who relied on the existing structure — however broken it was.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OUR APPROACH ──────────────────────── -->
+  <section class="cs-section cs-section--dark" id="approach" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">Our Approach</span>
+          <h2 class="cs-heading">
+            Data-first design,<br/>built around<br/><em>real workflows.</em>
+          </h2>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            Before touching Figma, we spent three weeks in discovery — 22 user interviews, session recordings analysis, and a full task-flow audit. We mapped every distinct job-to-be-done across the user base: from the data engineer building pipelines to the C-suite executive reading weekly KPI summaries.
+          </p>
+          <p>
+            The core insight: most users needed only 20% of the platform's features to complete 80% of their work. The interface was hiding that 20% inside the noise of everything else. The new information architecture built adaptive surfaces — showing complexity only when the workflow demanded it.
+          </p>
+          <p>
+            We ran three two-week design sprints with the engineering team embedded throughout, using a shared Figma component library as the single source of truth. Every component was built for both light and dark mode, accessibility-first, and mobile-responsive from day one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE RESULTS ───────────────────────── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col cs-two-col--4060">
+        <div class="cs-results-list">
+          <div class="cs-result-item">
+            <span class="cs-result-num">01</span>
+            <p class="cs-result-text">Full information architecture redesign reducing navigation from 3 levels to a single contextual layer</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">02</span>
+            <p class="cs-result-text">New design system with 80+ components, tokens, and patterns covering every dashboard state</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">03</span>
+            <p class="cs-result-text">Adaptive dashboard surfaces showing complexity progressively based on user role and task context</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">04</span>
+            <p class="cs-result-text">Mobile-responsive rebuild — full feature parity across desktop, tablet and mobile breakpoints</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">05</span>
+            <p class="cs-result-text">40% reduction in measured cognitive load; average task completion time cut from 4.2 min to 1.9 min</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">06</span>
+            <p class="cs-result-text">Developer handoff documentation and onboarding guide enabling zero-friction engineering implementation</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="cs-eyebrow">The Results</span>
+          <h2 class="cs-heading">
+            What we<br/><em>delivered.</em>
+          </h2>
+          <div class="cs-col-body">
+            <p>
+              The redesigned Nexus platform launched to beta users in Q3 2024. Within eight weeks, the onboarding completion rate climbed from 32% to 79%. The engineering team reported a 60% reduction in UI-related support tickets in the first month post-launch.
+            </p>
+            <p>
+              The design system became the foundation for the company's entire product suite — reducing the time to ship new features by an estimated 35% by eliminating design-from-scratch work for every new component.
+            </p>
+            <p>
+              Nexus used the redesigned product as a core part of their Series A pitch deck. The round closed at €4.2M in December 2024.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL ───────────────────────── -->
+  <section class="cs-testimonial" data-animate="fade-up">
+    <span class="cs-quote-mark">"</span>
+    <p class="cs-quote-text">
+      "Juan brought clarity to a product we had nearly given up trying to simplify. He spent more time in our Notion and Loom recordings than most of our own engineers. The redesign didn't just look better — it fundamentally changed how our users relate to the platform. We shipped features in the first sprint that had been stuck in backlog for two years."
+    </p>
+    <div class="cs-quote-attr">Marcus Lange, CTO — Nexus Analytics GmbH</div>
+  </section>
+
+  <!-- ── BEFORE & AFTER ────────────────────── -->
+  <section class="cs-section cs-section--alt" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Before & After</span>
+      <h2 class="cs-heading">
+        From noise<br/><em>to signal.</em>
+      </h2>
+
+      <div class="cs-ba-frames">
+        <div>
+          <p class="cs-ba-label">Before — Legacy dashboard</p>
+          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0a0a14 0%, #0c1220 100%);">Old dashboard — 3-level nav</div>
+        </div>
+        <div>
+          <p class="cs-ba-label">After — Redesigned platform</p>
+          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0d1628 0%, #1a3565 100%);">Redesigned adaptive surface</div>
+        </div>
+      </div>
+
+      <div class="cs-ba-lists">
+        <div class="cs-ba-list">
+          <h3>What wasn't working</h3>
+          <ul>
+            <li><span class="cs-ba-icon">✕</span> Three nested navigation levels requiring 6–8 clicks to reach core views</li>
+            <li><span class="cs-ba-icon">✕</span> 60+ widget types with no grouping logic or contextual relevance</li>
+            <li><span class="cs-ba-icon">✕</span> No mobile support — critical for executive users reviewing dashboards on the go</li>
+            <li><span class="cs-ba-icon">✕</span> No design system: every new feature diverged from the last</li>
+            <li><span class="cs-ba-icon">✕</span> 68% of new users never completed onboarding in their first session</li>
+          </ul>
+        </div>
+        <div class="cs-ba-list">
+          <h3>What we improved</h3>
+          <ul>
+            <li><span class="cs-ba-icon">✓</span> Single contextual navigation layer — core views reachable in 1–2 clicks</li>
+            <li><span class="cs-ba-icon">✓</span> Progressive disclosure: complexity revealed only when the workflow needs it</li>
+            <li><span class="cs-ba-icon">✓</span> Full mobile parity — responsive across all breakpoints</li>
+            <li><span class="cs-ba-icon">✓</span> 80+ component design system shared between design and engineering</li>
+            <li><span class="cs-ba-icon">✓</span> Onboarding completion rate up from 32% to 79% in 8 weeks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ───────────────────────────── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Project Gallery</span>
+      <h2 class="cs-heading">
+        Selected<br/><em>screens.</em>
+      </h2>
+      <div class="cs-gallery-grid">
+        <div class="cs-gallery-item cs-gallery-item--wide" style="background:linear-gradient(135deg,#0d1628,#1a3565);">Overview dashboard</div>
+        <div class="cs-gallery-item cs-gallery-item--tall" style="background:linear-gradient(135deg,#0a1220,#102040);">Side nav</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0f1e38,#163060);">KPI widget</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0c1628,#1d4080);">Chart library</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#08121e,#0f2a4a);">Data table</div>
+        <div class="cs-gallery-item cs-gallery-item--wide" style="background:linear-gradient(135deg,#060f1e,#0d2650);">Component system</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0a1830,#183560);">Mobile view</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#0c1a32,#1a3a6a);">Onboarding flow</div>
+        <div class="cs-gallery-item" style="background:linear-gradient(135deg,#080f20,#0e2248);">Settings panel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MORE WORK ─────────────────────────── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">More Work</span>
+      <h2 class="cs-heading">
+        You might also<br/><em>like these.</em>
+      </h2>
+      <div class="cs-more-grid">
+        <a href="project-flora.html" class="cs-more-card">
+          <div class="cs-more-img" style="background:linear-gradient(135deg,#0d0d0d,#1a0533,#2d1b69);">FLORA</div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">Mobile</span>
+              <span class="cs-more-pill">Consumer</span>
+              <span class="cs-more-pill">AI</span>
+            </div>
+            <h3 class="cs-more-title">Flora App</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+        <a href="project-velo.html" class="cs-more-card">
+          <div class="cs-more-img" style="background:linear-gradient(135deg,#0a0a0a,#1c2341,#2d3561);">VELO</div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">Fintech</span>
+              <span class="cs-more-pill">Web</span>
+            </div>
+            <h3 class="cs-more-title">Velo Finance</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER (same as index) ────────────── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label">Ready to work together?</p>
+        <h2 class="footer-cta-title">Let's connect dots<br /><span class="gradient-word">to create.</span></h2>
+        <a href="mailto:juangomezvara@gmail.com" class="btn-primary magnetic large">
+          <span class="btn-text">Meet JGV</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-graphic" aria-hidden="true">
+      <span class="footer-big-text" data-text="DESIGN">DESIGN</span>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <span class="footer-copy">© 2026 JGV, all rights reserved</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.behance.net/juangomezvara3027" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zM7.25 17.938c-.688 0-1.22-.136-1.595-.41-.376-.273-.563-.683-.563-1.228 0-.527.199-.934.598-1.22.396-.284.955-.428 1.675-.428h2.033v.459c0 .753-.209 1.347-.627 1.78-.418.432-1.015.647-1.521.647zm5.068 1.056c.135-.33.2-.742.2-1.236V12.03c0-1.167-.36-2.047-1.08-2.638-.72-.592-1.784-.888-3.192-.888H1v11.496h7.288c1.406 0 2.527-.301 3.364-.905.427-.306.77-.695 1.03-1.101h-.364zM4.5 10.5h2.27c.756 0 1.325.136 1.706.409.381.272.572.703.572 1.291 0 .554-.191.966-.575 1.235-.384.27-.97.404-1.758.404H4.5V10.5z"/></svg>
+          <span>Behance</span>
+        </a>
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
