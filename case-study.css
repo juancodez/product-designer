@@ -515,7 +515,7 @@ strong { font-weight: 700; color: var(--text); }
 */
 .cs-bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   padding: 48px 40px 0;
   max-width: 1200px;
@@ -529,15 +529,15 @@ strong { font-weight: 700; color: var(--text); }
   position: relative;
 }
 
-/* 2-col wide — aspect-ratio matches 960×720 source */
+/* 3-of-5 cols (60%) — balanced wide */
 .cs-bento-item--wide {
-  grid-column: span 2;
+  grid-column: span 3;
   aspect-ratio: 4/3;
 }
 
-/* 1-col single — aspect-ratio matches 960×720 source */
+/* 2-of-5 cols (40%) — balanced single */
 .cs-bento-item--third {
-  grid-column: span 1;
+  grid-column: span 2;
   aspect-ratio: 4/3;
 }
 
@@ -615,12 +615,13 @@ strong { font-weight: 700; color: var(--text); }
   .cs-metrics { grid-template-columns: 1fr; }
   .cs-lessons { grid-template-columns: 1fr; }
   .cs-bento-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     padding: 32px 20px 0;
   }
-  /* On mobile all items collapse to span 1 — 2-per-row, all 4:3 */
-  .cs-bento-item--wide { grid-column: span 1; }
+  /* On mobile collapse all to span 1 — 2-per-row, all 4:3 */
+  .cs-bento-item--wide,
+  .cs-bento-item--third { grid-column: span 1; }
   .cs-bento-videos { padding: 8px 20px 0; gap: 8px; }
   .cs-bento-video-item { width: 44%; }
 }
