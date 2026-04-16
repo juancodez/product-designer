@@ -348,11 +348,11 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 }
 
 .hero-sub {
-  font-size: 24px;
+  font-size: 19px;
   font-weight: 400;
   color: var(--text);
   line-height: 1.7;
-  max-width: 700px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 105px;
@@ -662,7 +662,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   border-top: 1px solid var(--border);
 }
 .footer-top { padding: 100px 40px 60px; }
-.footer-cta { max-width: 900px; display: flex; flex-direction: column; align-items: flex-start; }
+.footer-cta { max-width: 900px; display: flex; flex-direction: column; align-items: center; text-align: center; margin: 0 auto; }
 .footer-cta-label {
   display: flex; align-items: center; gap: 6px;
   font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
