@@ -19,6 +19,7 @@
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
       <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
     </a>
     <!-- Hamburger (mobile only) -->
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -102,8 +103,10 @@
 
       <div class="cs-hero-cta-wrap" data-animate="fade-up" data-delay="400">
         <a href="https://apps.apple.com/gb/app/micro-casing/id6754453873" target="_blank" class="btn-primary cs-live-btn magnetic">
-          View live product
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="btn-text">View live product</span>
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
       </div>
 
@@ -328,8 +331,41 @@
       </h2>
     </div>
 
-    <div class="cs-carousel-wrap">
-      <div class="cs-carousel-track" id="carouselTrack">
+    <div class="cs-bento-grid">
+
+      <!-- Row 1 -->
+      <div class="cs-bento-item cs-bento-item--wide">
+        <img src="assets/Screen-01.webp" alt="Screen 01" loading="lazy" />
+      </div>
+      <div class="cs-bento-item">
+        <img src="assets/Screen-02.webp" alt="Screen 02" loading="lazy" />
+      </div>
+
+      <!-- Row 2 -->
+      <div class="cs-bento-item">
+        <img src="assets/Screen-03_1.webp" alt="Screen 03" loading="lazy" />
+      </div>
+      <div class="cs-bento-item cs-bento-item--wide">
+        <video src="assets/Happy-Flow-MCA-00.mp4" autoplay loop muted playsinline></video>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="cs-bento-item cs-bento-item--wide">
+        <img src="assets/Screen-04_1.webp" alt="Screen 04" loading="lazy" />
+      </div>
+      <div class="cs-bento-item">
+        <img src="assets/Screen-05_1.webp" alt="Screen 05" loading="lazy" />
+      </div>
+
+      <!-- Row 4 -->
+      <div class="cs-bento-item">
+        <img src="assets/Screen-06_1.webp" alt="Screen 06" loading="lazy" />
+      </div>
+      <div class="cs-bento-item cs-bento-item--wide">
+        <video src="assets/Error-Flow-MCA.mp4" autoplay loop muted playsinline></video>
+      </div>
+
+    </div><!-- /bento -->
 
         <!-- Image 1 -->
         <div class="cs-carousel-item cs-carousel-item--img">
@@ -339,225 +375,6 @@
         <div class="cs-carousel-item cs-carousel-item--img">
           <img src="assets/Screen-02.webp" alt="Screen 02" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>
-        <!-- Video 1 — Prototype Happy Flow -->
-        <div class="cs-carousel-item cs-carousel-item--video">
-          <div class="cs-carousel-video-inner">
-            <video
-              src="assets/Happy-Flow-MCA-00.mp4"
-              autoplay loop muted playsinline
-              style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-            ></video>
-          </div>
-        </div>
-        <!-- Image 3 -->
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-03_1.webp" alt="Screen 03" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <!-- Image 4 -->
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-04_1.webp" alt="Screen 04" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <!-- Video 2 — Prototype Error Flow -->
-        <div class="cs-carousel-item cs-carousel-item--video">
-          <div class="cs-carousel-video-inner">
-            <video
-              src="assets/Error-Flow-MCA.mp4"
-              autoplay loop muted playsinline
-              style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-            ></video>
-          </div>
-        </div>
-        <!-- Image 5 -->
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-05_1.webp" alt="Screen 05" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <!-- Image 6 -->
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-06_1.webp" alt="Screen 06" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-
-        <!-- Duplicate set for seamless infinite loop -->
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-01.webp" alt="Screen 01" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-02.webp" alt="Screen 02" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--video">
-          <div class="cs-carousel-video-inner">
-            <video
-              src="assets/Happy-Flow-MCA-00.mp4"
-              autoplay loop muted playsinline
-              style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-            ></video>
-          </div>
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-03_1.webp" alt="Screen 03" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-04_1.webp" alt="Screen 04" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--video">
-          <div class="cs-carousel-video-inner">
-            <video
-              src="assets/Error-Flow-MCA.mp4"
-              autoplay loop muted playsinline
-              style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"
-            ></video>
-          </div>
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-05_1.webp" alt="Screen 05" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-        <div class="cs-carousel-item cs-carousel-item--img">
-          <img src="assets/Screen-06_1.webp" alt="Screen 06" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-
-      </div><!-- /track -->
-    </div><!-- /wrap -->
-  </section>
-
-  <style>
-    /* ── Carousel ─────────────────────────────── */
-    .cs-carousel-wrap {
-      overflow: hidden;
-      width: 100%;
-      padding: 48px 0 0;
-      cursor: grab;
-      user-select: none;
-      -webkit-user-select: none;
-      /* Soft fade at both edges — items visible the whole time, no hard clip */
-      -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        black 140px,
-        black calc(100% - 140px),
-        transparent 100%
-      );
-      mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        black 140px,
-        black calc(100% - 140px),
-        transparent 100%
-      );
-    }
-    .cs-carousel-wrap.is-dragging { cursor: grabbing; }
-    .cs-carousel-track {
-      display: flex;
-      gap: 16px;
-      width: max-content;
-      will-change: transform;
-    }
-    .cs-carousel-item--img {
-      width: clamp(280px, 30vw, 480px);
-      aspect-ratio: 4 / 3;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-    .cs-carousel-placeholder {
-      width: 100%; height: 100%;
-      background: var(--bg-3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-3);
-    }
-    .cs-carousel-item--video {
-      width: clamp(160px, 16vw, 260px);
-      aspect-ratio: 440 / 830;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-    .cs-carousel-video-inner {
-      width: 100%; height: 100%;
-      background: var(--bg);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .cs-carousel-video-placeholder {
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-3);
-    }
-    .cs-carousel-play {
-      font-size: 1.6rem;
-      background: var(--btn-gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  </style>
-
-  <script>
-    (function () {
-      const wrap  = document.querySelector('.cs-carousel-wrap');
-      const track = document.getElementById('carouselTrack');
-      if (!wrap || !track) return;
-
-      let x = 0, vel = 0, speed = 0.6;
-      let paused = false, dragging = false;
-      let dragLastX = 0, lastTime = 0;
-
-      function getHalfWidth() { return track.scrollWidth / 2; }
-
-      function tick(ts) {
-        const dt = Math.min(ts - lastTime, 50);
-        lastTime = ts;
-        if (!dragging) {
-          if (!paused) {
-            x -= speed * (dt / 16.67);
-          } else {
-            x += vel;
-            vel *= 0.92;
-            if (Math.abs(vel) < 0.05) vel = 0;
-          }
-        }
-        const half = getHalfWidth();
-        if (x <= -half) x += half;
-        if (x > 0)      x -= half;
-        track.style.transform = `translateX(${x}px)`;
-        requestAnimationFrame(tick);
-      }
-      requestAnimationFrame((ts) => { lastTime = ts; requestAnimationFrame(tick); });
-
-      wrap.addEventListener('mouseenter', () => { paused = true; });
-      wrap.addEventListener('mouseleave', () => { paused = false; vel = 0; });
-
-      wrap.addEventListener('mousedown', (e) => {
-        dragging = true; paused = true;
-        dragLastX = e.clientX; vel = 0;
-        wrap.classList.add('is-dragging');
-        e.preventDefault();
-      });
-      window.addEventListener('mousemove', (e) => {
-        if (!dragging) return;
-        const dx = e.clientX - dragLastX;
-        x += dx; vel = dx; dragLastX = e.clientX;
-      });
-      window.addEventListener('mouseup', () => {
-        if (!dragging) return;
-        dragging = false; paused = false;
-        wrap.classList.remove('is-dragging');
-      });
-
-      let touchLastX = 0;
-      wrap.addEventListener('touchstart', (e) => {
-        dragging = true; paused = true;
-        touchLastX = e.touches[0].clientX; vel = 0;
-      }, { passive: true });
-      wrap.addEventListener('touchmove', (e) => {
-        if (!dragging) return;
-        const dx = e.touches[0].clientX - touchLastX;
-        x += dx; vel = dx; touchLastX = e.touches[0].clientX;
-      }, { passive: true });
-      wrap.addEventListener('touchend', () => { dragging = false; paused = false; });
-    })();
-  </script>
 
   <!-- ── LESSONS LEARNED ── -->
   <section class="cs-section cs-section--dark" data-animate="fade-up">

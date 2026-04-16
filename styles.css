@@ -97,11 +97,19 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   transition: background 0.4s ease;
 }
 .nav-logo {
-  display: flex; align-items: center;
+  display: flex; align-items: center; gap: 10px;
   transition: opacity 0.2s;
   flex-shrink: 0;
 }
 .nav-logo:hover { opacity: 0.75; }
+.nav-name {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  white-space: nowrap;
+}
 
 /* Logo switches between dark/light */
 .logo-img { display: block; width: 44px; height: 44px; object-fit: contain; }

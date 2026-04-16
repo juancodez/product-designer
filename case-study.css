@@ -501,6 +501,40 @@ strong { font-weight: 700; color: var(--text); }
   background: var(--bg-3);
 }
 
+/* ── Bento Grid ────────────────────────────── */
+.cs-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 340px;
+  gap: 12px;
+  padding: 48px 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cs-bento-item {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-3);
+}
+
+.cs-bento-item--wide { grid-column: span 2; }
+
+.cs-bento-item img,
+.cs-bento-item video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Live button arrow rotation ─────────────── */
+.cs-live-btn .btn-arrow svg {
+  transition: transform 0.25s ease;
+}
+.cs-live-btn:hover .btn-arrow svg {
+  transform: rotate(-45deg);
+}
+
 /* ── Responsive ────────────────────────────── */
 @media (max-width: 1024px) {
   .cs-two-col, .cs-two-col--6040, .cs-two-col--4060 { gap: 48px; }
@@ -525,4 +559,10 @@ strong { font-weight: 700; color: var(--text); }
   .cs-pillars { grid-template-columns: 1fr; }
   .cs-metrics { grid-template-columns: 1fr; }
   .cs-lessons { grid-template-columns: 1fr; }
+  .cs-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+    padding: 32px 24px 0;
+  }
+  .cs-bento-item--wide { grid-column: span 1; }
 }
