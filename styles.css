@@ -675,7 +675,6 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   display: flex; align-items: center; gap: 6px;
   font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
   color: #1D5FCC; font-weight: 700; margin-bottom: 24px;
-  align-self: flex-start;
 }
 .footer-cta-title {
   font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900;
