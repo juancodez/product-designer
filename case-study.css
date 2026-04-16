@@ -562,24 +562,22 @@ strong { font-weight: 700; color: var(--text); }
 }
 
 .cs-bento-video-item {
-  width: 220px;
+  width: 300px;
   aspect-ratio: 9/17;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible;              /* let scale breathe — no clipping */
   background: var(--navy);
   flex-shrink: 0;
-  transform: translateZ(0);       /* force GPU layer — fixes border-radius clipping on scale */
-  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Safari clip fix */
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.cs-bento-video-item:hover { transform: scale(1.04); } /* scale the whole container */
 
 .cs-bento-video-item video {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  will-change: transform;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 14px;            /* radius on video itself since overflow: visible */
 }
-.cs-bento-video-item:hover video { transform: scale(1.05); }
 
 /* ── Live button arrow rotation ─────────────── */
 .cs-live-btn .btn-arrow svg {
@@ -622,5 +620,5 @@ strong { font-weight: 700; color: var(--text); }
   .cs-bento-item--wide,
   .cs-bento-item--third { grid-column: span 1; }
   .cs-bento-videos { padding: 8px 20px 0; gap: 8px; }
-  .cs-bento-video-item { width: 44%; }
+  .cs-bento-video-item { width: 46%; }
 }
