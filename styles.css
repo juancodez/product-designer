@@ -317,13 +317,12 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 }
 
 .hero-title {
-  font-size: clamp(4.375rem, 6.5vw, 6rem);
+  font-size: clamp(3.5rem, 5.5vw, 5rem);
   font-weight: 900;
   line-height: 1.12;
   margin-left: auto;
   margin-right: auto;
   letter-spacing: -0.04em;
-  max-width: 28ch; /* keeps each hero-line on one line */
   margin-bottom: 28px;
 }
 .hero-line {
@@ -338,7 +337,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 .hero-line:last-child {
   margin-bottom: 0;
 }
-.hero-line span { display: inline-block; white-space: nowrap; }
+.hero-line span { display: inline-block; }
 
 .gradient-word {
   background: linear-gradient(135deg, #1d5fcc 0%, #4d8ef0 100%);

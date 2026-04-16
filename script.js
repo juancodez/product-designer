@@ -106,8 +106,8 @@
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const idleColor   = 'rgba(21,29,60,0.70)';
-      const activeColor = 'rgba(21,29,60,1.00)';
+      const idleColor   = 'rgba(21,29,60,0.22)';
+      const activeColor = 'rgba(20,90,230,1.00)';
 
       const mouseCol   = Math.floor(mouse.x / dotSpacing);
       const mouseRow   = Math.floor(mouse.y / dotSpacing);
