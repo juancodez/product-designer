@@ -325,41 +325,44 @@
       </h2>
     </div>
 
+    <!-- Landscape screens: 3-col grid, each cell 4:3 (exact 960×720 ratio) -->
     <div class="cs-bento-grid">
 
-      <!-- Row 1: wide landscape + portrait phone video -->
+      <!-- Row 1: wide (01) + single (02) -->
       <div class="cs-bento-item cs-bento-item--wide">
-        <img src="assets/Screen-01.webp" alt="Screen 01" loading="lazy" />
+        <img src="assets/Screen-01.webp" alt="Micro-casing screen 01" loading="lazy" />
       </div>
-      <div class="cs-bento-item cs-bento-item--portrait">
+      <div class="cs-bento-item cs-bento-item--third">
+        <img src="assets/Screen-02.webp" alt="Micro-casing screen 02" loading="lazy" />
+      </div>
+
+      <!-- Row 2: single (03) + wide (04) — mirrored -->
+      <div class="cs-bento-item cs-bento-item--third">
+        <img src="assets/Screen-03_1.webp" alt="Micro-casing screen 03" loading="lazy" />
+      </div>
+      <div class="cs-bento-item cs-bento-item--wide">
+        <img src="assets/Screen-04_1.webp" alt="Micro-casing screen 04" loading="lazy" />
+      </div>
+
+      <!-- Row 3: single (05) + wide (06) -->
+      <div class="cs-bento-item cs-bento-item--third">
+        <img src="assets/Screen-05_1.webp" alt="Micro-casing screen 05" loading="lazy" />
+      </div>
+      <div class="cs-bento-item cs-bento-item--wide">
+        <img src="assets/Screen-06_1.webp" alt="Micro-casing screen 06" loading="lazy" />
+      </div>
+
+    </div><!-- /image bento -->
+
+    <!-- Portrait videos: exact 9:17 cells (440×830 source) -->
+    <div class="cs-bento-videos">
+      <div class="cs-bento-video-item">
         <video src="assets/Happy-Flow-MCA-00.mp4" autoplay loop muted playsinline></video>
       </div>
-
-      <!-- Row 2: portrait phone video + wide landscape (mirrored) -->
-      <div class="cs-bento-item cs-bento-item--portrait">
+      <div class="cs-bento-video-item">
         <video src="assets/Error-Flow-MCA.mp4" autoplay loop muted playsinline></video>
       </div>
-      <div class="cs-bento-item cs-bento-item--wide">
-        <img src="assets/Screen-02.webp" alt="Screen 02" loading="lazy" />
-      </div>
-
-      <!-- Row 3: three equal landscape screens -->
-      <div class="cs-bento-item cs-bento-item--third">
-        <img src="assets/Screen-03_1.webp" alt="Screen 03" loading="lazy" />
-      </div>
-      <div class="cs-bento-item cs-bento-item--third">
-        <img src="assets/Screen-04_1.webp" alt="Screen 04" loading="lazy" />
-      </div>
-      <div class="cs-bento-item cs-bento-item--third">
-        <img src="assets/Screen-05_1.webp" alt="Screen 05" loading="lazy" />
-      </div>
-
-      <!-- Row 4: full-width cinematic strip -->
-      <div class="cs-bento-item cs-bento-item--full">
-        <img src="assets/Screen-06_1.webp" alt="Screen 06" loading="lazy" />
-      </div>
-
-    </div><!-- /bento -->
+    </div><!-- /portrait videos -->
 
   </section><!-- /project gallery -->
 

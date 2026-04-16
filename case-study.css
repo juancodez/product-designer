@@ -504,57 +504,83 @@ strong { font-weight: 700; color: var(--text); }
 
 /* ── Bento Grid ────────────────────────────── */
 /*
-  Layout (3 equal columns, aspect-ratio drives row heights):
-  Row 1: Screen-01 --wide (span 2, 16:10) | Happy-Flow --portrait (span 1, 9:17)
-  Row 2: Error-Flow --portrait (span 1, 9:17) | Screen-02 --wide (span 2, 16:10)
-  Row 3: Screen-03 --third | Screen-04 --third | Screen-05 --third  (each 4:3)
-  Row 4: Screen-06 --full (span 3, 21:9)
+  Images in sequential order (Screen-01 → 06), alternating asymmetry:
+  Row 1: Screen-01 --wide (span 2, 4:3) | Screen-02 --third (span 1, 4:3)
+  Row 2: Screen-03 --third (span 1, 4:3) | Screen-04 --wide (span 2, 4:3)
+  Row 3: Screen-05 --third (span 1, 4:3) | Screen-06 --wide (span 2, 4:3)
+  All cells: aspect-ratio 4:3 — exact match to 960×720 source files.
+
+  Videos in a separate section below:
+  Happy-Flow | Error-Flow — aspect-ratio 9:17 (exact 440×830 source).
 */
 .cs-bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
   padding: 48px 40px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .cs-bento-item {
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
-  background: var(--bg-3);
+  background: var(--bg-2);
+  position: relative;
 }
 
-/* 2-col landscape — standard screenshots */
+/* 2-col wide — aspect-ratio matches 960×720 source */
 .cs-bento-item--wide {
   grid-column: span 2;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/3;
 }
 
-/* 1-col portrait — phone/video recordings */
-.cs-bento-item--portrait {
-  grid-column: span 1;
-  aspect-ratio: 9/17;
-}
-
-/* 1-col equal thirds — landscape screenshots */
+/* 1-col single — aspect-ratio matches 960×720 source */
 .cs-bento-item--third {
   grid-column: span 1;
   aspect-ratio: 4/3;
 }
 
-/* Full-width cinematic strip */
-.cs-bento-item--full {
-  grid-column: span 3;
-  aspect-ratio: 21/9;
-}
-
+/* Media fill + smooth zoom on hover */
 .cs-bento-item img,
 .cs-bento-item video {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.cs-bento-item:hover img,
+.cs-bento-item:hover video { transform: scale(1.05); }
+
+/* ── Portrait Videos (separate row, exact 9:17 source ratio) ── */
+.cs-bento-videos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cs-bento-video-item {
+  width: 220px;
+  aspect-ratio: 9/17;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--navy);
+  flex-shrink: 0;
+}
+
+.cs-bento-video-item video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cs-bento-video-item:hover video { transform: scale(1.05); }
 
 /* ── Live button arrow rotation ─────────────── */
 .cs-live-btn .btn-arrow svg {
@@ -589,12 +615,12 @@ strong { font-weight: 700; color: var(--text); }
   .cs-metrics { grid-template-columns: 1fr; }
   .cs-lessons { grid-template-columns: 1fr; }
   .cs-bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
-    padding: 32px 24px 0;
+    padding: 32px 20px 0;
   }
-  .cs-bento-item--wide    { grid-column: span 2; aspect-ratio: 3/2; }
-  .cs-bento-item--portrait { grid-column: span 1; aspect-ratio: 9/17; }
-  .cs-bento-item--third   { grid-column: span 1; aspect-ratio: 4/3; }
-  .cs-bento-item--full    { grid-column: span 2; aspect-ratio: 16/9; }
+  /* On mobile all items collapse to span 1 — 2-per-row, all 4:3 */
+  .cs-bento-item--wide { grid-column: span 1; }
+  .cs-bento-videos { padding: 8px 20px 0; gap: 8px; }
+  .cs-bento-video-item { width: 44%; }
 }
