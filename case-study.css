@@ -28,9 +28,9 @@
 .cs-back svg { flex-shrink: 0; transition: transform 0.2s; }
 .cs-back:hover svg { transform: translateX(-4px); }
 
-.cs-hero-inner { position: relative; z-index: 2; max-width: 1200px; }
+.cs-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
 
-.cs-tags { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+.cs-tags { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; justify-content: center; }
 .cs-tag {
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
@@ -50,26 +50,35 @@
   margin-bottom: 40px;
   overflow: hidden;
   padding-bottom: 0.1em;
+  text-align: center;
+}
+
+.cs-hero-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
 }
 
 .cs-hero-meta {
-  display: flex; align-items: flex-start; gap: 8px;
-  margin-bottom: 28px; flex-wrap: wrap;
+  display: flex; flex-direction: column; gap: 20px;
+  margin-bottom: 0;
 }
 .cs-hero-meta-item {
-  display: flex; flex-direction: column; gap: 3px;
-  background: #ffffff;
-  border: 1.5px solid rgba(6, 8, 16, 0.15);
-  border-radius: 100px;
-  padding: 8px 18px;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 0; background: none; border: none; border-radius: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(6, 8, 16, 0.10);
 }
+.cs-hero-meta-item:last-child { border-bottom: none; padding-bottom: 0; }
 .cs-hero-meta-label {
   font-size: 0.6rem; text-transform: uppercase;
-  letter-spacing: 0.14em; color: rgba(6, 8, 16, 0.50); font-weight: 600;
+  letter-spacing: 0.14em; color: rgba(6, 8, 16, 0.45); font-weight: 600;
 }
 .cs-hero-meta-value {
-  font-size: 0.82rem; color: #060810; font-weight: 700;
-  white-space: nowrap;
+  font-size: 0.88rem; color: #060810; font-weight: 700;
+  white-space: normal;
 }
 
 /* Bold scan anchors — font-weight 700, full text colour */
@@ -80,14 +89,20 @@ strong { font-weight: 700; color: var(--text); }
   font-weight: 400;
   color: #060810;
   line-height: 1.78;
-  max-width: 560px;
-  margin-bottom: 48px;
+  max-width: none;
+  margin-bottom: 0;
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(6, 8, 16, 0.08);
   border-radius: 16px;
   padding: 24px 28px;
+}
+
+.cs-hero-cta-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 80px;
 }
 
 .cs-hero-image {
@@ -504,6 +519,7 @@ strong { font-weight: 700; color: var(--text); }
   .cs-more-grid { grid-template-columns: 1fr; }
   .cs-ba-frames, .cs-ba-lists { grid-template-columns: 1fr; }
   .cs-title { line-height: 1.0; }
+  .cs-hero-body { grid-template-columns: 1fr; gap: 32px; }
   .cs-process { grid-template-columns: 1fr; }
   .cs-process-step { border-right: none; }
   .cs-pillars { grid-template-columns: 1fr; }
