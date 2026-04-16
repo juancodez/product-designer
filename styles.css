@@ -297,7 +297,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 
 .hero-content {
   position: relative; z-index: 2;
-  max-width: 900px;
+  max-width: 1100px;
   padding-bottom: 80px;
   margin: 0 auto;
   text-align: center;
