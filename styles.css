@@ -323,7 +323,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   margin-left: auto;
   margin-right: auto;
   letter-spacing: -0.04em;
-  max-width: 18ch; /* forces clean 2-line break */
+  max-width: 28ch; /* keeps each hero-line on one line */
   margin-bottom: 28px;
 }
 .hero-line {
