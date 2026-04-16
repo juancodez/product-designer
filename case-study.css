@@ -527,6 +527,8 @@ strong { font-weight: 700; color: var(--text); }
   overflow: hidden;
   background: var(--bg-2);
   position: relative;
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Both variants = span 1 in a 2-col grid → perfect 50/50 */
@@ -566,6 +568,8 @@ strong { font-weight: 700; color: var(--text); }
   overflow: hidden;
   background: var(--navy);
   flex-shrink: 0;
+  transform: translateZ(0);       /* force GPU layer — fixes border-radius clipping on scale */
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Safari clip fix */
 }
 
 .cs-bento-video-item video {
