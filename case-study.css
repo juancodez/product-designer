@@ -565,18 +565,21 @@ strong { font-weight: 700; color: var(--text); }
   width: 300px;
   aspect-ratio: 9/17;
   border-radius: 14px;
-  overflow: visible;              /* let scale breathe — no clipping */
-  background: var(--navy);
+  overflow: hidden;
+  background: #eef4ff;            /* matches the light blue of the phone screen bg */
   flex-shrink: 0;
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
-.cs-bento-video-item:hover { transform: scale(1.04); } /* scale the whole container */
+.cs-bento-video-item:hover { transform: scale(1.03); }
 
 .cs-bento-video-item video {
-  width: 100%; height: 100%;
-  object-fit: contain;            /* show full phone recording — no cropping */
+  width: 92%;                     /* slight inset — video breathes inside container */
+  height: 92%;
+  object-fit: contain;
   display: block;
-  border-radius: 14px;
+  margin: 4% auto 0;              /* center with top margin */
 }
 
 /* ── Live button arrow rotation ─────────────── */
