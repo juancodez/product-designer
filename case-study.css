@@ -128,7 +128,7 @@ strong { font-weight: 700; color: var(--text); }
 .cs-inner { max-width: 1200px; margin: 0 auto; }
 
 .cs-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 20px;
@@ -143,6 +143,7 @@ strong { font-weight: 700; color: var(--text); }
   font-weight: 900; letter-spacing: -0.04em;
   line-height: 1.2; margin-bottom: 56px;
   overflow: visible;
+  text-align: center;
 }
 .cs-heading em {
   font-style: italic; font-weight: 400;
@@ -502,10 +503,16 @@ strong { font-weight: 700; color: var(--text); }
 }
 
 /* ── Bento Grid ────────────────────────────── */
+/*
+  Layout (3 equal columns, aspect-ratio drives row heights):
+  Row 1: Screen-01 --wide (span 2, 16:10) | Happy-Flow --portrait (span 1, 9:17)
+  Row 2: Error-Flow --portrait (span 1, 9:17) | Screen-02 --wide (span 2, 16:10)
+  Row 3: Screen-03 --third | Screen-04 --third | Screen-05 --third  (each 4:3)
+  Row 4: Screen-06 --full (span 3, 21:9)
+*/
 .cs-bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 340px;
   gap: 12px;
   padding: 48px 40px 0;
   max-width: 1200px;
@@ -518,7 +525,29 @@ strong { font-weight: 700; color: var(--text); }
   background: var(--bg-3);
 }
 
-.cs-bento-item--wide { grid-column: span 2; }
+/* 2-col landscape — standard screenshots */
+.cs-bento-item--wide {
+  grid-column: span 2;
+  aspect-ratio: 16/10;
+}
+
+/* 1-col portrait — phone/video recordings */
+.cs-bento-item--portrait {
+  grid-column: span 1;
+  aspect-ratio: 9/17;
+}
+
+/* 1-col equal thirds — landscape screenshots */
+.cs-bento-item--third {
+  grid-column: span 1;
+  aspect-ratio: 4/3;
+}
+
+/* Full-width cinematic strip */
+.cs-bento-item--full {
+  grid-column: span 3;
+  aspect-ratio: 21/9;
+}
 
 .cs-bento-item img,
 .cs-bento-item video {
@@ -561,8 +590,11 @@ strong { font-weight: 700; color: var(--text); }
   .cs-lessons { grid-template-columns: 1fr; }
   .cs-bento-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 220px;
+    gap: 8px;
     padding: 32px 24px 0;
   }
-  .cs-bento-item--wide { grid-column: span 1; }
+  .cs-bento-item--wide    { grid-column: span 2; aspect-ratio: 3/2; }
+  .cs-bento-item--portrait { grid-column: span 1; aspect-ratio: 9/17; }
+  .cs-bento-item--third   { grid-column: span 1; aspect-ratio: 4/3; }
+  .cs-bento-item--full    { grid-column: span 2; aspect-ratio: 16/9; }
 }

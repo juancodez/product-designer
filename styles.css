@@ -396,6 +396,16 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 .btn-primary:hover { color: #fff; }
 .btn-primary.large { padding: 18px 36px; font-size: 1rem; }
 
+/* Arrow rotates –45° (diagonal ↗) on hover — all primary & nav buttons */
+.btn-primary .btn-arrow svg,
+.btn-nav .btn-arrow svg {
+  transition: transform 0.25s var(--ease-out);
+}
+.btn-primary:hover .btn-arrow svg,
+.btn-nav:hover .btn-arrow svg {
+  transform: rotate(-45deg);
+}
+
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   color: #060810;
