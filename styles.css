@@ -338,7 +338,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 .hero-line:last-child {
   margin-bottom: 0;
 }
-.hero-line span { display: inline-block; }
+.hero-line span { display: inline-block; white-space: nowrap; }
 
 .gradient-word {
   background: linear-gradient(135deg, #1d5fcc 0%, #4d8ef0 100%);
