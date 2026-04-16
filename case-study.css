@@ -515,7 +515,7 @@ strong { font-weight: 700; color: var(--text); }
 */
 .cs-bento-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 48px 40px 0;
   max-width: 1200px;
@@ -529,15 +529,10 @@ strong { font-weight: 700; color: var(--text); }
   position: relative;
 }
 
-/* 3-of-5 cols (60%) — balanced wide */
-.cs-bento-item--wide {
-  grid-column: span 3;
-  aspect-ratio: 4/3;
-}
-
-/* 2-of-5 cols (40%) — balanced single */
+/* Both variants = span 1 in a 2-col grid → perfect 50/50 */
+.cs-bento-item--wide,
 .cs-bento-item--third {
-  grid-column: span 2;
+  grid-column: span 1;
   aspect-ratio: 4/3;
 }
 
