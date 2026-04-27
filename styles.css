@@ -1132,6 +1132,11 @@ body.menu-open { overflow: hidden; }
   .btn-primary, .btn-ghost, .social-link, .theme-toggle { cursor: pointer; }
 }
 
+@media (max-width: 420px) {
+  .footer-cta-title { font-size: clamp(1.75rem, 8vw, 2.4rem); }
+  .footer-cta-line { white-space: normal; }
+}
+
 @media (max-width: 400px) {
   .footer-info { flex-direction: column; align-items: flex-start; gap: 8px; }
   .footer-copy { font-size: 0.68rem; }
