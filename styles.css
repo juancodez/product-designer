@@ -876,7 +876,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 }
 
 .project-card:hover .project-card-overlay {
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .project-card:hover .project-card-overlay-name {
