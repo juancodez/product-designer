@@ -874,6 +874,9 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   transform: translateY(12px);
   transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
 }
+.project-card-overlay-desc--soon {
+  font-weight: 700;
+}
 
 .project-card:hover .project-card-overlay {
   background: rgba(0, 0, 0, 0.85);
