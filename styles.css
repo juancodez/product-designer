@@ -844,6 +844,7 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   border-radius: 24px;
   transition: background 0.35s ease;
   pointer-events: none;
+  z-index: 2;
 }
 
 .project-card-overlay {
@@ -913,19 +914,6 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
   transform: scale(1.04);
 }
 
-.project-card-soon-label {
-  position: relative;
-  z-index: 2;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-.project-card--soon:hover .project-card-soon-label {
-  opacity: 0;
-}
 
 .project-card-meta-line {
   display: flex;
