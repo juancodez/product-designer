@@ -916,6 +916,10 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 .project-card--soon:hover .project-card-soon-mockup {
   transform: scale(1.04);
 }
+.project-card-soon-mockup--contain {
+  object-fit: contain;
+  padding: 20px;
+}
 
 
 .project-card-meta-line {
