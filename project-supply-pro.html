@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supply Pro — Juan Gomez Vara</title>
+  <link rel="icon" type="image/svg+xml" href="assets/LogoJGV_favicon-32px.svg" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
+    </a>
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#work"  class="nav-link magnetic active"><span>Projects</span></a>
+        <a href="index.html#about" class="nav-link magnetic"><span>About</span></a>
+      </div>
+      <a href="contact.html" class="btn-nav magnetic">
+        <span class="btn-text">Contact</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="index.html#work"   class="mobile-nav-link">Projects</a>
+      <a href="index.html#about"  class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
+    <div class="hero-noise"></div>
+    <div class="cs-hero-inner">
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">B2B SaaS</span>
+        <span class="cs-tag">Food Logistics</span>
+        <span class="cs-tag">Product Design</span>
+        <span class="cs-tag">Responsive</span>
+        <span class="cs-tag">UX/UI</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160">Supply<br />Pro</h1>
+
+      <div class="cs-hero-body">
+        <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Type</span>
+            <span class="cs-hero-meta-value">Solo Product Design Case</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Role</span>
+            <span class="cs-hero-meta-value">Product Designer &amp; UI/UX</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Scope</span>
+            <span class="cs-hero-meta-value">UX Research · Product Strategy · UI Design</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Duration</span>
+            <span class="cs-hero-meta-value">5 Months</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Tools</span>
+            <span class="cs-hero-meta-value">Figma · Miro · PostHog · Claude · Claude Code</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Status</span>
+            <span class="cs-hero-meta-value">In Handoff</span>
+          </div>
+        </div>
+
+        <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+          <strong>Supply Pro is an early warning system for professional kitchens.</strong> It detects supplier problems before they reach the service.<br><br>
+          Built on <strong>10 qualitative interviews with chefs across five countries</strong>, the product solves a single operational moment: the gap between order placement and delivery arrival.<br><br>
+          Sixty percent of chefs surveyed reported direct stress from late supplier deliveries. The rest flagged quality or quantity issues. <strong>The problem is not that something is missing. It is not knowing until the truck is already at the door.</strong>
+        </p>
+      </div>
+
+      <div class="cs-hero-cta-wrap" data-animate="fade-up" data-delay="400">
+        <a href="https://supply-pro.vercel.app" target="_blank" class="btn-primary cs-live-btn magnetic">
+          <span class="btn-text">View landing page</span>
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="cs-hero-image" data-animate="fade-up" data-delay="480">
+        <img src="assets/SP-MockUp.png" alt="Supply Pro App" class="cs-hero-img" loading="eager" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE PROBLEM ── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">The Problem</span>
+          <h2 class="cs-heading">
+            Not that something<br />is missing.<br /><em>Not knowing.</em>
+          </h2>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            In 10 qualitative interviews with chefs from Switzerland, France, Spain, Germany, and Uruguay, the same pattern appeared every time. Late deliveries, quality problems, quantity discrepancies. Each one discovered at the worst possible moment: when the delivery truck is already at the door and the service starts in two hours.
+          </p>
+          <p>
+            <strong>Sixty percent of chefs surveyed reported direct stress from late supplier deliveries.</strong> The rest flagged quality or quantity issues. In every case, the damage was not the problem itself. It was the absence of time to react.
+          </p>
+          <p>
+            Luxury gastronomy runs on WhatsApp, phone calls, and paper. Nothing is documented. No system warns in advance. The chef absorbs the consequences even when the mistake originated with the supplier.
+          </p>
+          <p>
+            <strong>At that moment, the service is already at risk. There is no time left to react.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS & KEY DECISIONS ── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Process &amp; Key Decisions</span>
+      <h2 class="cs-heading">
+        Three decisions that<br /><em>shaped the product</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        Each decision was a correction. A moment where the design process forced a choice between what looked good and what the research actually supported.
+      </p>
+
+      <div class="cs-pillars">
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">01 — Back to the User</span>
+          <div class="cs-pillar-title">Scope Before Features</div>
+          <div class="cs-pillar-body">
+            During competitive analysis, products like Apicbase and Haddock created scope drift. AI photo recognition, automatic complaints, complex supplier portals. When defining the MVP, the design had nothing to do with what chefs described in interviews. The correction was clear: <strong>Supply Pro solves one single moment.</strong> The moment between the order and the delivery.
+          </div>
+        </div>
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">02 — The Niche Defines the Design</span>
+          <div class="cs-pillar-title">Domain Knowledge as Design Input</div>
+          <div class="cs-pillar-body">
+            Kitchens under time pressure and high stress do not need an impressive interface. They need one that works. This shaped every design decision: no decorative elements, no complex flows, no hidden actions. <strong>Functional beats decorative.</strong> Seventeen years as a head pastry chef and cook in Michelin-starred restaurants was not a nice addition. It was the decisive advantage.
+          </div>
+        </div>
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">03 — UX Writing Is Not a Detail</span>
+          <div class="cs-pillar-title">Language as Interface</div>
+          <div class="cs-pillar-body">
+            The first usability test showed that several terms were unclear or contradictory. Testers hesitated not because the interface was poorly structured, but because they were unsure what an action meant. <strong>A chef does not read, they scan.</strong> This forced a complete overhaul of the UX writing and visual hierarchy. The F-pattern layout stayed. The language was rebuilt from scratch.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE SOLUTION ── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col cs-two-col--4060">
+        <div class="cs-results-list">
+          <div class="cs-result-item">
+            <span class="cs-result-num">01</span>
+            <p class="cs-result-text"><strong>Dashboard — Order Overview.</strong> The dashboard shows what is happening today at a glance. Open orders, confirmed deliveries, active alerts. The information architecture follows the F-pattern: the most critical information top left, status information to the right. A chef has three seconds. Everything must be scannable without reading.</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">02</span>
+            <p class="cs-result-text"><strong>Early Warning — Alert Screen.</strong> The core of Supply Pro. When a supplier reports a problem, the warning appears proactively before the chef has to look for it. The screen shows which product is affected, what the problem is, and what options are available. The chef confirms. They do not decide from nothing.</p>
+          </div>
+          <div class="cs-result-item">
+            <span class="cs-result-num">03</span>
+            <p class="cs-result-text"><strong>Alternative Product Selection.</strong> When a product is unavailable, the system automatically suggests a replacement. Price, delivery time, and availability visible at a glance. The chef chooses, the system sends. No phone call, no WhatsApp, no manual documentation.</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="cs-eyebrow">The Solution</span>
+          <h2 class="cs-heading">
+            Three screens.<br /><em>One clear flow.</em>
+          </h2>
+          <div class="cs-col-body">
+            <p>
+              Supply Pro focuses on a single operational moment: the gap between placing an order and receiving a delivery. Three screens, one unambiguous flow.
+            </p>
+            <p>
+              The product does not replace existing kitchen management tools. It fills the blind spot they all share: the silence between the order and the arrival.
+            </p>
+            <p>
+              From the first tap to a confirmed decision in under three minutes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTING & ITERATION ── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Testing &amp; Iteration</span>
+      <h2 class="cs-heading">
+        What the test<br /><em>actually revealed</em>
+      </h2>
+
+      <div class="cs-lessons">
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">01</span>
+          <div class="cs-lesson-title">What Was Tested</div>
+          <div class="cs-lesson-body">
+            The test goal was clear: is the early warning system understandable and easy to use for chefs? Four people from the gastronomy environment tested the prototype. The scenario was realistic: two simultaneous problem alerts — a quality issue and a delay — to be resolved within three minutes.
+          </div>
+        </div>
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">02</span>
+          <div class="cs-lesson-title">What Worked</div>
+          <div class="cs-lesson-body">
+            The F-pattern layout held. Testers scanned information intuitively from top left to right. No tester had difficulty locating the relevant information. The visual hierarchy guided attention without instruction.
+          </div>
+        </div>
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">03</span>
+          <div class="cs-lesson-title">What Failed</div>
+          <div class="cs-lesson-body">
+            The UX writing. Several terms were unclear or contradictory. Testers hesitated not because the interface was poorly structured, but because they were unsure what an action meant. That is a different problem with significant consequences.
+          </div>
+        </div>
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">04</span>
+          <div class="cs-lesson-title">What Changed</div>
+          <div class="cs-lesson-body">
+            Complete overhaul of the UX writing. Every term was reviewed: is it unambiguous? Does it trigger the right expectation? The typographic scale was adjusted and a clearer visual hierarchy through color was introduced. <strong>The layout stayed. The language was rebuilt.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BEFORE & AFTER ── -->
+  <section class="cs-section cs-section--alt" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Before &amp; After</span>
+      <h2 class="cs-heading">
+        From generic labels<br /><em>to clear language</em>
+      </h2>
+
+      <div class="cs-ba-frames">
+        <div>
+          <p class="cs-ba-label">Before: first usability test</p>
+          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a0533 50%, #2d1b69 100%); display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.3); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Generic status labels</div>
+        </div>
+        <div>
+          <p class="cs-ba-label">After: revised interface</p>
+          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0d1a0d 0%, #0f2d1a 50%, #143d22 100%); display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.3); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Clear action language</div>
+        </div>
+      </div>
+
+      <div class="cs-ba-lists">
+        <div class="cs-ba-list">
+          <h3>Before the test</h3>
+          <ul>
+            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Generic status terms</strong>: ambiguous labels that created hesitation at decision points</span></li>
+            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Inconsistent labels</strong>: the same action named differently across screens</span></li>
+            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Unclear CTAs</strong>: testers could not determine the consequence of an action before taking it</span></li>
+            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Flat visual hierarchy</strong>: primary and secondary actions carried equal visual weight</span></li>
+          </ul>
+        </div>
+        <div class="cs-ba-list">
+          <h3>After the iteration</h3>
+          <ul>
+            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Clear status badges</strong>: each state communicates exactly what it means with no interpretation needed</span></li>
+            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Unambiguous action labels</strong>: consistent terminology across every screen and state</span></li>
+            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Visible hierarchy</strong>: primary actions are visually dominant, secondary actions recede</span></li>
+            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Scannable language</strong>: every label written for a chef with three seconds and high stress</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SCREENS GALLERY ── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Screens</span>
+      <h2 class="cs-heading">
+        Three screens.<br /><em>Every state covered.</em>
+      </h2>
+
+      <div class="cs-bento-grid">
+        <div class="cs-bento-item cs-bento-item--wide">
+          <img src="assets/SP-MockUp.png" alt="Supply Pro — Dashboard overview" loading="lazy" decoding="async" />
+        </div>
+        <div class="cs-bento-item cs-bento-item--third">
+          <img src="assets/sp-mockup-01.png" alt="Supply Pro — Early warning alert screen" loading="lazy" decoding="async" />
+        </div>
+        <div class="cs-bento-item cs-bento-item--wide" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a0533 50%, #2d1b69 100%); display:flex; align-items:center; justify-content:center;">
+          <span style="color: rgba(255,255,255,0.2); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Alternative Selection — coming soon</span>
+        </div>
+        <div class="cs-bento-item cs-bento-item--third" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%); display:flex; align-items:center; justify-content:center;">
+          <span style="color: rgba(255,255,255,0.2); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Order Flow — coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI IN THE DESIGN PROCESS ── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">AI in the Design Process</span>
+      <h2 class="cs-heading">
+        One tool per<br /><em>phase of the process</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        AI was not a single tool. It was a system of specialized tools — one matched to each phase of the Design Thinking process.
+      </p>
+
+      <div class="cs-pillars">
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">01 — Research &amp; Competitive Analysis</span>
+          <div class="cs-pillar-title">Perplexity</div>
+          <div class="cs-pillar-body">Fast, source-based benchmark and competitive research. Used to analyze Apicbase, Haddock, and the broader market landscape before the first interview.</div>
+        </div>
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">02 — Interviews &amp; Documentation</span>
+          <div class="cs-pillar-title">Granola + Claude</div>
+          <div class="cs-pillar-body">Granola for transcription of qualitative interviews. Claude for synthesizing insights, clustering findings, and publishing documentation in Notion. Ten interviews processed without a single manual transcript.</div>
+        </div>
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">03 — UX Writing &amp; Microcopy</span>
+          <div class="cs-pillar-title">Claude</div>
+          <div class="cs-pillar-body">Testing different tones and terms across status badges and alert texts in Spanish and German. The language iteration that saved the product after usability testing was built entirely in Claude.</div>
+        </div>
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">04 — Wireframes &amp; Prototype</span>
+          <div class="cs-pillar-title">Miro + Google Stitch + Figma Make</div>
+          <div class="cs-pillar-body">Miro for lo-fi wireframes. Google Stitch and Figma Make for the mid-fi prototype. Each tool was evaluated against one criterion: which one reaches the goal fastest?</div>
+        </div>
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">05 — Deployment</span>
+          <div class="cs-pillar-title">Claude Code + GitHub + Vercel</div>
+          <div class="cs-pillar-body">Claude Code for building the landing page. GitHub as repository. Vercel for deployment. Supply Pro is live. The full product development cycle completed without a dedicated engineering team.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LESSONS LEARNED ── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Lessons Learned</span>
+      <h2 class="cs-heading">
+        What this project<br /><em>taught me</em>
+      </h2>
+
+      <div class="cs-lessons">
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">01</span>
+          <div class="cs-lesson-title">Tight Scope Is a Strategic Decision</div>
+          <div class="cs-lesson-body">
+            The decision to focus on one single moment saved the product. A tight scope is not a weakness. It is the only way to build an honest MVP that delivers real value without overcomplicating execution.
+          </div>
+        </div>
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">02</span>
+          <div class="cs-lesson-title">Domain Knowledge Sharpens Methods</div>
+          <div class="cs-lesson-body">
+            Seventeen years in professional kitchens was not a nice addition to the research. It was the reason the interviews went deep and the design decisions held. Domain knowledge does not replace UX methods. It sharpens them.
+          </div>
+        </div>
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">03</span>
+          <div class="cs-lesson-title">Test with Lo-Fi Earlier</div>
+          <div class="cs-lesson-body">
+            The first usability test came too late in the process. Two iteration rounds could have been saved. Low-fidelity testing surfaces language and flow problems before visual decisions lock them in.
+          </div>
+        </div>
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">04</span>
+          <div class="cs-lesson-title">Include All Stakeholders Earlier</div>
+          <div class="cs-lesson-body">
+            An interview with a supplier revealed that the supplier side has its own pain points the product needs to address. Anticipation is necessary for both parties. The supplier also benefits from communicating problems before they escalate.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OUTLOOK ── -->
+  <section class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Product Outlook</span>
+      <h2 class="cs-heading">
+        The next three<br /><em>versions</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        The long-term goal: Supply Pro becomes the operational memory of a professional kitchen.
+      </p>
+
+      <div class="cs-metrics">
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">V1.5</span>
+          <div class="cs-metric-title">GPS Tracking</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Real-time delivery location visible to the chef</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Eliminates the last blind spot between order and arrival</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Requested explicitly in 6 of 10 research interviews</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">V2</span>
+          <div class="cs-metric-title">Supplier Portal</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Suppliers confirm actively rather than the system reacting passively</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Closes the loop between kitchen and supply chain</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Identified through supplier interviews as a mutual need</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">V3</span>
+          <div class="cs-metric-title">Photo Recognition at Goods Receipt</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> AI detects quality problems directly at unpacking</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Documents issues instantly with no manual input</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Addresses the last step not covered by the current flow</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MORE WORK ── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">More Work</span>
+      <h2 class="cs-heading">
+        You might also<br /><em>like these.</em>
+      </h2>
+      <div class="cs-more-grid">
+        <a href="project-micro-casing.html" class="cs-more-card">
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #0d1a2e 50%, #0f2552 100%);">
+            <img src="assets/Thumbnail-Micro-casing.webp" alt="Micro-casing App" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+          </div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">Mobile App</span>
+              <span class="cs-more-pill">EdTech</span>
+              <span class="cs-more-pill">Branding</span>
+            </div>
+            <h3 class="cs-more-title">Micro-casing App</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+        <a href="index.html#footer" class="cs-more-card">
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%); display:flex; align-items:center; justify-content:center;">
+            <span style="font-size: 3rem; font-weight: 900; color: rgba(255,255,255,0.15); letter-spacing: -0.05em;">JGV.</span>
+          </div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">Open to work</span>
+              <span class="cs-more-pill">Berlin</span>
+            </div>
+            <h3 class="cs-more-title">Let's work together</h3>
+            <div class="cs-more-cta">
+              Get in touch
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label"><span class="eyebrow-dot"></span>Ready to work together?</p>
+        <h2 class="footer-cta-title">From complex problem<br /><span class="gradient-word">to shipped product.</span></h2>
+        <a href="contact.html" class="btn-primary magnetic large">
+          <span class="btn-text">Contact</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <span class="footer-copy">© 2026 JGV, all rights reserved</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

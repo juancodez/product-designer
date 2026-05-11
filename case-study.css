@@ -43,7 +43,7 @@
 .cs-title {
   font-size: clamp(3.5rem, 9vw, 9rem);
   font-weight: 900; letter-spacing: -0.05em;
-  line-height: 0.95;
+  line-height: 1.2;
   background: var(--btn-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
