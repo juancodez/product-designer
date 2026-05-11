@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Juan Gomez Vara</title>
+  <meta name="description" content="Get in touch with Juan Gomez Vara, Product Designer in Berlin. Tell me about your project." />
+  <link rel="icon" type="image/svg+xml" href="assets/LogoJGV_favicon-32px.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+
+  <!--
+  ─────────────────────────────────────────────────
+  CONNECT THE FORM TO YOUR INBOX — Formspree setup
+  ─────────────────────────────────────────────────
+  1. Go to https://formspree.io/register
+  2. Sign up with juangomezvara@gmail.com (free — 50 submissions/month)
+  3. Click "New Form", give it a name, copy the 8-character Form ID
+  4. Replace YOUR_FORM_ID in the <form> action attribute below
+     Example: action="https://formspree.io/f/xpwzabcd"
+  ─────────────────────────────────────────────────
+  -->
+
+  <style>
+    /* ── Hero title override ── */
+    .cs-hero .cs-title {
+      font-size: clamp(3.5rem, 5.5vw, 5rem);
+    }
+
+    /* ── Contact section layout ── */
+    .contact-section {
+      padding: 80px 0 120px;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── Left column: info ── */
+    .contact-info-col {
+      position: sticky;
+      top: 110px;
+    }
+
+    .contact-info-heading {
+      font-family: 'Satoshi', sans-serif;
+      font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .contact-info-heading em {
+      font-style: italic;
+      font-weight: 300;
+      background: linear-gradient(90deg, var(--accent) 0%, #4d8ef0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-info-desc {
+      font-size: 0.97rem;
+      color: var(--text-2);
+      line-height: 1.72;
+      margin-bottom: 44px;
+      max-width: 340px;
+    }
+
+    .contact-info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 40px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-info-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-info-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    .contact-info-value {
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .contact-info-value a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info-value a:hover {
+      color: var(--accent);
+    }
+
+    .contact-socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    /* ── Right column: form ── */
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .form-group--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    .form-input,
+    .form-textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid rgba(10, 22, 60, 0.28);
+      padding: 11px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.25s;
+      width: 100%;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-3);
+      font-weight: 300;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Fix browser autofill background flash */
+    .form-input:-webkit-autofill,
+    .form-input:-webkit-autofill:hover,
+    .form-input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 40px #fff inset !important;
+      -webkit-text-fill-color: var(--text) !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    .form-textarea {
+      resize: none;
+      height: 130px;
+      line-height: 1.65;
+    }
+
+    .form-checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 8px 0 32px;
+      grid-column: 1 / -1;
+    }
+
+    .form-checkbox {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+    }
+
+    .form-checkbox-label {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .form-submit-row {
+      display: flex;
+      justify-content: flex-start;
+      grid-column: 1 / -1;
+    }
+
+    /* State feedback */
+    .form-feedback {
+      display: none;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      margin-top: 20px;
+      grid-column: 1 / -1;
+      line-height: 1.5;
+    }
+
+    .form-feedback--success {
+      background: rgba(29, 95, 204, 0.06);
+      border: 1px solid rgba(29, 95, 204, 0.2);
+      color: var(--accent);
+    }
+
+    .form-feedback--error {
+      background: rgba(220, 38, 38, 0.06);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      color: #dc2626;
+    }
+
+    .form-feedback.is-visible {
+      display: block;
+    }
+
+    /* Send Message — same class as nav Contact button, kept at primary size */
+    #submitBtn {
+      padding: 14px 28px;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 100px;
+    }
+
+    /* Submit button loading state */
+    #submitBtn[data-loading] .btn-text::after {
+      content: '…';
+    }
+
+    #submitBtn[data-loading] .btn-text {
+      opacity: 0.7;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        padding: 0 28px;
+      }
+
+      .contact-info-col {
+        position: static;
+      }
+
+      .contact-info-desc {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .contact-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group--full {
+        grid-column: 1;
+      }
+
+      .form-checkbox-row,
+      .form-submit-row,
+      .form-feedback {
+        grid-column: 1;
+      }
+
+      .contact-section {
+        padding: 48px 0 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#work"  class="nav-link magnetic"><span>Projects</span></a>
+        <a href="index.html#about" class="nav-link magnetic"><span>About</span></a>
+      </div>
+      <a href="contact.html" class="btn-nav magnetic active">
+        <span class="btn-text">Contact</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="index.html#work"   class="mobile-nav-link">Projects</a>
+      <a href="index.html#about"  class="mobile-nav-link">About</a>
+      <a href="contact.html"      class="mobile-nav-link active">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
+    <div class="hero-noise"></div>
+    <div class="cs-hero-inner">
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">Open to work</span>
+        <span class="cs-tag">Berlin</span>
+        <span class="cs-tag">Full-time &amp; Freelance</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160">
+        Get in<br />touch.
+      </h1>
+
+      <div class="cs-hero-body">
+        <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Response time</span>
+            <span class="cs-hero-meta-value">Within one working day</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Location</span>
+            <span class="cs-hero-meta-value">Berlin, Germany</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Languages</span>
+            <span class="cs-hero-meta-value">English · French · German · Spanish</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Available for</span>
+            <span class="cs-hero-meta-value">Full-time · Freelance · Contract</span>
+          </div>
+        </div>
+
+        <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+          <strong>Tell me about your project.</strong> Whether it is a product from scratch, a redesign that went sideways, or a team that needs a designer who ships. I want to hear it.<br><br>
+          I read complex systems, find where they break, and redesign them for business, enterprise, and people. <strong>As fast and direct as the context demands.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT FORM SECTION ── -->
+  <section class="contact-section">
+    <div class="contact-inner">
+
+      <!-- Left: contact info -->
+      <div class="contact-info-col" data-animate="fade-up">
+        <h2 class="contact-info-heading">
+          Let's work<br /><em>together.</em>
+        </h2>
+        <p class="contact-info-desc">
+          Have a project in mind? Looking for a designer who ships? Fill in the form and I will come back to you within one working day.
+        </p>
+
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <span class="contact-info-label">Email</span>
+            <span class="contact-info-value">
+              <a href="mailto:juangomezvara@gmail.com">juangomezvara@gmail.com</a>
+            </span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Location</span>
+            <span class="contact-info-value">Berlin, Germany</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Available</span>
+            <span class="contact-info-value">Full-time · Freelance · Contract</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Response</span>
+            <span class="contact-info-value">Within one working day</span>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+            <span>Medium</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form-col" data-animate="fade-up" data-delay="120">
+
+        <!-- Replace YOUR_FORM_ID with your Formspree form ID after setup -->
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/mqenwjdz"
+          method="POST"
+          novalidate
+        >
+          <div class="contact-form-grid">
+
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name <span aria-hidden="true">*</span></label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="name"
+                required
+                autocomplete="name"
+                placeholder="Your Name..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Company</label>
+              <input
+                class="form-input"
+                type="text"
+                id="company"
+                name="company"
+                autocomplete="organization"
+                placeholder="Studio, Agency, Restaurant..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="you@example.com"
+                data-fs-field
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input
+                class="form-input"
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="+49 ..."
+              />
+            </div>
+
+            <div class="form-group form-group--full">
+              <label class="form-label" for="message">How can I help? <span aria-hidden="true">*</span></label>
+              <textarea
+                class="form-textarea"
+                id="message"
+                name="message"
+                required
+                data-fs-field
+                placeholder="Tell me about your project, the problem you're solving, or the role you're hiring for..."
+              ></textarea>
+            </div>
+
+            <div class="form-checkbox-row">
+              <input
+                class="form-checkbox"
+                type="checkbox"
+                id="consent"
+                name="consent"
+                required
+              />
+              <label class="form-checkbox-label" for="consent">
+                I'm happy for this website to store my info so Juan can respond to my enquiry.
+              </label>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-nav magnetic" id="submitBtn" data-fs-submit-btn>
+                <span class="btn-text">Send Message</span>
+                <span class="btn-arrow">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="form-feedback form-feedback--success" id="formSuccess" role="alert" data-fs-success>
+              Message sent. I'll come back to you within one working day. Thank you.
+            </div>
+
+            <div class="form-feedback form-feedback--error" id="formError" role="alert" data-fs-error>
+              Something went wrong. Please try again or email me directly at
+              <a href="mailto:juangomezvara@gmail.com">juangomezvara@gmail.com</a>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label"><span class="eyebrow-dot"></span>Ready to work together?</p>
+        <h2 class="footer-cta-title"><span class="footer-cta-line">From complex problem</span><span class="footer-cta-line gradient-word">to shipped product.</span></h2>
+        <a href="contact.html" class="btn-primary magnetic large">
+          <span class="btn-text">Contact</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <span class="footer-copy">© 2026 Juan Gomez Vara, all rights reserved</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contactForm', formId: 'mqenwjdz' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
