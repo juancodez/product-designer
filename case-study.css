@@ -3,6 +3,294 @@
    Builds on top of styles.css variables
    ============================================ */
 
+/* ─────────────────────────────────────────────
+   QUICK NAV — sticky sidebar scrollspy
+   ───────────────────────────────────────────── */
+
+.cs-quicknav {
+  position: fixed;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.cs-quicknav--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Desktop list ── */
+.cs-qn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(6, 8, 16, 0.09);
+  border-radius: 16px;
+  padding: 14px 8px;
+  box-shadow: 0 4px 28px rgba(6, 8, 16, 0.07);
+  /* prevent overflow on short viewports */
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.cs-qn-list::-webkit-scrollbar { display: none; }
+
+.cs-qn-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 9px;
+  text-decoration: none;
+  cursor: pointer;
+  /* min 44 px touch target height */
+  min-height: 36px;
+  transition: background 0.2s;
+  /* focus ring via outline */
+  outline-offset: 2px;
+}
+.cs-qn-item:hover { background: rgba(6, 8, 16, 0.05); }
+
+/* Keyboard focus ring — visible on keyboard navigation only */
+.cs-qn-item:focus-visible {
+  outline: 2px solid #1d5fcc;
+  outline-offset: 2px;
+}
+
+.cs-qn-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(6, 8, 16, 0.22);
+  transition: background 0.25s, transform 0.25s;
+}
+.cs-qn-item.is-active .cs-qn-dot,
+.cs-qn-item[aria-current="location"] .cs-qn-dot {
+  background: #1d5fcc;
+  transform: scale(1.4);
+}
+
+.cs-qn-label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  /* rgba(6,8,16,0.60) on white ≈ #656669 → contrast ~5.0:1 — passes WCAG AA */
+  color: rgba(6, 8, 16, 0.60);
+  white-space: nowrap;
+  transition: color 0.25s;
+  line-height: 1.2;
+}
+.cs-qn-item.is-active .cs-qn-label,
+.cs-qn-item[aria-current="location"] .cs-qn-label {
+  background: var(--btn-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+/* forced-colors (Windows High Contrast): gradient text falls back to system highlight */
+@media (forced-colors: active) {
+  .cs-qn-item.is-active .cs-qn-label,
+  .cs-qn-item[aria-current="location"] .cs-qn-label {
+    -webkit-text-fill-color: Highlight;
+    color: Highlight;
+    background: none;
+  }
+  .cs-qn-item.is-active .cs-qn-dot,
+  .cs-qn-item[aria-current="location"] .cs-qn-dot {
+    background: Highlight;
+  }
+}
+
+/* ── Mobile toggle (hidden on desktop) ── */
+.cs-qn-toggle { display: none; }
+
+/* ── Mobile drawer (hidden on desktop) ── */
+.cs-qn-drawer { display: none; }
+
+/* ── Tablet (900 – 1279 px): dots only, label tooltip ── */
+@media (max-width: 1279px) {
+  .cs-quicknav { left: 18px; }
+
+  .cs-qn-label { display: none; }
+
+  .cs-qn-item {
+    padding: 9px 10px;
+    position: relative;
+    min-height: 40px;
+    justify-content: center;
+  }
+
+  /* tooltip that appears to the right on hover / focus */
+  .cs-qn-item::after {
+    content: attr(data-label);
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(6, 8, 16, 0.86);
+    color: #fff;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    padding: 5px 12px;
+    border-radius: 7px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s;
+    /* tooltip is presentational — hide from AT */
+    role: tooltip;
+  }
+  .cs-qn-item:hover::after,
+  .cs-qn-item:focus-visible::after { opacity: 1; }
+
+  .cs-qn-dot { width: 8px; height: 8px; }
+
+  .cs-qn-list {
+    padding: 12px 8px;
+    gap: 5px;
+  }
+}
+
+/* ── Mobile (< 900 px): floating toggle + bottom drawer ── */
+@media (max-width: 899px) {
+  .cs-quicknav {
+    left: auto;
+    right: 20px;
+    bottom: 24px;
+    top: auto;
+    transform: none;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .cs-qn-list { display: none; }
+
+  /* floating button — 52×52 px, well above 44px min touch target */
+  .cs-qn-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(6, 8, 16, 0.88);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(6, 8, 16, 0.26);
+    position: relative;
+    z-index: 201;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .cs-qn-toggle:hover { background: #1d5fcc; transform: scale(1.06); }
+  .cs-qn-toggle:focus-visible {
+    outline: 2px solid #1d5fcc;
+    outline-offset: 3px;
+  }
+
+  /* drawer opens above the button */
+  .cs-qn-drawer {
+    display: block;
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(6, 8, 16, 0.09);
+    border-radius: 16px;
+    padding: 10px 8px;
+    box-shadow: 0 8px 40px rgba(6, 8, 16, 0.14);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.22s, transform 0.22s;
+    min-width: 172px;
+  }
+  .cs-quicknav--open .cs-qn-drawer {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .cs-qn-drawer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cs-qn-drawer-item {
+    display: block;
+    /* min 44px touch target */
+    padding: 10px 16px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    /* rgba(6,8,16,0.60) ≈ contrast 5:1 on white */
+    color: rgba(6, 8, 16, 0.60);
+    text-decoration: none;
+    border-radius: 9px;
+    white-space: nowrap;
+    transition: background 0.18s, color 0.18s;
+    outline-offset: 2px;
+  }
+  .cs-qn-drawer-item:hover {
+    background: rgba(6, 8, 16, 0.05);
+    color: rgba(6, 8, 16, 0.88);
+  }
+  .cs-qn-drawer-item:focus-visible {
+    outline: 2px solid #1d5fcc;
+    outline-offset: 2px;
+  }
+  .cs-qn-drawer-item.is-active,
+  .cs-qn-drawer-item[aria-current="location"] {
+    background: var(--btn-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+  @media (forced-colors: active) {
+    .cs-qn-drawer-item.is-active,
+    .cs-qn-drawer-item[aria-current="location"] {
+      -webkit-text-fill-color: Highlight;
+      color: Highlight;
+      background: none;
+    }
+  }
+}
+
+/* ── Reduced motion: turn off fade/slide transitions ── */
+@media (prefers-reduced-motion: reduce) {
+  .cs-quicknav,
+  .cs-qn-item,
+  .cs-qn-dot,
+  .cs-qn-label,
+  .cs-qn-drawer,
+  .cs-qn-toggle { transition: none !important; }
+  .cs-qn-item.is-active .cs-qn-dot,
+  .cs-qn-item[aria-current="location"] .cs-qn-dot { transform: none; }
+}
+
+/* ── Hide quicknav on very small screens ── */
+@media (max-width: 359px) {
+  .cs-quicknav { display: none; }
+}
+
+/* ── END QUICK NAV ── */
+
 /* ── Hero ──────────────────────────────────── */
 .cs-hero {
   padding: 150px 40px 100px;
@@ -105,6 +393,85 @@ strong { font-weight: 700; color: var(--text); }
   margin-bottom: 80px;
 }
 
+/* ── Case Study Image Hover Effect ─────────── */
+
+/* Containers that need position:relative for the overlay */
+.cs-ba-img,
+.cs-solution-img { position: relative; }
+
+/* Smooth zoom on the image */
+.cs-hero-img,
+.cs-ba-img img,
+.cs-solution-img img {
+  transition: transform 0.5s ease-out;
+}
+.cs-hero-image:hover .cs-hero-img,
+.cs-ba-img:hover img,
+.cs-solution-img:hover img {
+  transform: scale(1.04);
+}
+
+/* Overlay — hidden; zoom-only effect active */
+.cs-img-overlay {
+  display: none;
+}
+.cs-hero-image:hover .cs-img-overlay,
+.cs-ba-img:hover .cs-img-overlay,
+.cs-solution-img:hover .cs-img-overlay {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+/* Overlay title — slides up & fades in */
+.cs-img-overlay-title {
+  color: #fff;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s, transform 0.35s;
+}
+.cs-hero-image:hover .cs-img-overlay-title,
+.cs-ba-img:hover .cs-img-overlay-title,
+.cs-solution-img:hover .cs-img-overlay-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay description — slight stagger */
+.cs-img-overlay-desc {
+  color: rgba(255, 255, 255, 0.82);
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 280px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s 0.05s, transform 0.35s 0.05s;
+}
+.cs-hero-image:hover .cs-img-overlay-desc,
+.cs-ba-img:hover .cs-img-overlay-desc,
+.cs-solution-img:hover .cs-img-overlay-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cs-hero-img,
+  .cs-ba-img img,
+  .cs-solution-img img,
+  .cs-img-overlay,
+  .cs-img-overlay-title,
+  .cs-img-overlay-desc { transition: none; }
+  .cs-img-overlay-title,
+  .cs-img-overlay-desc { opacity: 1; transform: none; }
+}
+
+/* ── END Hover Effect ── */
+
 .cs-hero-image {
   position: relative; z-index: 2;
   width: 100%; margin-top: 80px;
@@ -124,6 +491,7 @@ strong { font-weight: 700; color: var(--text); }
 .cs-section { padding: 120px 40px; }
 .cs-section--dark  { background: var(--bg-2); }
 .cs-section--alt   { background: var(--bg-3); }
+.cs-section--flush { padding: 0 40px 80px; }
 
 .cs-inner { max-width: 1200px; margin: 0 auto; }
 
@@ -196,6 +564,74 @@ strong { font-weight: 700; color: var(--text); }
   font-size: 0.95rem; color: var(--text-2); line-height: 1.75; padding-top: 2px;
 }
 
+/* ── Solution rows (text left / image right) ── */
+.cs-solution-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 64px;
+}
+
+.cs-solution-row {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cs-solution-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cs-solution-title {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.cs-solution-desc {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+.cs-solution-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.10);
+  background: var(--bg-2);
+}
+
+.cs-solution-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-solution-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(10, 22, 60, 0.25);
+}
+
+@media (max-width: 768px) {
+  .cs-solution-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 /* ── Testimonial ───────────────────────────── */
 .cs-testimonial {
   padding: 120px 40px;
@@ -219,7 +655,16 @@ strong { font-weight: 700; color: var(--text); }
   display: flex; align-items: center; justify-content: center; gap: 16px;
 }
 .cs-quote-attr::before, .cs-quote-attr::after {
-  content: ''; width: 40px; height: 1px; background: var(--border);
+  content: ''; width: 40px; height: 1px; background: var(--border); flex-shrink: 0;
+}
+.cs-quote-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
 }
 
 /* ── Gallery ───────────────────────────────── */
@@ -282,26 +727,32 @@ strong { font-weight: 700; color: var(--text); }
 
 /* ── Before / After ────────────────────────── */
 .cs-ba-frames {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 24px; margin-top: 48px; margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+.cs-ba-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 .cs-ba-label {
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--text-3); margin-bottom: 10px;
+  color: var(--text-3); margin-bottom: 16px;
 }
 .cs-ba-img {
   border-radius: 12px; overflow: hidden;
   border: 1px solid var(--border);
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/12.5;
   background: var(--bg-3);
   display: flex; align-items: center; justify-content: center;
   font-size: 0.72rem; color: var(--text-3);
   letter-spacing: 0.1em; text-transform: uppercase;
 }
-.cs-ba-lists {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
-}
+.cs-ba-lists { display: none; } /* replaced by inline .cs-ba-row layout */
 .cs-ba-list h3 {
   font-size: 0.72rem; font-weight: 700;
   letter-spacing: 0.16em; text-transform: uppercase;
@@ -332,6 +783,114 @@ strong { font-weight: 700; color: var(--text); }
   background: linear-gradient(135deg, #4cda80 0%, #1db954 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Research Metrics ──────────────────────── */
+.sp-rm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 64px 0 72px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.sp-rm-card {
+  padding: 44px 36px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  /* only fade the card — no transform so overflow:hidden doesn't clip the slide */
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(.16, 1, .3, 1);
+}
+.sp-rm-card:last-child { border-right: none; }
+.sp-rm-card:nth-child(2) { transition-delay: 0.1s; }
+.sp-rm-card:nth-child(3) { transition-delay: 0.2s; }
+
+/* inner elements slide up independently */
+.sp-rm-num,
+.sp-rm-label,
+.sp-rm-desc {
+  transform: translateY(14px);
+  transition: transform 0.65s cubic-bezier(.16, 1, .3, 1);
+}
+.sp-rm-label { transition-delay: 0.08s; }
+.sp-rm-desc  { transition-delay: 0.14s; }
+
+.sp-rm-card.sp-revealed {
+  opacity: 1;
+}
+.sp-rm-card.sp-revealed .sp-rm-num,
+.sp-rm-card.sp-revealed .sp-rm-label,
+.sp-rm-card.sp-revealed .sp-rm-desc {
+  transform: translateY(0);
+}
+
+.sp-rm-num {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  /* tabular-nums keeps each digit the same width → no layout shift during count-up */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  background: var(--btn-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 14px;
+}
+
+/* percentage sign slightly smaller so it feels tight */
+.sp-rm-pct {
+  font-size: 0.62em;
+  letter-spacing: -0.01em;
+  vertical-align: 0.06em;
+}
+
+.sp-rm-label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.sp-rm-desc {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  /* var(--text-3) ≈ #8090b0 — contrast ~4.6:1 on white, passes WCAG AA */
+  color: var(--text-3);
+  line-height: 1.6;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* tablet stacking */
+@media (max-width: 768px) {
+  .sp-rm-grid { grid-template-columns: 1fr; }
+  .sp-rm-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 36px 28px;
+  }
+  .sp-rm-card:last-child { border-bottom: none; }
+}
+
+/* respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .sp-rm-card,
+  .sp-rm-num,
+  .sp-rm-label,
+  .sp-rm-desc {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ── Process Steps ─────────────────────────── */
@@ -384,12 +943,21 @@ strong { font-weight: 700; color: var(--text); }
 .cs-pillar:hover { border-color: var(--border-hover); background: var(--bg-3); }
 .cs-pillar-num {
   display: block;
+  font-size: 2rem; font-weight: 900;
+  letter-spacing: -0.05em;
+  background: var(--btn-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px; line-height: 1;
+}
+.cs-pillar-cat {
+  display: block;
   font-size: 0.65rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 14px;
 }
 .cs-pillar-title {
-  font-size: 1.05rem; font-weight: 700;
+  font-size: 1.15rem; font-weight: 700;
   letter-spacing: -0.02em; margin-bottom: 12px;
   color: var(--text);
 }
@@ -415,7 +983,7 @@ strong { font-weight: 700; color: var(--text); }
   padding: 32px 28px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: var(--card-bg);
+  background: var(--bg);
   transition: border-color 0.25s, transform 0.3s var(--ease-out);
 }
 .cs-metric-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
@@ -459,22 +1027,23 @@ strong { font-weight: 700; color: var(--text); }
   padding: 32px 28px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: var(--card-bg);
+  background: var(--bg);
   transition: border-color 0.25s, background 0.25s;
 }
 .cs-lesson:hover { border-color: var(--border-hover); background: var(--bg-3); }
 .cs-lesson-num {
   display: block;
-  font-size: 1.8rem; font-weight: 900;
+  font-size: 2rem; font-weight: 900;
   letter-spacing: -0.05em;
   background: var(--btn-gradient);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 14px; line-height: 1;
+  margin-bottom: 16px; line-height: 1;
 }
+.cs-lesson-num svg { display: block; }
 .cs-lesson-title {
-  font-size: 0.95rem; font-weight: 700;
-  letter-spacing: -0.02em; margin-bottom: 10px;
+  font-size: 1.15rem; font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: 12px;
   color: var(--text);
 }
 .cs-lesson-body {
@@ -606,7 +1175,7 @@ strong { font-weight: 700; color: var(--text); }
   .cs-gallery-grid { grid-template-columns: 1fr 1fr; }
   .cs-gallery-item--wide { grid-column: span 2; }
   .cs-more-grid { grid-template-columns: 1fr; }
-  .cs-ba-frames, .cs-ba-lists { grid-template-columns: 1fr; }
+  .cs-ba-row { grid-template-columns: 1fr; }
   .cs-title { line-height: 1.0; }
   .cs-hero-body { grid-template-columns: 1fr; gap: 32px; }
   .cs-process { grid-template-columns: 1fr; }

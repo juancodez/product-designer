@@ -50,6 +50,58 @@
     </nav>
   </div>
 
+  <!-- ── QUICK NAV ── -->
+  <aside class="cs-quicknav" id="csQuickNav" aria-label="Case study navigation">
+
+    <!-- Desktop / tablet: vertical pill list -->
+    <nav class="cs-qn-list" id="csQnList">
+      <a href="#problem"      class="cs-qn-item" data-section="problem"      data-label="Problem">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Problem</span></a>
+      <a href="#research"     class="cs-qn-item" data-section="research"     data-label="Research">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Research</span></a>
+      <a href="#persona"      class="cs-qn-item" data-section="persona"      data-label="Persona">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Persona</span></a>
+      <a href="#how-might-we" class="cs-qn-item" data-section="how-might-we" data-label="How Might We"><span class="cs-qn-dot"></span><span class="cs-qn-label">How Might We</span></a>
+      <a href="#user-flow"    class="cs-qn-item" data-section="user-flow"    data-label="User Flow">    <span class="cs-qn-dot"></span><span class="cs-qn-label">User Flow</span></a>
+      <a href="#process"      class="cs-qn-item" data-section="process"      data-label="Process">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Process</span></a>
+      <a href="#testing"      class="cs-qn-item" data-section="testing"      data-label="Testing">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Testing</span></a>
+      <a href="#before-after" class="cs-qn-item" data-section="before-after" data-label="Before &amp; After"><span class="cs-qn-dot"></span><span class="cs-qn-label">Before &amp; After</span></a>
+      <a href="#solution"     class="cs-qn-item" data-section="solution"     data-label="Solution">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Solution</span></a>
+      <a href="#prototype"    class="cs-qn-item" data-section="prototype"    data-label="Prototype">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Prototype</span></a>
+      <a href="#ai-design"    class="cs-qn-item" data-section="ai-design"    data-label="AI in Design"> <span class="cs-qn-dot"></span><span class="cs-qn-label">AI in Design</span></a>
+      <a href="#kpis"         class="cs-qn-item" data-section="kpis"         data-label="KPIs">         <span class="cs-qn-dot"></span><span class="cs-qn-label">KPIs</span></a>
+      <a href="#outlook"      class="cs-qn-item" data-section="outlook"      data-label="Outlook">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Outlook</span></a>
+      <a href="#lessons"      class="cs-qn-item" data-section="lessons"      data-label="Lessons">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Lessons</span></a>
+    </nav>
+
+    <!-- Mobile: floating toggle button -->
+    <button class="cs-qn-toggle" id="csQnToggle" aria-label="Open case study navigation" aria-expanded="false" aria-controls="csQnDrawer">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <rect x="2" y="3"   width="12" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect x="2" y="7.3" width="8"  height="1.5" rx="0.75" fill="currentColor"/>
+        <rect x="2" y="11.5" width="10" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+    </button>
+
+    <!-- Mobile: expandable drawer (opens above the toggle) -->
+    <div class="cs-qn-drawer" id="csQnDrawer" role="region" aria-label="Section navigation" aria-hidden="true">
+      <nav class="cs-qn-drawer-list">
+        <a href="#problem"      class="cs-qn-drawer-item" data-section="problem">Problem</a>
+        <a href="#research"     class="cs-qn-drawer-item" data-section="research">Research</a>
+        <a href="#persona"      class="cs-qn-drawer-item" data-section="persona">Persona</a>
+        <a href="#how-might-we" class="cs-qn-drawer-item" data-section="how-might-we">How Might We</a>
+        <a href="#user-flow"    class="cs-qn-drawer-item" data-section="user-flow">User Flow</a>
+        <a href="#process"      class="cs-qn-drawer-item" data-section="process">Process</a>
+        <a href="#testing"      class="cs-qn-drawer-item" data-section="testing">Testing</a>
+        <a href="#before-after" class="cs-qn-drawer-item" data-section="before-after">Before &amp; After</a>
+        <a href="#solution"     class="cs-qn-drawer-item" data-section="solution">Solution</a>
+        <a href="#prototype"    class="cs-qn-drawer-item" data-section="prototype">Prototype</a>
+        <a href="#ai-design"    class="cs-qn-drawer-item" data-section="ai-design">AI in Design</a>
+        <a href="#kpis"         class="cs-qn-drawer-item" data-section="kpis">KPIs</a>
+        <a href="#outlook"      class="cs-qn-drawer-item" data-section="outlook">Outlook</a>
+        <a href="#lessons"      class="cs-qn-drawer-item" data-section="lessons">Lessons</a>
+      </nav>
+    </div>
+
+  </aside>
+
   <!-- ── HERO ── -->
   <section class="cs-hero">
     <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
@@ -82,11 +134,11 @@
           </div>
           <div class="cs-hero-meta-item">
             <span class="cs-hero-meta-label">Duration</span>
-            <span class="cs-hero-meta-value">5 Months</span>
+            <span class="cs-hero-meta-value">4 Months</span>
           </div>
           <div class="cs-hero-meta-item">
             <span class="cs-hero-meta-label">Tools</span>
-            <span class="cs-hero-meta-value">Figma · Miro · PostHog · Claude · Claude Code</span>
+            <span class="cs-hero-meta-value">Perplexity · Claude · Figma · Miro · Figma Make · Claude Code</span>
           </div>
           <div class="cs-hero-meta-item">
             <span class="cs-hero-meta-label">Status</span>
@@ -95,9 +147,7 @@
         </div>
 
         <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
-          <strong>Supply Pro is an early warning system for professional kitchens.</strong> It detects supplier problems before they reach the service.<br><br>
-          Built on <strong>10 qualitative interviews with chefs across five countries</strong>, the product solves a single operational moment: the gap between order placement and delivery arrival.<br><br>
-          Sixty percent of chefs surveyed reported direct stress from late supplier deliveries. The rest flagged quality or quantity issues. <strong>The problem is not that something is missing. It is not knowing until the truck is already at the door.</strong>
+          Supply Pro was born out of a problem I personally encountered over <strong>17 years as a head pastry chef and chef in high-end restaurants.</strong> Procurement in the restaurant industry is chaotic and labour-intensive. However, the real issue is not just a lack of communication and documentation, but also <strong>a lack of anticipation.</strong>
         </p>
       </div>
 
@@ -111,67 +161,254 @@
       </div>
 
       <div class="cs-hero-image" data-animate="fade-up" data-delay="480" style="aspect-ratio: 16/9;">
-        <img src="assets/sp-interviews.jpg" alt="Professional kitchen in service — the environment Supply Pro was designed for" class="cs-hero-img" loading="eager" decoding="async" style="object-position: center 35%;" />
+        <img src="assets/brigata_di_cucina_2.jpg" alt="Professional kitchen brigade in service — the environment Supply Pro was designed for" class="cs-hero-img" loading="eager" decoding="async" style="object-position: center 40%;" />
+        <div class="cs-img-overlay" aria-hidden="true">
+          <span class="cs-img-overlay-title">Supply Pro</span>
+          <span class="cs-img-overlay-desc">B2B SaaS · Food Logistics · Product Design</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── THE PROBLEM ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <section id="problem" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
       <div class="cs-two-col--6040 cs-two-col">
         <div class="cs-col-head">
           <span class="cs-eyebrow">The Problem</span>
           <h2 class="cs-heading">
-            Not that something<br />is missing.<br /><em>Not knowing.</em>
+            Supplier issues<br /><em>discovered almost too late.</em>
           </h2>
         </div>
         <div class="cs-col-body">
           <p>
-            In 10 qualitative interviews with chefs from Switzerland, France, Spain, Germany, and Uruguay, the same pattern appeared every time. Late deliveries, quality problems, quantity discrepancies. Each one discovered at the worst possible moment: when the delivery truck is already at the door and the service starts in two hours.
+            <strong>The problem is the agony, the fear of not knowing whether the supplier will arrive on time with the necessary products and whether they match what was ordered.</strong> At that moment, service is already at risk. There is very little time left to react.
           </p>
-          <p>
-            <strong>Sixty percent of chefs surveyed reported direct stress from late supplier deliveries.</strong> The rest flagged quality or quantity issues. In every case, the damage was not the problem itself. It was the absence of time to react.
-          </p>
-          <p>
-            Luxury gastronomy runs on WhatsApp, phone calls, and paper. Nothing is documented. No system warns in advance. The chef absorbs the consequences even when the mistake originated with the supplier.
-          </p>
-          <p>
+          <!-- <p>
             <strong>At that moment, the service is already at risk. There is no time left to react.</strong>
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── RESEARCH ARTIFACT ── -->
+  <section id="research" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+
+      <span class="cs-eyebrow">Research</span>
+      <h2 class="cs-heading">Deep Qualitative<br /><em>Research</em></h2>
+
+      <div class="sp-rm-grid" role="list" aria-label="Research key figures">
+
+        <div class="sp-rm-card" role="listitem">
+          <div class="sp-rm-num" aria-hidden="true"><span class="sp-rm-counter" data-target="11">0</span></div>
+          <div class="sp-rm-label">Interviews</div>
+          <p class="sp-rm-desc">10 Top Executive Chefs with +10 years experience and biggest Fruit &amp; Vegetable suppliers in Switzerland</p>
+        </div>
+
+        <div class="sp-rm-card" role="listitem">
+          <div class="sp-rm-num" aria-hidden="true"><span class="sp-rm-counter" data-target="5">0</span></div>
+          <div class="sp-rm-label">Countries</div>
+          <p class="sp-rm-desc">Chefs from Germany, Uruguay, France, Switzerland and Spain</p>
+        </div>
+
+        <div class="sp-rm-card" role="listitem">
+          <div class="sp-rm-num" aria-hidden="true"><span class="sp-rm-counter" data-target="60">0</span><span class="sp-rm-pct">%</span></div>
+          <div class="sp-rm-label">Directly Affected</div>
+          <p class="sp-rm-desc">of the chefs surveyed are directly affected by late deliveries</p>
+        </div>
+
+      </div>
+
+      <!-- Research board image -->
+      <div style="
+        width: 70%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+      ">
+        <img
+          src="assets/sp-interviews-01.jpg"
+          alt="Qualitative research board — interview answers from chefs and suppliers"
+          style="width: 100%; height: auto; display: block;"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL 1 ── -->
+  <section class="cs-testimonial" data-animate="fade-up">
+    <span class="cs-quote-mark">"</span>
+    <p class="cs-quote-text">
+      "An early warning system for delays or supplier problems would be a good solution to this problem, as it would allow us to respond sooner and salvage the service."
+    </p>
+    <div class="cs-quote-attr">
+      <img class="cs-quote-avatar" src="assets/Daniel-garcia-sera.png" alt="Portrait of Daniel Garcia Serra" loading="lazy" decoding="async" />
+      <span>Daniel Garcia Serra · Executive Chef at the Yellowstone Club, Big Sky, Montana, United States</span>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL 2 ── -->
+  <section class="cs-testimonial" data-animate="fade-up">
+    <span class="cs-quote-mark">"</span>
+    <p class="cs-quote-text">
+      "Then you often have to run around to make sure they deliver the product on time and in good condition, or you have to work with other suppliers, but it's always a headache when that happens to you."
+    </p>
+    <div class="cs-quote-attr">
+      <img class="cs-quote-avatar" src="assets/Marco.webp" alt="Portrait of Marco Silva Lindblom" loading="lazy" decoding="async" />
+      <span>Marco Silva Lindblom · Executive Chef at the England Embassy, Montevideo, Uruguay</span>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL 3 ── -->
+  <section class="cs-testimonial" data-animate="fade-up">
+    <span class="cs-quote-mark">"</span>
+    <p class="cs-quote-text">
+      "If the product doesn't meet the required standard, I immediately feel frustrated and concerned about the operational side of things. As a chef, I am responsible for the final quality."
+    </p>
+    <div class="cs-quote-attr">
+      <img class="cs-quote-avatar" src="assets/Edoardo-De-simone.webp" alt="Portrait of Edoardo De Simone" loading="lazy" decoding="async" style="object-position: right center;" />
+      <span>Edoardo De Simone · Executive Chef at Clinique La Prairie, Clarens, Suisse</span>
+    </div>
+  </section>
+
+  <!-- ── USER PERSONA ── -->
+  <section id="persona" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span class="cs-eyebrow">User Persona</span>
+        <h2 class="cs-heading">
+          Mark the<br /><em>Perfectionist.</em>
+        </h2>
+        <p style="color: var(--text-2); line-height: 1.75; margin-top: 12px;">
+          Based on ten in-depth interviews, Mark emerged as the central user persona for Supply Pro. This persona kept every design decision grounded in real user needs and frustrations. The empathy was not abstract. <strong>I was a Chef myself for seventeen years.</strong> I understood the pressure, the uncertainty, and what was truly at stake when a delivery went wrong.
+        </p>
+      </div>
+
+      <div style="
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+      ">
+        <img
+          src="assets/User-persona-Mark.png"
+          alt="User persona — Mark the Perfectionist, Executive Chef"
+          style="width: 100%; height: auto; display: block;"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── HOW MIGHT WE ── -->
+  <section id="how-might-we" class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner" style="text-align: center; max-width: 800px; margin: 0 auto;">
+
+      <span class="cs-eyebrow">How Might We</span>
+      <h2 class="cs-heading" style="margin-bottom: 20px;">
+        The key<br /><em>design question.</em>
+      </h2>
+      <p style="color: var(--text-muted, var(--text-2)); line-height: 1.75; margin-bottom: 48px; max-width: 560px; margin-left: auto; margin-right: auto;">
+        The user persona and the ten interviews converged into a single question. This became the filter for every product and design decision that followed.
+      </p>
+
+      <div style="
+        background: var(--bg);
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        padding: 48px 56px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+      ">
+        <p style="
+          font-family: 'Satoshi', sans-serif;
+          font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+          font-weight: 700;
+          line-height: 1.45;
+          letter-spacing: -0.02em;
+          color: var(--text);
+          margin: 0;
+        ">
+          How might we help chefs in gastronomy detect supply disruptions early so they can react <em style="font-weight: 300; color: var(--accent);">before service is affected?</em>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── USER FLOW ── -->
+  <section id="user-flow" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+
+      <div class="cs-two-col cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">User Flow</span>
+          <h2 class="cs-heading">
+            Mapping the<br /><em>critical moment.</em>
+          </h2>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            The user flow was essential to define the scope of the MVP. Mapping the full kitchen procurement journey made it clear that not every moment needed to be solved at once.
+          </p>
+          <p>
+            <strong>One moment concentrated all the tension: the gap between the order placement and the delivery arrival.</strong> That is where chefs lose control. That is where stress, improvisation, and service risk accumulate.
+          </p>
+          <p>
+            Supply Pro was designed to own that moment. Everything outside it was deliberately left out of V1.
+          </p>
+        </div>
+      </div>
+
+      <!-- User flow diagram -->
+      <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(0,0,0,0.07);">
+        <img src="assets/SP-userflow.svg" alt="Supply Pro user flow diagram" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async" />
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── PROCESS & KEY DECISIONS ── -->
-  <section class="cs-section cs-section--dark" data-animate="fade-up">
+  <section id="process" class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Process &amp; Key Decisions</span>
       <h2 class="cs-heading">
         Three decisions that<br /><em>shaped the product</em>
       </h2>
       <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
-        Each decision was a correction. A moment where the design process forced a choice between what looked good and what the research actually supported.
+        The interviews became the foundation for every product decision. Hearing the same operational tensions across multiple kitchens helped separate assumptions from real workflow problems.
       </p>
 
       <div class="cs-pillars">
         <div class="cs-pillar">
-          <span class="cs-pillar-num">01 — Back to the User</span>
+          <span class="cs-pillar-num">01</span>
+          <span class="cs-pillar-cat">Back to the User</span>
           <div class="cs-pillar-title">Scope Before Features</div>
           <div class="cs-pillar-body">
-            During competitive analysis, products like Apicbase and Haddock created scope drift. AI photo recognition, automatic complaints, complex supplier portals. When defining the MVP, the design had nothing to do with what chefs described in interviews. The correction was clear: <strong>Supply Pro solves one single moment.</strong> The moment between the order and the delivery.
+            <strong>Competitive analysis initially pulled me away from the core problem.</strong> I became distracted by feature-heavy products and started designing beyond what chefs had actually described in interviews. The research helped realign the MVP around one specific moment: <strong>the gap between order placement and delivery arrival.</strong>
           </div>
         </div>
         <div class="cs-pillar">
-          <span class="cs-pillar-num">02 — The Niche Defines the Design</span>
+          <span class="cs-pillar-num">02</span>
+          <span class="cs-pillar-cat">The Niche Defines the Design</span>
           <div class="cs-pillar-title">Domain Knowledge as Design Input</div>
           <div class="cs-pillar-body">
             Kitchens under time pressure and high stress do not need an impressive interface. They need one that works. This shaped every design decision: no decorative elements, no complex flows, no hidden actions. <strong>Functional beats decorative.</strong> Seventeen years as a head pastry chef and cook in Michelin-starred restaurants was not a nice addition. It was the decisive advantage.
           </div>
         </div>
         <div class="cs-pillar">
-          <span class="cs-pillar-num">03 — UX Writing Is Not a Detail</span>
+          <span class="cs-pillar-num">03</span>
+          <span class="cs-pillar-cat">UX Writing Is Not a Detail</span>
           <div class="cs-pillar-title">Language as Interface</div>
           <div class="cs-pillar-body">
             The first usability test showed that several terms were unclear or contradictory. Testers hesitated not because the interface was poorly structured, but because they were unsure what an action meant. <strong>A chef does not read, they scan.</strong> This forced a complete overhaul of the UX writing and visual hierarchy. The F-pattern layout stayed. The language was rebuilt from scratch.
@@ -181,89 +418,122 @@
     </div>
   </section>
 
-  <!-- ── THE SOLUTION ── -->
-  <section class="cs-section" data-animate="fade-up">
-    <div class="cs-inner">
-      <div class="cs-two-col cs-two-col--4060">
-        <div class="cs-results-list">
-          <div class="cs-result-item">
-            <span class="cs-result-num">01</span>
-            <p class="cs-result-text"><strong>Dashboard — Order Overview.</strong> The dashboard shows what is happening today at a glance. Open orders, confirmed deliveries, active alerts. The information architecture follows the F-pattern: the most critical information top left, status information to the right. A chef has three seconds. Everything must be scannable without reading.</p>
-          </div>
-          <div class="cs-result-item">
-            <span class="cs-result-num">02</span>
-            <p class="cs-result-text"><strong>Early Warning — Alert Screen.</strong> The core of Supply Pro. When a supplier reports a problem, the warning appears proactively before the chef has to look for it. The screen shows which product is affected, what the problem is, and what options are available. The chef confirms. They do not decide from nothing.</p>
-          </div>
-          <div class="cs-result-item">
-            <span class="cs-result-num">03</span>
-            <p class="cs-result-text"><strong>Alternative Product Selection.</strong> When a product is unavailable, the system automatically suggests a replacement. Price, delivery time, and availability visible at a glance. The chef chooses, the system sends. No phone call, no WhatsApp, no manual documentation.</p>
-          </div>
-        </div>
-
-        <div>
-          <span class="cs-eyebrow">The Solution</span>
-          <h2 class="cs-heading">
-            Three screens.<br /><em>One clear flow.</em>
-          </h2>
-          <div class="cs-col-body">
-            <p>
-              Supply Pro focuses on a single operational moment: the gap between placing an order and receiving a delivery. Three screens, one unambiguous flow.
-            </p>
-            <p>
-              The product does not replace existing kitchen management tools. It fills the blind spot they all share: the silence between the order and the arrival.
-            </p>
-            <p>
-              From the first tap to a confirmed decision in under three minutes.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── TESTING & ITERATION ── -->
-  <section class="cs-section cs-section--dark" data-animate="fade-up">
+  <section id="testing" class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Testing &amp; Iteration</span>
       <h2 class="cs-heading">
         What the test<br /><em>actually revealed</em>
       </h2>
 
-      <div class="cs-lessons">
+      <!-- Testing image -->
+      <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.07);">
+        <img src="assets/sp-testing.png" alt="Supply Pro usability testing session" style="width: 100%; height: auto; display: block; object-fit: cover;" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="cs-lessons" style="margin-top: 40px;">
         <div class="cs-lesson">
-          <span class="cs-lesson-num">01</span>
+          <span class="cs-lesson-num">
+            <!-- Question mark — What Was Tested -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-q" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/>
+                  <stop offset="50%" stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="20" cy="20" r="17" stroke="url(#lg-q)" stroke-width="1.8"/>
+              <path d="M16.5 16.8C16.5 14.37 18.02 12.5 20 12.5C21.98 12.5 23.5 14.37 23.5 16.8C23.5 18.66 22.34 20.26 20.65 20.9C20.27 21.04 20 21.4 20 21.8V23.2" stroke="url(#lg-q)" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="20" cy="27" r="1.3" fill="url(#lg-q)"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">What Was Tested</div>
           <div class="cs-lesson-body">
-            The test goal was clear: is the early warning system understandable and easy to use for chefs? Four people from the gastronomy environment tested the prototype. The scenario was realistic: two simultaneous problem alerts — a quality issue and a delay — to be resolved within three minutes.
+            The test goal was clear: <strong>is the early warning system understandable and easy to use for chefs?</strong> Five people from the gastronomy environment tested the prototype. The scenario was realistic: two simultaneous problem alerts — a quality issue and a delay — to be resolved within three minutes.
           </div>
         </div>
         <div class="cs-lesson">
-          <span class="cs-lesson-num">02</span>
+          <span class="cs-lesson-num">
+            <!-- Check mark — What Worked -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ck" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/>
+                  <stop offset="50%" stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="20" cy="20" r="17" stroke="url(#lg-ck)" stroke-width="1.8"/>
+              <path d="M13 20.5L17.5 26L27 14" stroke="url(#lg-ck)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">What Worked</div>
           <div class="cs-lesson-body">
-            The F-pattern layout held. Testers scanned information intuitively from top left to right. No tester had difficulty locating the relevant information. The visual hierarchy guided attention without instruction.
+            <strong>The F-pattern layout held.</strong> Testers scanned information intuitively from top left to right. No tester had difficulty locating the relevant information. The visual hierarchy guided attention without instruction.
           </div>
         </div>
         <div class="cs-lesson">
-          <span class="cs-lesson-num">03</span>
+          <span class="cs-lesson-num">
+            <!-- Cross — What Failed -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-x" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/>
+                  <stop offset="50%" stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="20" cy="20" r="17" stroke="url(#lg-x)" stroke-width="1.8"/>
+              <path d="M14 14L26 26M26 14L14 26" stroke="url(#lg-x)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">What Failed</div>
           <div class="cs-lesson-body">
-            The UX writing. Several terms were unclear or contradictory. Testers hesitated not because the interface was poorly structured, but because they were unsure what an action meant. That is a different problem with significant consequences.
+            <strong>The UX writing. Several terms were unclear or contradictory.</strong> Testers hesitated not because the interface was poorly structured, but because they were unsure what an action meant. That is a different problem with significant consequences.
           </div>
         </div>
-        <div class="cs-lesson">
-          <span class="cs-lesson-num">04</span>
+        <div class="cs-lesson" style="grid-column: 2;">
+          <span class="cs-lesson-num">
+            <!-- Lightbulb — What Changed -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-lb" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/>
+                  <stop offset="50%" stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="20" cy="20" r="17" stroke="url(#lg-lb)" stroke-width="1.8"/>
+              <path d="M20 11C16.134 11 13 14.134 13 18C13 20.396 14.216 22.51 16.1 23.78V26.5C16.1 26.776 16.324 27 16.6 27H23.4C23.676 27 23.9 26.776 23.9 26.5V23.78C25.784 22.51 27 20.396 27 18C27 14.134 23.866 11 20 11Z" stroke="url(#lg-lb)" stroke-width="1.8" stroke-linejoin="round"/>
+              <line x1="17" y1="29" x2="23" y2="29" stroke="url(#lg-lb)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="18.5" y1="31.5" x2="21.5" y2="31.5" stroke="url(#lg-lb)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">What Changed</div>
           <div class="cs-lesson-body">
-            Complete overhaul of the UX writing. Every term was reviewed: is it unambiguous? Does it trigger the right expectation? The typographic scale was adjusted and a clearer visual hierarchy through color was introduced. <strong>The layout stayed. The language was rebuilt.</strong>
+            <strong>Complete overhaul of the UX writing.</strong> Every term was reviewed: is it unambiguous? Does it trigger the right expectation? <strong>The typographic scale was adjusted</strong> and a clearer visual hierarchy through color was introduced. <strong>The layout stayed. The language was rebuilt.</strong>
           </div>
         </div>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL — TESTING ── -->
+  <section class="cs-testimonial" data-animate="fade-up">
+    <span class="cs-quote-mark">"</span>
+    <p class="cs-quote-text">
+      "Even though it was in another language, you could still figure out what to do. In fact, it's super clear — it's not at all hard to understand how it works. There's nothing superfluous; it simply provides the necessary information."
+    </p>
+    <div class="cs-quote-attr">
+      <img class="cs-quote-avatar" src="assets/Valentin.webp" alt="Portrait of Valentin Chappuis" loading="lazy" decoding="async" />
+      <span>Valentin Chappuis · Pastry Chef, Vegan Restaurant Aujourd'hui Demain, Paris, France</span>
     </div>
   </section>
 
   <!-- ── BEFORE & AFTER ── -->
-  <section class="cs-section cs-section--alt" data-animate="fade-up">
+  <section id="before-after" class="cs-section cs-section--alt" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Before &amp; After</span>
       <h2 class="cs-heading">
@@ -271,66 +541,156 @@
       </h2>
 
       <div class="cs-ba-frames">
-        <div>
-          <p class="cs-ba-label">Before: first usability test</p>
-          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a0533 50%, #2d1b69 100%); display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.3); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Generic status labels</div>
-        </div>
-        <div>
-          <p class="cs-ba-label">After: revised interface</p>
-          <div class="cs-ba-img" style="background: linear-gradient(135deg, #0d1a0d 0%, #0f2d1a 50%, #143d22 100%); display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.3); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Clear action language</div>
-        </div>
-      </div>
 
-      <div class="cs-ba-lists">
-        <div class="cs-ba-list">
-          <h3>Before the test</h3>
-          <ul>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Generic status terms</strong>: ambiguous labels that created hesitation at decision points</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Inconsistent labels</strong>: the same action named differently across screens</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Unclear CTAs</strong>: testers could not determine the consequence of an action before taking it</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Flat visual hierarchy</strong>: primary and secondary actions carried equal visual weight</span></li>
-          </ul>
+        <!-- Before row -->
+        <div class="cs-ba-row">
+          <div>
+            <div class="cs-ba-img">
+              <img src="assets/Sp-Before-Screens.png" alt="Supply Pro — Before: generic status labels" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy" decoding="async" />
+              <div class="cs-img-overlay" aria-hidden="true">
+                <span class="cs-img-overlay-title">Before</span>
+                <span class="cs-img-overlay-desc">Generic status labels with no clear action language</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="cs-ba-label">Before: first usability test</p>
+            <div class="cs-ba-list">
+              <h3>Before the test</h3>
+              <ul>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Generic status terms</strong>: ambiguous labels that created hesitation at decision points</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Inconsistent labels</strong>: the same action named differently across screens</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Unclear CTAs</strong>: testers could not determine the consequence of an action before taking it</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Flat visual hierarchy</strong>: primary and secondary actions carried equal visual weight</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="cs-ba-list">
-          <h3>After the iteration</h3>
-          <ul>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Clear status badges</strong>: each state communicates exactly what it means with no interpretation needed</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Unambiguous action labels</strong>: consistent terminology across every screen and state</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Visible hierarchy</strong>: primary actions are visually dominant, secondary actions recede</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Scannable language</strong>: every label written for a chef with three seconds and high stress</span></li>
-          </ul>
+
+        <!-- After row -->
+        <div class="cs-ba-row">
+          <div>
+            <div class="cs-ba-img">
+              <img src="assets/sp-after-screens.png" alt="Supply Pro — After: clear action language" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy" decoding="async" />
+              <div class="cs-img-overlay" aria-hidden="true">
+                <span class="cs-img-overlay-title">After</span>
+                <span class="cs-img-overlay-desc">Clear action language and improved visual hierarchy</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="cs-ba-label">After: revised interface</p>
+            <div class="cs-ba-list">
+              <h3>After the iteration</h3>
+              <ul>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Clear status badges</strong>: each state communicates exactly what it means with no interpretation needed</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Unambiguous action labels</strong>: consistent terminology across every screen and state</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Visible hierarchy</strong>: primary actions are visually dominant, secondary actions recede</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Scannable language</strong>: every label written for a chef with three seconds and high stress</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── SCREENS GALLERY ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <!-- ── THE SOLUTION ── -->
+  <section id="solution" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
-      <span class="cs-eyebrow">Screens</span>
+
+      <!-- Centered header -->
+      <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+        <span class="cs-eyebrow">The Solution</span>
+        <h2 class="cs-heading">
+          Three screens.<br /><em>One clear flow.</em>
+        </h2>
+        <p style="color: var(--text-2); line-height: 1.75; margin-top: 12px;">
+          Supply Pro focuses on a single operational moment: the gap between placing an order and receiving a delivery. From the first tap to a confirmed decision in under three minutes.
+        </p>
+      </div>
+
+      <!-- Three rows -->
+      <div class="cs-solution-rows">
+
+        <!-- Row 01 -->
+        <div class="cs-solution-row" data-animate="fade-up">
+          <div class="cs-solution-text">
+            <span class="cs-result-num">01</span>
+            <div class="cs-solution-title">Dashboard — Order Overview</div>
+            <p class="cs-solution-desc">
+              The dashboard shows what is happening today at a glance. Open orders, confirmed deliveries, active alerts. The information architecture follows the F-pattern: the most critical information top left, status information to the right. A chef has three seconds. Everything must be scannable without reading.
+            </p>
+          </div>
+          <div class="cs-solution-img">
+            <img src="assets/SP-Ipad-Mock-Up.png" alt="Supply Pro Dashboard — Order Overview screen" loading="lazy" decoding="async" />
+            <div class="cs-img-overlay" aria-hidden="true">
+              <span class="cs-img-overlay-title">Dashboard</span>
+              <span class="cs-img-overlay-desc">Order overview — critical information scannable in three seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 02 -->
+        <div class="cs-solution-row" data-animate="fade-up">
+          <div class="cs-solution-text">
+            <span class="cs-result-num">02</span>
+            <div class="cs-solution-title">Early Warning — Alert Screen</div>
+            <p class="cs-solution-desc">
+              The core of Supply Pro. When a supplier reports a problem, the warning appears proactively before the chef has to look for it. The screen shows which product is affected, what the problem is, and what options are available. The chef confirms. They do not decide from nothing.
+            </p>
+          </div>
+          <div class="cs-solution-img">
+            <img src="assets/SP-EWS-02.png" alt="Supply Pro — Early Warning System screen" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;" />
+            <div class="cs-img-overlay" aria-hidden="true">
+              <span class="cs-img-overlay-title">Early Warning</span>
+              <span class="cs-img-overlay-desc">Proactive alerts before the chef has to search for them</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 03 -->
+        <div class="cs-solution-row" data-animate="fade-up">
+          <div class="cs-solution-text">
+            <span class="cs-result-num">03</span>
+            <div class="cs-solution-title">Alternative Product Selection</div>
+            <p class="cs-solution-desc">
+              When a product is unavailable, the system automatically suggests a replacement. Price, delivery time, and availability visible at a glance. The chef chooses, the system sends. No phone call, no WhatsApp, no manual documentation.
+            </p>
+          </div>
+          <div class="cs-solution-img">
+            <img src="assets/SP-ESW-04.png" alt="Supply Pro — Alternative Product Selection screen" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;" />
+            <div class="cs-img-overlay" aria-hidden="true">
+              <span class="cs-img-overlay-title">Alternative Product</span>
+              <span class="cs-img-overlay-desc">Automatic replacements with price, delivery time and availability</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROTOTYPE ── -->
+  <section id="prototype" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Prototype</span>
       <h2 class="cs-heading">
-        Three screens.<br /><em>Every state covered.</em>
+        See it in<br /><em>motion.</em>
       </h2>
 
-      <div class="cs-bento-grid">
-        <div class="cs-bento-item cs-bento-item--wide">
-          <img src="assets/SP-MockUp.png" alt="Supply Pro — Dashboard overview" loading="lazy" decoding="async" />
-        </div>
-        <div class="cs-bento-item cs-bento-item--third">
-          <img src="assets/sp-mockup-01.png" alt="Supply Pro — Early warning alert screen" loading="lazy" decoding="async" />
-        </div>
-        <div class="cs-bento-item cs-bento-item--wide" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a0533 50%, #2d1b69 100%); display:flex; align-items:center; justify-content:center;">
-          <span style="color: rgba(255,255,255,0.2); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Alternative Selection — coming soon</span>
-        </div>
-        <div class="cs-bento-item cs-bento-item--third" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%); display:flex; align-items:center; justify-content:center;">
-          <span style="color: rgba(255,255,255,0.2); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;">Order Flow — coming soon</span>
-        </div>
+      <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.07);">
+        <video autoplay muted loop playsinline style="width: 100%; display: block;">
+          <source src="assets/sp-flow.mp4" type="video/mp4" />
+        </video>
       </div>
+
     </div>
   </section>
 
   <!-- ── AI IN THE DESIGN PROCESS ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <section id="ai-design" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">AI in the Design Process</span>
       <h2 class="cs-heading">
@@ -340,38 +700,112 @@
         AI was not a single tool. It was a system of specialized tools — one matched to each phase of the Design Thinking process.
       </p>
 
-      <div class="cs-pillars">
-        <div class="cs-pillar">
-          <span class="cs-pillar-num">01 — Research &amp; Competitive Analysis</span>
-          <div class="cs-pillar-title">Perplexity</div>
-          <div class="cs-pillar-body">Fast, source-based benchmark and competitive research. Used to analyze Apicbase, Haddock, and the broader market landscape before the first interview.</div>
+      <!-- Full-width AI workflow diagram -->
+      <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(6,8,16,0.08);">
+        <img src="assets/AI-Workflow.svg" alt="AI workflow across the design process" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KPIs TO SURVEY ── -->
+  <section id="kpis" class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">KPIs to Survey</span>
+      <h2 class="cs-heading">
+        Measuring what<br /><em>actually matters</em>
+      </h2>
+      <p style="color: var(--text-2); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        These are the indicators that would validate whether Supply Pro is solving the right problem — and how fast.
+      </p>
+
+      <div class="cs-metrics">
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">01</span>
+          <div class="cs-metric-title">Time to Action</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Time from alert received to chef action taken</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Target</span> Under 2 minutes per alert</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Confirms the interface reduces decision friction under pressure</div>
         </div>
-        <div class="cs-pillar">
-          <span class="cs-pillar-num">02 — Interviews &amp; Documentation</span>
-          <div class="cs-pillar-title">Granola + Claude</div>
-          <div class="cs-pillar-body">Granola for transcription of qualitative interviews. Claude for synthesizing insights, clustering findings, and publishing documentation in Notion. Ten interviews processed without a single manual transcript.</div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">02</span>
+          <div class="cs-metric-title">Task Completion Rate</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Time from alert to confirm alternative order or ignoring alert</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Target</span> Under 5 minutes end-to-end</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Validates the full flow — detect, decide, resolve — without manual steps</div>
         </div>
-        <div class="cs-pillar">
-          <span class="cs-pillar-num">03 — UX Writing &amp; Microcopy</span>
-          <div class="cs-pillar-title">Claude</div>
-          <div class="cs-pillar-body">Testing different tones and terms across status badges and alert texts in Spanish and German. The language iteration that saved the product after usability testing was built entirely in Claude.</div>
+        <!--
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">03</span>
+          <div class="cs-metric-title">Proactive vs. Reactive Ratio</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> % of supply issues flagged before service impact</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Target</span> &gt;80% caught proactively</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> The core promise of the EWS — this ratio is the product working</div>
         </div>
-        <div class="cs-pillar">
-          <span class="cs-pillar-num">04 — Wireframes &amp; Prototype</span>
-          <div class="cs-pillar-title">Miro + Google Stitch + Figma Make</div>
-          <div class="cs-pillar-body">Miro for lo-fi wireframes. Google Stitch and Figma Make for the mid-fi prototype. Each tool was evaluated against one criterion: which one reaches the goal fastest?</div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">04</span>
+          <div class="cs-metric-title">Order Accuracy Rate</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> % of orders arriving without unresolved issues</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Target</span> &gt;95% post-implementation</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Direct indicator of operational reliability improvement</div>
         </div>
-        <div class="cs-pillar">
-          <span class="cs-pillar-num">05 — Deployment</span>
-          <div class="cs-pillar-title">Claude Code + GitHub + Vercel</div>
-          <div class="cs-pillar-body">Claude Code for building the landing page. GitHub as repository. Vercel for deployment. Supply Pro is live. The full product development cycle completed without a dedicated engineering team.</div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">05</span>
+          <div class="cs-metric-title">Chef Satisfaction (CSAT)</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Post-task satisfaction score after resolving an alert</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Target</span> Score &ge;4 out of 5</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Measures perceived control — the emotional core of the product</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">06</span>
+          <div class="cs-metric-title">Revenue Protected</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Estimated revenue saved per avoided service disruption</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Target</span> Trackable from week 1 of deployment</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> The business case — makes Supply Pro a revenue tool, not just an ops tool</div>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OUTLOOK ── -->
+  <section id="outlook" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Product Outlook</span>
+      <h2 class="cs-heading">
+        The next three<br /><em>versions</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        The long-term goal: Supply Pro becomes the operational memory of a professional kitchen.
+      </p>
+
+      <div class="cs-metrics" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">V1.5</span>
+          <div class="cs-metric-title">GPS Tracking</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Real-time delivery location visible to the chef</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Eliminates the last blind spot between order and arrival</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Requested explicitly in 6 of 10 research interviews</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">V2</span>
+          <div class="cs-metric-title">Supplier Portal</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Suppliers confirm actively rather than the system reacting passively</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Closes the loop between kitchen and supply chain</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Identified through supplier interviews as a mutual need</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">V3</span>
+          <div class="cs-metric-title">Photo Recognition at Goods Receipt</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> AI detects quality problems directly at unpacking</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Documents issues instantly with no manual input</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Addresses the last step not covered by the current flow</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── LESSONS LEARNED ── -->
-  <section class="cs-section cs-section--dark" data-animate="fade-up">
+  <section id="lessons" class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Lessons Learned</span>
       <h2 class="cs-heading">
@@ -399,50 +833,6 @@
           <div class="cs-lesson-body">
             The first usability test came too late in the process. Two iteration rounds could have been saved. Low-fidelity testing surfaces language and flow problems before visual decisions lock them in.
           </div>
-        </div>
-        <div class="cs-lesson">
-          <span class="cs-lesson-num">04</span>
-          <div class="cs-lesson-title">Include All Stakeholders Earlier</div>
-          <div class="cs-lesson-body">
-            An interview with a supplier revealed that the supplier side has its own pain points the product needs to address. Anticipation is necessary for both parties. The supplier also benefits from communicating problems before they escalate.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── OUTLOOK ── -->
-  <section class="cs-section" data-animate="fade-up">
-    <div class="cs-inner">
-      <span class="cs-eyebrow">Product Outlook</span>
-      <h2 class="cs-heading">
-        The next three<br /><em>versions</em>
-      </h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
-        The long-term goal: Supply Pro becomes the operational memory of a professional kitchen.
-      </p>
-
-      <div class="cs-metrics">
-        <div class="cs-metric-card">
-          <span class="cs-metric-num">V1.5</span>
-          <div class="cs-metric-title">GPS Tracking</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Real-time delivery location visible to the chef</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Eliminates the last blind spot between order and arrival</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Requested explicitly in 6 of 10 research interviews</div>
-        </div>
-        <div class="cs-metric-card">
-          <span class="cs-metric-num">V2</span>
-          <div class="cs-metric-title">Supplier Portal</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Suppliers confirm actively rather than the system reacting passively</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Closes the loop between kitchen and supply chain</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Identified through supplier interviews as a mutual need</div>
-        </div>
-        <div class="cs-metric-card">
-          <span class="cs-metric-num">V3</span>
-          <div class="cs-metric-title">Photo Recognition at Goods Receipt</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> AI detects quality problems directly at unpacking</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Value</span> Documents issues instantly with no manual input</div>
-          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Addresses the last step not covered by the current flow</div>
         </div>
       </div>
     </div>
@@ -527,5 +917,139 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- ── QUICK NAV SCROLLSPY ── -->
+  <script>
+  (function () {
+    const quickNav  = document.getElementById('csQuickNav');
+    const hero      = document.querySelector('.cs-hero');
+    const toggle    = document.getElementById('csQnToggle');
+    const drawer    = document.getElementById('csQnDrawer');
+    const allItems  = document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item');
+
+    // collect section elements from sidebar links
+    const sectionEls = Array.from(document.querySelectorAll('.cs-qn-item')).map(a =>
+      document.getElementById(a.dataset.section)
+    ).filter(Boolean);
+
+    /* ── helpers ── */
+    function setActive(id) {
+      allItems.forEach(item => {
+        const match = item.dataset.section === id;
+        item.classList.toggle('is-active', match);
+        // aria-current: "location" = currently active section in page
+        if (match) {
+          item.setAttribute('aria-current', 'location');
+        } else {
+          item.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function closeDrawer() {
+      if (!drawer) return;
+      quickNav.classList.remove('cs-quicknav--open');
+      toggle && toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    /* ── Show sidebar after hero scrolls out ── */
+    if (hero && quickNav) {
+      const heroObs = new IntersectionObserver(entries => {
+        quickNav.classList.toggle('cs-quicknav--visible', !entries[0].isIntersecting);
+      }, { threshold: 0.15 });
+      heroObs.observe(hero);
+    }
+
+    /* ── Scrollspy ── */
+    const spyObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+    sectionEls.forEach(s => spyObs.observe(s));
+
+    /* ── Smooth scroll with nav offset ── */
+    document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.section);
+        if (!target) return;
+        const top = target.getBoundingClientRect().top + window.scrollY - 88;
+        window.scrollTo({ top, behavior: 'smooth' });
+        closeDrawer();
+        // move focus to the section for screen readers
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    /* ── Mobile toggle ── */
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => {
+        const isOpen = quickNav.classList.toggle('cs-quicknav--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        drawer.setAttribute('aria-hidden', String(!isOpen));
+        // move focus into drawer when it opens
+        if (isOpen) {
+          const first = drawer.querySelector('.cs-qn-drawer-item');
+          first && first.focus();
+        }
+      });
+
+      // close on outside click
+      document.addEventListener('click', e => {
+        if (!quickNav.contains(e.target)) closeDrawer();
+      });
+
+      // close on Escape
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && quickNav.classList.contains('cs-quicknav--open')) {
+          closeDrawer();
+          toggle.focus();
+        }
+      });
+    }
+
+    /* ── Research metrics — scroll reveal + count-up ── */
+    const rmCards = document.querySelectorAll('.sp-rm-card');
+    if (rmCards.length) {
+
+      function countUp(counterEl, target, duration) {
+        const startTime = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          // ease-out cubic — fast start, smooth landing
+          const eased = 1 - Math.pow(1 - progress, 3);
+          counterEl.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const rmObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const card = entry.target;
+          card.classList.add('sp-revealed');
+
+          const counter = card.querySelector('.sp-rm-counter');
+          if (counter) {
+            const target = parseInt(counter.dataset.target, 10);
+            // scale duration to the magnitude: 11 → ~700ms, 60 → ~1100ms
+            const duration = Math.min(400 + target * 12, 1200);
+            countUp(counter, target, duration);
+          }
+
+          rmObs.unobserve(card); // fire once per card
+        });
+      }, { threshold: 0.3 });
+
+      rmCards.forEach(el => rmObs.observe(el));
+    }
+
+  })();
+  </script>
 </body>
 </html>
