@@ -231,19 +231,14 @@
 
 /* ── Mobile (< 900 px): floating toggle + bottom drawer ── */
 @media (max-width: 899px) {
-  .cs-page-layout { grid-template-columns: 1fr; }
+  .cs-page-layout,
+  .cs-page-layout.is-collapsed { grid-template-columns: 1fr; }
   .cs-qn-collapse-btn { display: none; }
+  .cs-lessons { grid-template-columns: 1fr; }
 
+  /* sidebar nav hidden on mobile — desktop/tablet only */
   .cs-quicknav {
-    position: fixed;
-    left: auto;
-    right: 20px;
-    bottom: 24px;
-    top: auto;
-    height: auto;
-    overflow: visible;
-    padding: 0;
-    transform: none;
+    display: none;
   }
 
   .cs-qn-list { display: none; }
@@ -1004,6 +999,11 @@ strong { font-weight: 700; color: var(--text); }
   gap: 24px;
   margin-top: 56px;
 }
+/* 2-col variant (MC Challenge) — collapses to 1 col on tablet + mobile */
+.cs-pillars--2col { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 899px) {
+  .cs-pillars--2col { grid-template-columns: 1fr; }
+}
 .cs-pillar {
   padding: 32px 28px;
   border: 1px solid var(--border);
@@ -1052,6 +1052,11 @@ strong { font-weight: 700; color: var(--text); }
   gap: 24px;
   margin-top: 56px;
 }
+/* 3-col variant (Product Outlook) — collapses to 1 col on tablet + mobile */
+.cs-metrics--3col { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1024px) {
+  .cs-metrics--3col { grid-template-columns: 1fr; }
+}
 .cs-metric-card {
   padding: 32px 28px;
   border: 1px solid var(--border);
@@ -1095,6 +1100,11 @@ strong { font-weight: 700; color: var(--text); }
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 56px;
+}
+/* 2-col variant (MC Lessons) — collapses to 1 col on tablet + mobile */
+.cs-lessons--2col { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 899px) {
+  .cs-lessons--2col { grid-template-columns: 1fr; }
 }
 .cs-lesson {
   padding: 32px 28px;
@@ -1309,15 +1319,15 @@ strong { font-weight: 700; color: var(--text); }
   .cs-metrics { grid-template-columns: 1fr; }
   .cs-lessons { grid-template-columns: 1fr; }
   .cs-bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 8px;
     padding: 32px 20px 0;
   }
-  /* On mobile collapse all to span 1 — 2-per-row, all 4:3 */
+  /* Single column — each screen full width */
   .cs-bento-item--wide,
   .cs-bento-item--third { grid-column: span 1; }
-  .cs-bento-videos { padding: 8px 20px 0; gap: 8px; }
-  .cs-bento-video-item { width: 46%; }
+  .cs-bento-videos { flex-direction: column; align-items: center; padding: 8px 20px 0; gap: 32px; }
+  .cs-bento-video-item { width: 80%; max-width: 320px; }
   .cs-branding-row,
   .cs-branding-row--reverse { grid-template-columns: 1fr; }
   .cs-branding-placeholder { aspect-ratio: 16/9; min-height: 220px; }
