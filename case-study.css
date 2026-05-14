@@ -1167,10 +1167,10 @@ strong { font-weight: 700; color: var(--text); }
 */
 .cs-bento-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
   padding: 48px 40px 0;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -1205,16 +1205,17 @@ strong { font-weight: 700; color: var(--text); }
 /* ── Portrait Videos (separate row, exact 9:17 source ratio) ── */
 .cs-bento-videos {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 40px 0;
-  max-width: 1200px;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 40px 0;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .cs-bento-video-item {
-  width: 300px;
+  width: min(300px, 80vw);
   aspect-ratio: 9/17;
   border-radius: 20px;
   overflow: hidden;
