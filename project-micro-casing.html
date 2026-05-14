@@ -97,7 +97,7 @@
         <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
           <strong>Micro-casing is a mobile app that replaces $200/hour coaching</strong> with 400-second gamified case studies, making consulting interview prep fast, affordable, and sustainable for anyone competing for a spot at <strong>McKinsey, BCG, or Bain.</strong><br><br>
           Traditional prep is slow, expensive, and hard to stick to. Micro-casing flips the model: <strong>bite-sized cases on your commute,</strong> built on the same decision-making framework top coaches use.<br><br>
-          The result: <strong>2.84% download-to-paid conversion</strong> by day 35, <strong>8 active subscription plans,</strong> and <strong>+700% subscriber growth</strong> since launch, driven entirely by freemium onboarding.
+          The CEO of Micro-casing App, <strong>Shankar Ananth</strong>, contacted me to redesign the branding and rework the flow of his product.
         </p>
       </div>
 
@@ -116,79 +116,180 @@
     </div>
   </section>
 
+  <!-- ── PAGE LAYOUT: sticky sidebar + content ── -->
+  <div class="cs-page-layout" id="csPageLayout">
+
+    <!-- Collapsible sidebar -->
+    <aside class="cs-quicknav" id="csQuickNav" aria-label="Case study navigation">
+
+      <!-- Desktop collapse toggle -->
+      <button class="cs-qn-collapse-btn" id="csQnCollapseBtn" aria-label="Collapse navigation" aria-expanded="true">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop / tablet nav list -->
+      <nav class="cs-qn-list" id="csQnList">
+        <a href="#challenge"   class="cs-qn-item" data-section="challenge"   data-label="Challenge">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Challenge</span></a>
+        <a href="#approach"    class="cs-qn-item" data-section="approach"    data-label="Discovery">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Discovery</span></a>
+        <a href="#branding"    class="cs-qn-item" data-section="branding"    data-label="Branding">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Branding</span></a>
+        <a href="#impact"      class="cs-qn-item" data-section="impact"      data-label="Design Impact"><span class="cs-qn-dot"></span><span class="cs-qn-label">Design Impact</span></a>
+        <a href="#complexity"  class="cs-qn-item" data-section="complexity"  data-label="Complexity">   <span class="cs-qn-dot"></span><span class="cs-qn-label">Complexity</span></a>
+        <a href="#before-after" class="cs-qn-item" data-section="before-after" data-label="Before &amp; After"><span class="cs-qn-dot"></span><span class="cs-qn-label">Before &amp; After</span></a>
+        <a href="#gallery"     class="cs-qn-item" data-section="gallery"     data-label="Prototype">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Prototype</span></a>
+        <a href="#ai-design"   class="cs-qn-item" data-section="ai-design"   data-label="AI Process">   <span class="cs-qn-dot"></span><span class="cs-qn-label">AI Process</span></a>
+        <a href="#lessons"     class="cs-qn-item" data-section="lessons"     data-label="Lessons">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Lessons</span></a>
+        <a href="#metrics"     class="cs-qn-item" data-section="metrics"     data-label="Metrics">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Metrics</span></a>
+        <a href="#links"       class="cs-qn-item" data-section="links"       data-label="Links">        <span class="cs-qn-dot"></span><span class="cs-qn-label">Links</span></a>
+      </nav>
+
+      <!-- Mobile: floating toggle -->
+      <button class="cs-qn-toggle" id="csQnToggle" aria-label="Open section navigation" aria-expanded="false" aria-controls="csQnDrawer">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <rect x="2" y="3"    width="12" height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="7.3"  width="8"  height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="11.5" width="10" height="1.5" rx="0.75" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <!-- Mobile: drawer -->
+      <div class="cs-qn-drawer" id="csQnDrawer" role="region" aria-label="Section navigation" aria-hidden="true">
+        <nav class="cs-qn-drawer-list">
+          <a href="#challenge"   class="cs-qn-drawer-item" data-section="challenge">Challenge</a>
+          <a href="#approach"    class="cs-qn-drawer-item" data-section="approach">Discovery</a>
+          <a href="#branding"    class="cs-qn-drawer-item" data-section="branding">Branding</a>
+          <a href="#impact"      class="cs-qn-drawer-item" data-section="impact">Design Impact</a>
+          <a href="#complexity"  class="cs-qn-drawer-item" data-section="complexity">Complexity</a>
+          <a href="#before-after" class="cs-qn-drawer-item" data-section="before-after">Before &amp; After</a>
+          <a href="#gallery"     class="cs-qn-drawer-item" data-section="gallery">Prototype</a>
+          <a href="#ai-design"   class="cs-qn-drawer-item" data-section="ai-design">AI Process</a>
+          <a href="#lessons"     class="cs-qn-drawer-item" data-section="lessons">Lessons</a>
+          <a href="#metrics"     class="cs-qn-drawer-item" data-section="metrics">Metrics</a>
+          <a href="#links"       class="cs-qn-drawer-item" data-section="links">Links</a>
+        </nav>
+      </div>
+
+    </aside>
+
+    <!-- All content sections -->
+    <div class="cs-page-content">
+
   <!-- ── THE CHALLENGE ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <section id="challenge" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
-      <div class="cs-two-col--6040 cs-two-col">
-        <div class="cs-col-head">
-          <span class="cs-eyebrow">The Challenge</span>
-          <h2 class="cs-heading">
-            Defining the<br /><em>Product System<br />and Brand Guide</em>
-          </h2>
+      <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
+        <span class="cs-eyebrow">The Challenge</span>
+        <h2 class="cs-heading">
+          Defining the<br /><em>Product System<br />and Brand Guide</em>
+        </h2>
+        <p style="color:var(--text-2);line-height:1.75;margin-top:12px;">
+          Micro-casing had been built from AI-generated wireframes with no design system behind it.
+          The UX audit mapped four specific failures, each one blocking a different part of the product.
+        </p>
+      </div>
+
+      <div class="cs-pillars" style="grid-template-columns: repeat(2, 1fr);">
+
+        <!-- 01 — Fragmented Visual Identity: three offset layer rectangles -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ch01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="4"  y="7"  width="28" height="9" rx="2" stroke="url(#lg-ch01)" stroke-width="1.8"/>
+              <rect x="12" y="18" width="28" height="9" rx="2" stroke="url(#lg-ch01)" stroke-width="1.8"/>
+              <rect x="2"  y="29" width="28" height="9" rx="2" stroke="url(#lg-ch01)" stroke-width="1.8"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Visual System</span>
+          <div class="cs-pillar-title">Fragmented Visual Identity</div>
+          <div class="cs-pillar-body">No shared tokens, no hierarchy logic, no component consistency. Every screen made the user rebuild context from scratch, creating cognitive load before a single case was attempted.</div>
         </div>
-        <div class="cs-col-body">
-          <p>
-            Micro-casing had been built from AI-generated wireframes with no design system behind it.
-            The UX audit mapped four specific failures, each one blocking a different part of the product.
-          </p>
-          <p>
-            <strong>Fragmented visual identity.</strong> No shared tokens, no hierarchy logic, no component consistency. Every screen made the user rebuild context from scratch, creating cognitive load before a single case was attempted.
-          </p>
-          <p>
-            <strong>Broken navigation and user control.</strong> Users were locked into a single forced flow. No bottom nav, no way to backtrack, no access to profile or filtering. The product grew its case library weekly but gave users no way to orient inside it.
-          </p>
-          <p>
-            <strong>Misaligned copy and tone of voice.</strong> Gaming language and consulting authority were competing in the same interface. The result was a product that felt neither credible enough for serious prep nor approachable enough to open daily.
-          </p>
-          <p>
-            <strong>Cognitive overload at critical touchpoints.</strong> The case results screen, the moment where users decide to continue or quit, was cluttered with redundant information. Drop-off was happening exactly where engagement needed to peak.
-          </p>
+
+        <!-- 02 — Broken Navigation: two nodes with a broken/interrupted path -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ch02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="9"  cy="22" r="3.5" stroke="url(#lg-ch02)" stroke-width="1.8"/>
+              <circle cx="35" cy="22" r="3.5" stroke="url(#lg-ch02)" stroke-width="1.8"/>
+              <line x1="12.5" y1="22" x2="18"   y2="22" stroke="url(#lg-ch02)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M23 15 L21 29"            stroke="url(#lg-ch02)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="26"   y1="22" x2="31.5" y2="22" stroke="url(#lg-ch02)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Navigation</span>
+          <div class="cs-pillar-title">Broken Navigation and User Control</div>
+          <div class="cs-pillar-body">Users were locked into a single forced flow. No bottom nav, no way to backtrack, no access to profile or filtering. The product grew its case library weekly but gave users no way to orient inside it.</div>
         </div>
+
+        <!-- 03 — Misaligned Copy: three text lines each starting at a different indent -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ch03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <line x1="5"  y1="13" x2="30" y2="13" stroke="url(#lg-ch03)" stroke-width="2"   stroke-linecap="round"/>
+              <line x1="15" y1="22" x2="39" y2="22" stroke="url(#lg-ch03)" stroke-width="2"   stroke-linecap="round"/>
+              <line x1="5"  y1="31" x2="27" y2="31" stroke="url(#lg-ch03)" stroke-width="2"   stroke-linecap="round"/>
+              <path d="M9 17 L16 26"               stroke="url(#lg-ch03)" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 2"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">UX Writing</span>
+          <div class="cs-pillar-title">Misaligned Copy and Tone of Voice</div>
+          <div class="cs-pillar-body">Gaming language and consulting authority were competing in the same interface. The result was a product that felt neither credible enough for serious prep nor approachable enough to open daily.</div>
+        </div>
+
+        <!-- 04 — Cognitive Overload: circle (head) with radiating signals + exclamation inside -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ch04" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="22" cy="22" r="13" stroke="url(#lg-ch04)" stroke-width="1.8"/>
+              <line x1="22" y1="4"  x2="22" y2="8"    stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="33" y1="7"  x2="30.5" y2="9.5" stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="39" y1="18" x2="36"   y2="19.5" stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="39" y1="26" x2="36"   y2="24.5" stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="11" y1="7"  x2="13.5" y2="9.5" stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="5"  y1="18" x2="8"    y2="19.5" stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="5"  y1="26" x2="8"    y2="24.5" stroke="url(#lg-ch04)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="22" y1="16" x2="22"   y2="24"   stroke="url(#lg-ch04)" stroke-width="2"   stroke-linecap="round"/>
+              <circle cx="22" cy="28" r="1.3" fill="url(#lg-ch04)"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Information Architecture</span>
+          <div class="cs-pillar-title">Cognitive Overload at Critical Touchpoints</div>
+          <div class="cs-pillar-body">The case results screen — the moment where users decide to continue or quit — was cluttered with redundant information. Drop-off was happening exactly where engagement needed to peak.</div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── THE RESULTS ── -->
-  <section class="cs-section" data-animate="fade-up">
-    <div class="cs-inner">
-      <div class="cs-two-col cs-two-col--4060">
-        <div class="cs-results-list">
-          <div class="cs-result-item">
-            <span class="cs-result-num">01</span>
-            <p class="cs-result-text"><strong>Mini UI Kit cut implementation ambiguity.</strong> A component library with colours, typography, and iconography gave engineers a single source of truth. No guessing specs, no revision loops. The team shipped faster because every pattern was already defined and reusable.</p>
-          </div>
-          <div class="cs-result-item">
-            <span class="cs-result-num">02</span>
-            <p class="cs-result-text"><strong>High-fidelity prototype aligned the team before a line of code was written.</strong> Eight complete flows with interaction logic let developers see exact behaviour, transitions, and edge cases upfront. Decisions that would have surfaced mid-sprint were resolved in Figma.</p>
-          </div>
-          <div class="cs-result-item">
-            <span class="cs-result-num">03</span>
-            <p class="cs-result-text"><strong>Scalable content architecture removed design as a bottleneck.</strong> A filtering system built around difficulty, category, and new releases means new cases plug directly into the existing structure. The content library can grow every week without requiring a design intervention.</p>
-          </div>
-        </div>
+  <!-- ── CASEY STRESSED ── -->
+  <div style="display: flex; justify-content: center; padding: 0 0 80px;" data-animate="fade-up">
+    <img src="assets/Casey-Stressed.svg" alt="Casey stressed mascot" style="width: 50vw; max-width: 100%; height: auto; border-radius: 20px; border: 1px solid rgba(6,8,16,0.08);" loading="lazy" decoding="async" />
+  </div>
 
-        <div>
-          <span class="cs-eyebrow">Design Impact</span>
-          <h2 class="cs-heading">
-            Deliverables That<br /><em>Unblocked the Team</em>
-          </h2>
-          <div class="cs-col-body">
-            <p>
-              The inherited file had no component logic, no prototype flows, and no consistent visual system. The engineering team was building from static mockups with no interaction spec.
-            </p>
-            <p>
-              These three deliverables changed how the team worked: a shared component language, a prototype that replaced written specs, and a content structure that scaled without design dependency.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── DISCOVERY METHODS ── -->
-  <section class="cs-section cs-section--dark" data-animate="fade-up">
+  <!-- ── DISCOVERY ── -->
+  <section id="approach" class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
-      <span class="cs-eyebrow">The Approach</span>
+      <span class="cs-eyebrow">Discovery</span>
       <h2 class="cs-heading">
         Three Workstreams<br /><em>One Foundation</em>
       </h2>
@@ -198,22 +299,67 @@
       </p>
 
       <div class="cs-pillars">
+
+        <!-- 01 — Founder Alignment: document with form lines (structured questionnaire) -->
         <div class="cs-pillar">
-          <span class="cs-pillar-num">01 — Brand & Product Questionnaire</span>
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-dc01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="8" y="4" width="28" height="36" rx="3" stroke="url(#lg-dc01)" stroke-width="1.8"/>
+              <line x1="14" y1="14" x2="30" y2="14" stroke="url(#lg-dc01)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="30" y2="20" stroke="url(#lg-dc01)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="26" x2="30" y2="26" stroke="url(#lg-dc01)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="32" x2="22" y2="32" stroke="url(#lg-dc01)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Brand &amp; Product Questionnaire</span>
           <div class="cs-pillar-title">Founder Alignment</div>
           <div class="cs-pillar-body">A structured alignment session with the founder to define
             <strong>vision, target audience, tone, and competitive positioning</strong> before opening Figma.</div>
           <a href="https://www.notion.so/Discovery-Questionnaire-Micro-Casing-App-Case-2ec0f72674e48086bb8bf6199c76c27e"
             target="_blank" class="cs-pillar-link">View questionnaire ↗</a>
         </div>
+
+        <!-- 02 — Product Purpose: lightbulb (vision, founder insight) -->
         <div class="cs-pillar">
-          <span class="cs-pillar-num">02 — Founder Vision</span>
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-dc02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M22 5C15.4 5 10 10.4 10 17C10 21.2 12.2 24.9 15.5 27.3V31C15.5 31.6 15.9 32 16.5 32H27.5C28.1 32 28.5 31.6 28.5 31V27.3C31.8 24.9 34 21.2 34 17C34 10.4 28.6 5 22 5Z" stroke="url(#lg-dc02)" stroke-width="1.8"/>
+              <line x1="17" y1="36" x2="27" y2="36" stroke="url(#lg-dc02)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="19" y1="40" x2="25" y2="40" stroke="url(#lg-dc02)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Founder Vision</span>
           <div class="cs-pillar-title">Product Purpose</div>
           <div class="cs-pillar-body">Shankar Ananth built Micro-casing to address a gap he experienced firsthand during
             consulting interview preparation. Understanding that context shaped every strategic decision.</div>
         </div>
+
+        <!-- 03 — Structural Diagnosis: magnifying glass (audit, systematic review) -->
         <div class="cs-pillar">
-          <span class="cs-pillar-num">03 — UX / UI Audit</span>
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-dc03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="18" cy="18" r="12" stroke="url(#lg-dc03)" stroke-width="1.8"/>
+              <line x1="27" y1="27" x2="39" y2="39" stroke="url(#lg-dc03)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="13" y1="16" x2="23" y2="16" stroke="url(#lg-dc03)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="13" y1="21" x2="19" y2="21" stroke="url(#lg-dc03)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">UX / UI Audit</span>
           <div class="cs-pillar-title">Structural Diagnosis</div>
           <div class="cs-pillar-body">Systematic review of existing screens to identify
             <strong>hierarchy failures, navigation gaps, cognitive overload points, and scalability blockers</strong>
@@ -221,12 +367,183 @@
           <a href="https://drive.google.com/file/d/1083O2rGdC5Mwhxh2M-EWMtqUtvRZoksD/view?usp=sharing" target="_blank"
             class="cs-pillar-link">View full audit ↗</a>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── BRANDING STRATEGY & UI DECISIONS ── -->
+  <section id="branding" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+
+      <!-- Section header — left aligned -->
+      <div class="cs-branding-header">
+        <span class="cs-eyebrow">Branding Strategy</span>
+        <h2 class="cs-heading" style="text-align:center;">
+          Branding Strategy<br /><em>and UI Decisions</em>
+        </h2>
+        <p class="cs-branding-intro">
+          Defining the visual and gamification direction for the Micro-Casing app through competitive analysis and branding decisions.
+        </p>
+      </div>
+
+      <!-- Grid: 3 rows × 2 columns, alternating -->
+      <div class="cs-branding-grid">
+
+        <!-- Row 1: Text left · Placeholder right -->
+        <div class="cs-branding-row">
+          <div class="cs-branding-text">
+            <span class="cs-branding-eyebrow">Research</span>
+            <h3 class="cs-branding-title">Competitive &amp; Comparative Analysis</h3>
+            <p class="cs-branding-body">
+              Researching platforms such as <strong>Elevate</strong> and <strong>Duolingo</strong> helped identify successful engagement patterns used in gamified learning experiences. These references informed the comparative and competitive analysis during the discovery phase.
+            </p>
+          </div>
+          <div class="cs-branding-img-wrap">
+            <img src="assets/mca-brainstorming.webp" alt="Competitive and comparative analysis — brainstorming research" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- Row 2: Placeholder left · Text right -->
+        <div class="cs-branding-row cs-branding-row--reverse">
+          <div class="cs-branding-text">
+            <span class="cs-branding-eyebrow">UX Direction</span>
+            <h3 class="cs-branding-title">Gamified Coaching Experience</h3>
+            <p class="cs-branding-body">
+              The insights gathered during research led to the decision to introduce <strong>coaching-oriented and gamified interactions</strong> into the Micro-Casing app. Progression systems, achievement-driven experiences, and guided learning mechanics became central to the product experience.
+            </p>
+          </div>
+          <div class="cs-branding-img-wrap">
+            <img src="assets/mca-casey-mascot.svg" alt="Gamified coaching experience — mascot exploration" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- Row 3: Text left · Placeholder right -->
+        <div class="cs-branding-row">
+          <div class="cs-branding-text">
+            <span class="cs-branding-eyebrow">Visual Identity</span>
+            <h3 class="cs-branding-title">Branding &amp; Visual Direction</h3>
+            <p class="cs-branding-body">
+              The discovery phase also shaped the branding strategy and UI direction. <strong>Green was intentionally selected as the primary brand color</strong> to differentiate the product from existing consulting and gamification platforms, helping establish a more distinctive and modern visual identity.
+            </p>
+          </div>
+          <div class="cs-branding-img-wrap">
+            <img src="assets/mca-branding.webp" alt="Branding and visual direction — color and identity system" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /branding -->
+
+  <!-- ── THE RESULTS ── -->
+  <section id="impact" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div style="text-align:center; max-width:640px; margin:0 auto 56px;">
+        <span class="cs-eyebrow">Design Impact</span>
+        <h2 class="cs-heading">
+          Deliverables That<br /><em>Unblocked the Team</em>
+        </h2>
+        <p style="color:var(--text-2); line-height:1.75; margin-top:12px;">
+          The inherited file had no component logic, no prototype flows, and no consistent visual system.
+          These three deliverables changed how the team worked.
+        </p>
+      </div>
+
+      <div class="cs-pillars">
+
+        <!-- 01 — Mini UI Kit: grid of component squares (design system / kit) -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-im01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- 2×2 component grid -->
+              <rect x="4"  y="4"  width="16" height="16" rx="3" stroke="url(#lg-im01)" stroke-width="1.8"/>
+              <rect x="24" y="4"  width="16" height="16" rx="3" stroke="url(#lg-im01)" stroke-width="1.8"/>
+              <rect x="4"  y="24" width="16" height="16" rx="3" stroke="url(#lg-im01)" stroke-width="1.8"/>
+              <rect x="24" y="24" width="16" height="16" rx="3" stroke="url(#lg-im01)" stroke-width="1.8"/>
+              <!-- inner detail lines on top-left cell -->
+              <line x1="8"  y1="11" x2="16" y2="11" stroke="url(#lg-im01)" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="8"  y1="14" x2="13" y2="14" stroke="url(#lg-im01)" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Component Library</span>
+          <div class="cs-pillar-title">Mini UI Kit</div>
+          <div class="cs-pillar-body">A component library with colours, typography, and iconography gave engineers a <strong>single source of truth</strong>. No guessing specs, no revision loops. Every pattern already defined and reusable.</div>
+        </div>
+
+        <!-- 02 — High-fidelity prototype: two screens connected by an arrow (prototype flow) -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-im02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Left screen -->
+              <rect x="2" y="8" width="16" height="28" rx="3" stroke="url(#lg-im02)" stroke-width="1.8"/>
+              <line x1="5" y1="14" x2="15" y2="14" stroke="url(#lg-im02)" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="5" y1="18" x2="12" y2="18" stroke="url(#lg-im02)" stroke-width="1.3" stroke-linecap="round"/>
+              <rect x="5" y="22" width="10" height="6" rx="1.5" stroke="url(#lg-im02)" stroke-width="1.3"/>
+              <!-- Arrow -->
+              <line x1="20" y1="22" x2="28" y2="22" stroke="url(#lg-im02)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M25 18 L29 22 L25 26" stroke="url(#lg-im02)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Right screen -->
+              <rect x="30" y="8" width="12" height="28" rx="3" stroke="url(#lg-im02)" stroke-width="1.8"/>
+              <line x1="33" y1="14" x2="39" y2="14" stroke="url(#lg-im02)" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="33" y1="18" x2="37" y2="18" stroke="url(#lg-im02)" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Prototyping</span>
+          <div class="cs-pillar-title">High-Fidelity Prototype</div>
+          <div class="cs-pillar-body">Eight complete flows with interaction logic let developers see <strong>exact behaviour, transitions, and edge cases</strong> upfront. Decisions that would have surfaced mid-sprint were resolved in Figma.</div>
+        </div>
+
+        <!-- 03 — Scalable content architecture: branching filter tree (growing structure) -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-im03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Root node -->
+              <circle cx="22" cy="8" r="4" stroke="url(#lg-im03)" stroke-width="1.8"/>
+              <!-- Trunk -->
+              <line x1="22" y1="12" x2="22" y2="18" stroke="url(#lg-im03)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Branch left -->
+              <line x1="22" y1="18" x2="10" y2="26" stroke="url(#lg-im03)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- Branch right -->
+              <line x1="22" y1="18" x2="34" y2="26" stroke="url(#lg-im03)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- Branch centre -->
+              <line x1="22" y1="18" x2="22" y2="26" stroke="url(#lg-im03)" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- Leaf nodes -->
+              <rect x="5"  y="26" width="10" height="7" rx="2" stroke="url(#lg-im03)" stroke-width="1.6"/>
+              <rect x="17" y="26" width="10" height="7" rx="2" stroke="url(#lg-im03)" stroke-width="1.6"/>
+              <rect x="29" y="26" width="10" height="7" rx="2" stroke="url(#lg-im03)" stroke-width="1.6"/>
+              <!-- Growth arrow -->
+              <line x1="38" y1="37" x2="38" y2="43" stroke="url(#lg-im03)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M35 40 L38 37 L41 40" stroke="url(#lg-im03)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Content Architecture</span>
+          <div class="cs-pillar-title">Scalable Content Architecture</div>
+          <div class="cs-pillar-body">A filtering system built around difficulty, category, and new releases means new cases <strong>plug directly into the existing structure</strong> — no design intervention needed as the library grows.</div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ── TRADE-OFFS ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <section id="complexity" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Complexity</span>
       <h2 class="cs-heading">
@@ -234,75 +551,167 @@
       </h2>
 
       <div class="cs-lessons">
+
+        <!-- 01 — Building a System Inside a Sprint: stopwatch + blocks (time-pressured construction) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">01</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-cx01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Stopwatch -->
+              <circle cx="15" cy="26" r="11" stroke="url(#lg-cx01)" stroke-width="1.8"/>
+              <line x1="12" y1="6" x2="18" y2="6" stroke="url(#lg-cx01)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="15" y1="6" x2="15" y2="11" stroke="url(#lg-cx01)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="15" y1="26" x2="15" y2="20" stroke="url(#lg-cx01)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="15" y1="26" x2="20" y2="26" stroke="url(#lg-cx01)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Building blocks stack -->
+              <rect x="28" y="22" width="11" height="6" rx="1.2" stroke="url(#lg-cx01)" stroke-width="1.6"/>
+              <rect x="28" y="30" width="11" height="6" rx="1.2" stroke="url(#lg-cx01)" stroke-width="1.6"/>
+              <rect x="30" y="14" width="9"  height="6" rx="1.2" stroke="url(#lg-cx01)" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Building a System Inside a Sprint</div>
           <div class="cs-lesson-body">
-            <strong>Building a system inside a sprint.</strong><br>
-            Two weeks is not enough time to build a proper design system — but handing engineers a Figma file with no components would have created permanent debt. The answer was to define only the component set that appeared in production screens: a minimal but real kit, not a comprehensive library. It gave the team a foundation without killing the sprint.
+            Two weeks is not enough time to build a proper design system — but handing engineers a Figma file with no components would have created permanent debt.
           </div>
         </div>
+
+        <!-- 02 — Gamification vs. Credibility: balance scale (trade-off) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">02</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-cx02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Vertical pillar -->
+              <line x1="22" y1="8" x2="22" y2="37" stroke="url(#lg-cx02)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Base -->
+              <line x1="14" y1="37" x2="30" y2="37" stroke="url(#lg-cx02)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Horizontal beam -->
+              <line x1="8"  y1="14" x2="36" y2="14" stroke="url(#lg-cx02)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Left pan strings -->
+              <line x1="10" y1="14" x2="6"  y2="22" stroke="url(#lg-cx02)" stroke-width="1.4" stroke-linecap="round"/>
+              <line x1="10" y1="14" x2="14" y2="22" stroke="url(#lg-cx02)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Right pan strings -->
+              <line x1="34" y1="14" x2="30" y2="22" stroke="url(#lg-cx02)" stroke-width="1.4" stroke-linecap="round"/>
+              <line x1="34" y1="14" x2="38" y2="22" stroke="url(#lg-cx02)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Left pan -->
+              <path d="M5 22 Q10 27 15 22" stroke="url(#lg-cx02)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- Right pan -->
+              <path d="M29 22 Q34 27 39 22" stroke="url(#lg-cx02)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- Top pivot dot -->
+              <circle cx="22" cy="14" r="1.6" fill="url(#lg-cx02)"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Gamification vs. Credibility in a High-Stakes Context</div>
           <div class="cs-lesson-body">
-            <strong>Gamification vs. credibility in a high-stakes context.</strong><br>
-            Consulting interviews are serious. Gamification signals casual. Design too playful and a competitive McKinsey candidate won't trust it; design too corporate and they won't open it daily. The resolution was to separate tone from visual weight: the interface stayed clean and structured while the copy carried the friendly register, and the Casey mascot was introduced as a directional hypothesis to lower the perceived barrier to entry.
+            Consulting interviews are serious. Gamification signals casual. Design too playful and a competitive McKinsey candidate won't trust it; design too corporate and they won't open it daily.
           </div>
         </div>
+
+        <!-- 03 — Rebuilding on Top of an AI-Generated File: stacked layers with refresh arrow (refactor on top) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">03</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-cx03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Bottom layer (foundation, existing file) -->
+              <path d="M22 30 L8 36 L22 42 L36 36 Z" stroke="url(#lg-cx03)" stroke-width="1.6" stroke-linejoin="round"/>
+              <!-- Middle layer -->
+              <path d="M22 22 L8 28 L22 34 L36 28 Z" stroke="url(#lg-cx03)" stroke-width="1.6" stroke-linejoin="round"/>
+              <!-- Top layer (rebuilt) -->
+              <path d="M22 14 L8 20 L22 26 L36 20 Z" stroke="url(#lg-cx03)" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- Refresh arrow on top -->
+              <path d="M28 6 A6 6 0 1 1 16 6" stroke="url(#lg-cx03)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <path d="M28 3 L28 6 L25 6" stroke="url(#lg-cx03)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Rebuilding on Top of an AI-Generated File</div>
           <div class="cs-lesson-body">
-            <strong>Rebuilding on top of an AI-generated file.</strong><br>
-            The inherited Figma file had been generated by AI and built out by engineers — no auto-layout, no components, no naming logic. Starting from scratch would have been faster, but would have forced the team to re-implement screens already in production. Instead, the existing architecture was used as a map, not a template: each screen was rebuilt with proper component logic while preserving the navigation structure the team already understood and shipped.
+            The inherited Figma file had been generated by AI and built out by engineers — no auto-layout, no components, no naming logic. Starting from scratch would have been faster, but would have forced the team to re-implement screens already in production.
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── OLD SCREENS ── -->
+  <div style="padding: 0 40px 80px;" data-animate="fade-up">
+    <div style="border-radius: 20px; overflow: hidden; border: 1px solid rgba(6,8,16,0.08); box-shadow: 0 8px 40px rgba(0,0,0,0.07);">
+      <img src="assets/mca-old-screens.webp" alt="Micro-casing — original screens before redesign" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async" />
+    </div>
+  </div>
+
   <!-- ── BEFORE & AFTER ── -->
-  <section class="cs-section cs-section--alt" data-animate="fade-up">
+  <section id="before-after" class="cs-section cs-section--alt" data-animate="fade-up">
     <div class="cs-inner">
-      <span class="cs-eyebrow">Before & After</span>
+      <span class="cs-eyebrow">Before &amp; After</span>
       <h2 class="cs-heading">
-        From Fragmented<br /><em>to Focused</em>
+        From Fragmented<br><em>to Focused</em>
       </h2>
 
       <div class="cs-ba-frames">
-        <div>
-          <p class="cs-ba-label">Before: AI-generated wireframes</p>
-          <div class="cs-ba-img">
-            <img src="assets/Before-Foto-00.webp" alt="Before: original Micro-casing interface" style="width:100%;height:100%;object-fit:cover;display:block;" />
-          </div>
-        </div>
-        <div>
-          <p class="cs-ba-label">After: Redesigned experience</p>
-          <div class="cs-ba-img">
-            <img src="assets/After-Foto_1.webp" alt="After: redesigned Micro-casing interface" style="width:100%;height:100%;object-fit:cover;display:block;" />
-          </div>
-        </div>
-      </div>
 
-      <div class="cs-ba-lists">
-        <div class="cs-ba-list">
-          <h3>What was not working</h3>
-          <ul>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Fragmented visual hierarchy</strong>: creating cognitive overload across all screens</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>No global navigation</strong>: users trapped in a single forced flow with no orientation</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Misaligned UX copy</strong>: mixing gaming tone with consulting prep context</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>No filtering or discovery system</strong>: unsustainable as the content library grew</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>No component library</strong>: no foundation for consistent or scalable development</span></li>
-          </ul>
+        <!-- Before row -->
+        <div class="cs-ba-row">
+          <div>
+            <div class="cs-ba-img">
+              <img src="assets/Before-Foto-00.webp" alt="Micro-casing — Before: AI-generated wireframes" style="width:100%; height:auto; display:block;" loading="lazy" decoding="async" />
+              <div class="cs-img-overlay" aria-hidden="true">
+                <span class="cs-img-overlay-title">Before</span>
+                <span class="cs-img-overlay-desc">AI-generated wireframes with no design system behind them</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="cs-ba-label">Before: AI-generated wireframes</p>
+            <div class="cs-ba-list">
+              <h3>What was not working</h3>
+              <ul>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Fragmented visual hierarchy</strong>: cognitive overload across every screen</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>No global navigation</strong>: users trapped in a single forced flow with no orientation</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>Misaligned UX copy</strong>: gaming tone competing with consulting credibility</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>No filtering or discovery system</strong>: unsustainable as the content library grew</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--x">✕</span><span class="cs-ba-item-content"><strong>No component library</strong>: no foundation for consistent or scalable development</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="cs-ba-list">
-          <h3>What we improved</h3>
-          <ul>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Cohesive visual system</strong>: unified typography, hierarchy, and colour across all screens</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Global navigation bar</strong>: Office, Cases, New Cases, Favorites, and Profile always accessible</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Tone-aligned UX copy</strong>: Professional, Friendly, and Modern across every touchpoint</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Filtering system</strong>: by difficulty, category, and new releases supports content scaling</span></li>
-            <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Mini UI Kit</strong>: component library ready for immediate developer implementation</span></li>
-          </ul>
+
+        <!-- After row -->
+        <div class="cs-ba-row">
+          <div>
+            <div class="cs-ba-img">
+              <img src="assets/After-Foto_1.webp" alt="Micro-casing — After: redesigned experience" style="width:100%; height:auto; display:block;" loading="lazy" decoding="async" />
+              <div class="cs-img-overlay" aria-hidden="true">
+                <span class="cs-img-overlay-title">After</span>
+                <span class="cs-img-overlay-desc">Cohesive design system and rebuilt user flow</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="cs-ba-label">After: redesigned experience</p>
+            <div class="cs-ba-list">
+              <h3>What we improved</h3>
+              <ul>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Cohesive visual system</strong>: unified typography, hierarchy, and colour across all screens</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Global navigation bar</strong>: Office, Cases, New Cases, Favorites, and Profile always accessible</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Tone-aligned UX copy</strong>: Professional, Friendly, and Modern across every touchpoint</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Filtering system</strong>: by difficulty, category, and new releases supports content scaling</span></li>
+                <li><span class="cs-ba-icon cs-ba-icon--check">✓</span><span class="cs-ba-item-content"><strong>Mini UI Kit</strong>: component library ready for immediate developer implementation</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -313,110 +722,178 @@
     <p class="cs-quote-text">
       "I worked with Juan for my app's (Micro-casing) UX,UI design. Juan was very thorough and very professional, and I had a great time working with him. His discipline in learning about the customer journey in the industry related to the app was very much appreciated."
     </p>
-    <div class="cs-quote-attr">Shankar Ananth, CEO, Cerebral Games · Former McKinsey and Bain Consultant</div>
+    <div class="cs-quote-attr">
+      <img class="cs-quote-avatar" src="assets/shankar.webp" alt="Portrait of Shankar Ananth" loading="lazy" decoding="async" />
+      <span>Shankar Ananth · CEO, Cerebral Games · Former McKinsey and Bain Consultant</span>
+    </div>
   </section>
 
-  <!-- ── PROJECT GALLERY ── -->
-  <section class="cs-section cs-section--dark" data-animate="fade-up">
+  <!-- ── PROTOTYPE ── -->
+  <section id="gallery" class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
-      <span class="cs-eyebrow">Project Gallery</span>
+      <span class="cs-eyebrow">Prototype</span>
       <h2 class="cs-heading">
-        From Wireframes<br>to <em>Final Screens</em>
+        See it in<br><em>motion.</em>
       </h2>
     </div>
 
-    <!-- Landscape screens: 3-col grid, each cell 4:3 (exact 960×720 ratio) -->
+    <!--
     <div class="cs-bento-grid">
-
-      <!-- Row 1: wide (01) + single (02) -->
       <div class="cs-bento-item cs-bento-item--wide">
         <img src="assets/Screen-01.webp" alt="Micro-casing screen 01" loading="lazy" />
       </div>
       <div class="cs-bento-item cs-bento-item--third">
         <img src="assets/Screen-02.webp" alt="Micro-casing screen 02" loading="lazy" />
       </div>
-
-      <!-- Row 2: single (03) + wide (04) — mirrored -->
       <div class="cs-bento-item cs-bento-item--third">
         <img src="assets/Screen-03_1.webp" alt="Micro-casing screen 03" loading="lazy" />
       </div>
       <div class="cs-bento-item cs-bento-item--wide">
         <img src="assets/Screen-04_1.webp" alt="Micro-casing screen 04" loading="lazy" />
       </div>
-
-      <!-- Row 3: single (05) + wide (06) -->
       <div class="cs-bento-item cs-bento-item--third">
         <img src="assets/Screen-05_1.webp" alt="Micro-casing screen 05" loading="lazy" />
       </div>
       <div class="cs-bento-item cs-bento-item--wide">
         <img src="assets/Screen-06_1.webp" alt="Micro-casing screen 06" loading="lazy" />
       </div>
+    </div>
+    -->
 
-    </div><!-- /image bento -->
-
-    <!-- Portrait videos: exact 9:17 cells (440×830 source) -->
+    <!-- Portrait videos -->
     <div class="cs-bento-videos">
-      <div class="cs-bento-video-item">
-        <video src="assets/Happy-Flow-MCA-00.mp4" autoplay loop muted playsinline></video>
+      <div class="cs-bento-video-wrap">
+        <div class="cs-bento-video-item">
+          <video src="assets/Happy-Flow-MCA-00.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <h3 class="cs-bento-video-title">Happy Path</h3>
+        <p class="cs-bento-video-label">Full case flow from start to result</p>
       </div>
-      <div class="cs-bento-video-item">
-        <video src="assets/Error-Flow-MCA.mp4" autoplay loop muted playsinline></video>
+      <div class="cs-bento-video-wrap">
+        <div class="cs-bento-video-item">
+          <video src="assets/Error-Flow-MCA.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <h3 class="cs-bento-video-title">Error Path</h3>
+        <p class="cs-bento-video-label">Connection failure flow</p>
       </div>
-    </div><!-- /portrait videos -->
+    </div>
 
-  </section><!-- /project gallery -->
+  </section><!-- /prototype -->
+
+  <!-- ── AI IN THE DESIGN PROCESS ── -->
+  <section id="ai-design" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">AI in the Design Process</span>
+      <h2 class="cs-heading">
+        One tool per<br><em>phase of the process</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        AI was not a single tool. It was a system of specialized tools — one matched to each phase of the Design Thinking process.
+      </p>
+      <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(6,8,16,0.08);">
+        <img src="assets/mca-ai-workflow.svg" alt="AI workflow across the design process" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section><!-- /ai-design -->
 
   <!-- ── LESSONS LEARNED ── -->
-  <section class="cs-section cs-section--dark" data-animate="fade-up">
+  <section id="lessons" class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Lessons Learned</span>
       <h2 class="cs-heading">
         What This Project<br /><em>Taught Me</em>
       </h2>
 
-      <div class="cs-lessons">
+      <div class="cs-lessons" style="grid-template-columns: repeat(2, 1fr);">
+
+        <!-- 01 — UX Leads, UI Follows: pyramid layers (wide base = UX, narrowing to UI) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">01</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="4"  y="29" width="36" height="8" rx="2" stroke="url(#lg-ls01)" stroke-width="2"/>
+              <rect x="10" y="19" width="24" height="8" rx="2" stroke="url(#lg-ls01)" stroke-width="1.8"/>
+              <rect x="16" y="9"  width="12" height="8" rx="2" stroke="url(#lg-ls01)" stroke-width="1.5"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">UX Leads, UI Follows</div>
           <div class="cs-lesson-body">Flows can always evolve and improve. Visual identity, once defined, becomes the
             <strong>stable foundation</strong> everything else builds on.</div>
         </div>
+
+        <!-- 02 — Communication Is a Design Deliverable: speech bubble with content lines -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">02</span>
-          <div class="cs-lesson-title">Human Direction Makes AI Meaningful</div>
-          <div class="cs-lesson-body">AI accelerated exploration and iteration, but every
-            <strong>strategic and creative decision</strong> required human judgment to be meaningful.</div>
-        </div>
-        <div class="cs-lesson">
-          <span class="cs-lesson-num">03</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M6 7h32a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H20l-7 7v-7H6a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3z" stroke="url(#lg-ls02)" stroke-width="1.8"/>
+              <line x1="12" y1="16" x2="32" y2="16" stroke="url(#lg-ls02)" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="12" y1="23" x2="24" y2="23" stroke="url(#lg-ls02)" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">Communication Is a Design Deliverable</div>
           <div class="cs-lesson-body"><strong>Structured documentation and clear client communication</strong> were as
             critical as the design itself. Without them, even great work loses direction.</div>
         </div>
+
+        <!-- 03 — Prototype Early, Prototype Always: circular iteration arrow -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">04</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M36 22A14 14 0 1 1 28.5 9.5" stroke="url(#lg-ls03)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M24 6l5 4-5 4"               stroke="url(#lg-ls03)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Play triangle in centre -->
+              <path d="M18 16l10 6-10 6V16z"        stroke="url(#lg-ls03)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">Prototype Early, Prototype Always</div>
           <div class="cs-lesson-body">Prototyping was the single most effective way to
             <strong>validate decisions, communicate intent, and reduce misalignment</strong> with the development team.</div>
         </div>
+
+        <!-- 04 — Workflow Is Efficiency: three circles connected left-to-right -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">05</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls04" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="8"  cy="22" r="5" stroke="url(#lg-ls04)" stroke-width="1.8"/>
+              <circle cx="22" cy="22" r="5" stroke="url(#lg-ls04)" stroke-width="1.8"/>
+              <circle cx="36" cy="22" r="5" stroke="url(#lg-ls04)" stroke-width="1.8"/>
+              <line x1="13" y1="22" x2="17" y2="22" stroke="url(#lg-ls04)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="27" y1="22" x2="31" y2="22" stroke="url(#lg-ls04)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Arrow heads -->
+              <path d="M15 20l2 2-2 2" stroke="url(#lg-ls04)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M29 20l2 2-2 2" stroke="url(#lg-ls04)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">Workflow Is Efficiency</div>
           <div class="cs-lesson-body">Defining a <strong>clear personal workflow</strong> before starting saved time,
             reduced errors, and kept the project moving within a strict two-week sprint.</div>
         </div>
-        <div class="cs-lesson">
-          <span class="cs-lesson-num">06</span>
-          <div class="cs-lesson-title">AI Is Not a Trend, It Is Infrastructure</div>
-          <div class="cs-lesson-body">AI tools are now standard infrastructure. Using them effectively is a
-            <strong>baseline professional expectation</strong>, not a differentiator.</div>
-        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ── METRICS ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <section id="metrics" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Live Metrics</span>
       <h2 class="cs-heading">
@@ -460,7 +937,7 @@
   </section>
 
   <!-- ── PROJECT LINKS ── -->
-  <section class="cs-section" data-animate="fade-up">
+  <section id="links" class="cs-section" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">Sources & Links</span>
       <h2 class="cs-heading">
@@ -478,7 +955,7 @@
     </div>
   </section>
 
-  <!-- ── MORE WORK ── (commented out — content pending)
+  <!-- ── MORE WORK ── -->
   <section class="cs-section cs-section--dark" data-animate="fade-up">
     <div class="cs-inner">
       <span class="cs-eyebrow">More Work</span>
@@ -486,33 +963,46 @@
         You might also<br /><em>like these.</em>
       </h2>
       <div class="cs-more-grid">
-        <a href="#" class="cs-more-card">
-          <div class="cs-more-img" style="background:linear-gradient(135deg,#0d0d0d,#1a0533,#2d1b69);">SUPPLY PRO</div>
+        <a href="project-supply-pro.html" class="cs-more-card">
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%);">
+            <img src="assets/alainpassard.webp" alt="Supply Pro" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;border-radius:inherit;" />
+          </div>
           <div class="cs-more-info">
             <div class="cs-more-pills">
-              <span class="cs-more-pill">SaaS</span>
-              <span class="cs-more-pill">B2B</span>
+              <span class="cs-more-pill">B2B SaaS</span>
+              <span class="cs-more-pill">Food Logistics</span>
               <span class="cs-more-pill">Product Design</span>
             </div>
             <h3 class="cs-more-title">Supply Pro</h3>
-            <div class="cs-more-cta">View case study →</div>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
           </div>
         </a>
         <a href="index.html#footer" class="cs-more-card">
-          <div class="cs-more-img" style="background:linear-gradient(135deg,#0a0a0a,#1c2341,#2d3561);">JGV.</div>
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%); overflow:hidden; position:relative;">
+            <img src="assets/JGV-Pattern-01.svg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; opacity:0.55;" />
+            <img src="assets/logo-dark.svg" alt="JGV" aria-hidden="true" style="position:relative; z-index:1; width:120px; height:auto; display:block; filter:brightness(0) invert(1); opacity:0.92;" />
+          </div>
           <div class="cs-more-info">
             <div class="cs-more-pills">
-              <span class="cs-more-pill">Branding</span>
-              <span class="cs-more-pill">Identity</span>
+              <span class="cs-more-pill">Open to work</span>
+              <span class="cs-more-pill">Berlin</span>
             </div>
             <h3 class="cs-more-title">Let's work together</h3>
-            <div class="cs-more-cta">Get in touch →</div>
+            <div class="cs-more-cta">
+              Get in touch
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
           </div>
         </a>
       </div>
     </div>
   </section>
-  -->
+
+    </div><!-- /cs-page-content -->
+  </div><!-- /cs-page-layout -->
 
   <!-- ── FOOTER ── -->
   <footer class="footer" id="footer">
@@ -551,5 +1041,86 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- ── QUICK NAV SCROLLSPY ── -->
+  <script>
+  (function () {
+    const quickNav    = document.getElementById('csQuickNav');
+    const pageLayout  = document.getElementById('csPageLayout');
+    const collapseBtn = document.getElementById('csQnCollapseBtn');
+    const toggle      = document.getElementById('csQnToggle');
+    const drawer      = document.getElementById('csQnDrawer');
+    const allItems    = document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item');
+
+    const sectionEls = Array.from(document.querySelectorAll('.cs-qn-item')).map(a =>
+      document.getElementById(a.dataset.section)
+    ).filter(Boolean);
+
+    /* ── Collapse / expand ── */
+    const STORAGE_KEY = 'mc-qn-collapsed';
+    function setCollapsed(collapsed) {
+      quickNav.classList.toggle('is-collapsed', collapsed);
+      pageLayout && pageLayout.classList.toggle('is-collapsed', collapsed);
+      if (collapseBtn) {
+        collapseBtn.setAttribute('aria-expanded', String(!collapsed));
+        collapseBtn.setAttribute('aria-label', collapsed ? 'Expand navigation' : 'Collapse navigation');
+      }
+      localStorage.setItem(STORAGE_KEY, collapsed ? '1' : '0');
+    }
+    setCollapsed(localStorage.getItem(STORAGE_KEY) === '1');
+    collapseBtn && collapseBtn.addEventListener('click', () => {
+      setCollapsed(!quickNav.classList.contains('is-collapsed'));
+    });
+
+    /* ── helpers ── */
+    function setActive(id) {
+      allItems.forEach(item => {
+        const match = item.dataset.section === id;
+        item.classList.toggle('is-active', match);
+        if (match) item.setAttribute('aria-current', 'location');
+        else item.removeAttribute('aria-current');
+      });
+    }
+    function closeDrawer() {
+      if (!drawer) return;
+      quickNav.classList.remove('cs-quicknav--open');
+      toggle && toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    /* ── Scrollspy ── */
+    const spyObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sectionEls.forEach(s => spyObs.observe(s));
+
+    /* ── Smooth scroll ── */
+    document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.section);
+        if (!target) return;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+        closeDrawer();
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    /* ── Mobile drawer toggle ── */
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => {
+        const isOpen = quickNav.classList.toggle('cs-quicknav--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        drawer.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen) { const first = drawer.querySelector('.cs-qn-drawer-item'); first && first.focus(); }
+      });
+      document.addEventListener('click', e => { if (!quickNav.contains(e.target)) closeDrawer(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && quickNav.classList.contains('cs-quicknav--open')) { closeDrawer(); toggle.focus(); }
+      });
+    }
+  })();
+  </script>
 </body>
 </html>

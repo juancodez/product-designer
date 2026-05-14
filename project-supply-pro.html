@@ -50,58 +50,6 @@
     </nav>
   </div>
 
-  <!-- ── QUICK NAV ── -->
-  <aside class="cs-quicknav" id="csQuickNav" aria-label="Case study navigation">
-
-    <!-- Desktop / tablet: vertical pill list -->
-    <nav class="cs-qn-list" id="csQnList">
-      <a href="#problem"      class="cs-qn-item" data-section="problem"      data-label="Problem">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Problem</span></a>
-      <a href="#research"     class="cs-qn-item" data-section="research"     data-label="Research">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Research</span></a>
-      <a href="#persona"      class="cs-qn-item" data-section="persona"      data-label="Persona">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Persona</span></a>
-      <a href="#how-might-we" class="cs-qn-item" data-section="how-might-we" data-label="How Might We"><span class="cs-qn-dot"></span><span class="cs-qn-label">How Might We</span></a>
-      <a href="#user-flow"    class="cs-qn-item" data-section="user-flow"    data-label="User Flow">    <span class="cs-qn-dot"></span><span class="cs-qn-label">User Flow</span></a>
-      <a href="#process"      class="cs-qn-item" data-section="process"      data-label="Process">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Process</span></a>
-      <a href="#testing"      class="cs-qn-item" data-section="testing"      data-label="Testing">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Testing</span></a>
-      <a href="#before-after" class="cs-qn-item" data-section="before-after" data-label="Before &amp; After"><span class="cs-qn-dot"></span><span class="cs-qn-label">Before &amp; After</span></a>
-      <a href="#solution"     class="cs-qn-item" data-section="solution"     data-label="Solution">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Solution</span></a>
-      <a href="#prototype"    class="cs-qn-item" data-section="prototype"    data-label="Prototype">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Prototype</span></a>
-      <a href="#ai-design"    class="cs-qn-item" data-section="ai-design"    data-label="AI in Design"> <span class="cs-qn-dot"></span><span class="cs-qn-label">AI in Design</span></a>
-      <a href="#kpis"         class="cs-qn-item" data-section="kpis"         data-label="KPIs">         <span class="cs-qn-dot"></span><span class="cs-qn-label">KPIs</span></a>
-      <a href="#outlook"      class="cs-qn-item" data-section="outlook"      data-label="Outlook">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Outlook</span></a>
-      <a href="#lessons"      class="cs-qn-item" data-section="lessons"      data-label="Lessons">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Lessons</span></a>
-    </nav>
-
-    <!-- Mobile: floating toggle button -->
-    <button class="cs-qn-toggle" id="csQnToggle" aria-label="Open case study navigation" aria-expanded="false" aria-controls="csQnDrawer">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <rect x="2" y="3"   width="12" height="1.5" rx="0.75" fill="currentColor"/>
-        <rect x="2" y="7.3" width="8"  height="1.5" rx="0.75" fill="currentColor"/>
-        <rect x="2" y="11.5" width="10" height="1.5" rx="0.75" fill="currentColor"/>
-      </svg>
-    </button>
-
-    <!-- Mobile: expandable drawer (opens above the toggle) -->
-    <div class="cs-qn-drawer" id="csQnDrawer" role="region" aria-label="Section navigation" aria-hidden="true">
-      <nav class="cs-qn-drawer-list">
-        <a href="#problem"      class="cs-qn-drawer-item" data-section="problem">Problem</a>
-        <a href="#research"     class="cs-qn-drawer-item" data-section="research">Research</a>
-        <a href="#persona"      class="cs-qn-drawer-item" data-section="persona">Persona</a>
-        <a href="#how-might-we" class="cs-qn-drawer-item" data-section="how-might-we">How Might We</a>
-        <a href="#user-flow"    class="cs-qn-drawer-item" data-section="user-flow">User Flow</a>
-        <a href="#process"      class="cs-qn-drawer-item" data-section="process">Process</a>
-        <a href="#testing"      class="cs-qn-drawer-item" data-section="testing">Testing</a>
-        <a href="#before-after" class="cs-qn-drawer-item" data-section="before-after">Before &amp; After</a>
-        <a href="#solution"     class="cs-qn-drawer-item" data-section="solution">Solution</a>
-        <a href="#prototype"    class="cs-qn-drawer-item" data-section="prototype">Prototype</a>
-        <a href="#ai-design"    class="cs-qn-drawer-item" data-section="ai-design">AI in Design</a>
-        <a href="#kpis"         class="cs-qn-drawer-item" data-section="kpis">KPIs</a>
-        <a href="#outlook"      class="cs-qn-drawer-item" data-section="outlook">Outlook</a>
-        <a href="#lessons"      class="cs-qn-drawer-item" data-section="lessons">Lessons</a>
-      </nav>
-    </div>
-
-  </aside>
-
   <!-- ── HERO ── -->
   <section class="cs-hero">
     <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
@@ -169,6 +117,71 @@
       </div>
     </div>
   </section>
+
+  <!-- ── PAGE LAYOUT: sticky sidebar + content ── -->
+  <div class="cs-page-layout" id="csPageLayout">
+
+    <!-- Collapsible sidebar -->
+    <aside class="cs-quicknav" id="csQuickNav" aria-label="Case study navigation">
+
+      <!-- Desktop collapse toggle -->
+      <button class="cs-qn-collapse-btn" id="csQnCollapseBtn" aria-label="Collapse navigation" aria-expanded="true">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop / tablet nav list -->
+      <nav class="cs-qn-list" id="csQnList">
+        <a href="#problem"      class="cs-qn-item" data-section="problem"      data-label="Problem">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Problem</span></a>
+        <a href="#research"     class="cs-qn-item" data-section="research"     data-label="Research">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Research</span></a>
+        <a href="#persona"      class="cs-qn-item" data-section="persona"      data-label="Persona">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Persona</span></a>
+        <a href="#how-might-we" class="cs-qn-item" data-section="how-might-we" data-label="How Might We"><span class="cs-qn-dot"></span><span class="cs-qn-label">How Might We</span></a>
+        <a href="#user-flow"    class="cs-qn-item" data-section="user-flow"    data-label="User Flow">    <span class="cs-qn-dot"></span><span class="cs-qn-label">User Flow</span></a>
+        <a href="#process"      class="cs-qn-item" data-section="process"      data-label="Process">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Process</span></a>
+        <a href="#testing"      class="cs-qn-item" data-section="testing"      data-label="Testing">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Testing</span></a>
+        <a href="#before-after" class="cs-qn-item" data-section="before-after" data-label="Before &amp; After"><span class="cs-qn-dot"></span><span class="cs-qn-label">Before &amp; After</span></a>
+        <a href="#solution"     class="cs-qn-item" data-section="solution"     data-label="Solution">     <span class="cs-qn-dot"></span><span class="cs-qn-label">Solution</span></a>
+        <a href="#prototype"    class="cs-qn-item" data-section="prototype"    data-label="Prototype">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Prototype</span></a>
+        <a href="#ai-design"    class="cs-qn-item" data-section="ai-design"    data-label="AI in Design"> <span class="cs-qn-dot"></span><span class="cs-qn-label">AI in Design</span></a>
+        <a href="#kpis"         class="cs-qn-item" data-section="kpis"         data-label="KPIs">         <span class="cs-qn-dot"></span><span class="cs-qn-label">KPIs</span></a>
+        <a href="#outlook"      class="cs-qn-item" data-section="outlook"      data-label="Outlook">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Outlook</span></a>
+        <a href="#lessons"      class="cs-qn-item" data-section="lessons"      data-label="Lessons">      <span class="cs-qn-dot"></span><span class="cs-qn-label">Lessons</span></a>
+      </nav>
+
+      <!-- Mobile: floating toggle -->
+      <button class="cs-qn-toggle" id="csQnToggle" aria-label="Open section navigation" aria-expanded="false" aria-controls="csQnDrawer">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <rect x="2" y="3"    width="12" height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="7.3"  width="8"  height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="11.5" width="10" height="1.5" rx="0.75" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <!-- Mobile: drawer -->
+      <div class="cs-qn-drawer" id="csQnDrawer" role="region" aria-label="Section navigation" aria-hidden="true">
+        <nav class="cs-qn-drawer-list">
+          <a href="#problem"      class="cs-qn-drawer-item" data-section="problem">Problem</a>
+          <a href="#research"     class="cs-qn-drawer-item" data-section="research">Research</a>
+          <a href="#persona"      class="cs-qn-drawer-item" data-section="persona">Persona</a>
+          <a href="#how-might-we" class="cs-qn-drawer-item" data-section="how-might-we">How Might We</a>
+          <a href="#user-flow"    class="cs-qn-drawer-item" data-section="user-flow">User Flow</a>
+          <a href="#process"      class="cs-qn-drawer-item" data-section="process">Process</a>
+          <a href="#testing"      class="cs-qn-drawer-item" data-section="testing">Testing</a>
+          <a href="#before-after" class="cs-qn-drawer-item" data-section="before-after">Before &amp; After</a>
+          <a href="#solution"     class="cs-qn-drawer-item" data-section="solution">Solution</a>
+          <a href="#prototype"    class="cs-qn-drawer-item" data-section="prototype">Prototype</a>
+          <a href="#ai-design"    class="cs-qn-drawer-item" data-section="ai-design">AI in Design</a>
+          <a href="#kpis"         class="cs-qn-drawer-item" data-section="kpis">KPIs</a>
+          <a href="#outlook"      class="cs-qn-drawer-item" data-section="outlook">Outlook</a>
+          <a href="#lessons"      class="cs-qn-drawer-item" data-section="lessons">Lessons</a>
+        </nav>
+      </div>
+
+    </aside>
+
+    <!-- All content sections -->
+    <div class="cs-page-content">
 
   <!-- ── THE PROBLEM ── -->
   <section id="problem" class="cs-section" data-animate="fade-up">
@@ -390,30 +403,96 @@
       </p>
 
       <div class="cs-pillars">
+
+        <!-- 01 — Scope Before Features: bullseye / target (focus on the core user problem) -->
         <div class="cs-pillar">
-          <span class="cs-pillar-num">01</span>
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-sp01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#060f20"/>
+                  <stop offset="50%"  stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Outer ring -->
+              <circle cx="22" cy="22" r="18" stroke="url(#lg-sp01)" stroke-width="1.8"/>
+              <!-- Middle ring -->
+              <circle cx="22" cy="22" r="11" stroke="url(#lg-sp01)" stroke-width="1.8"/>
+              <!-- Inner dot -->
+              <circle cx="22" cy="22" r="4"  stroke="url(#lg-sp01)" stroke-width="1.8"/>
+              <!-- Cross-hair lines -->
+              <line x1="22" y1="2"  x2="22" y2="8"  stroke="url(#lg-sp01)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="22" y1="36" x2="22" y2="42" stroke="url(#lg-sp01)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="2"  y1="22" x2="8"  y2="22" stroke="url(#lg-sp01)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="36" y1="22" x2="42" y2="22" stroke="url(#lg-sp01)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
           <span class="cs-pillar-cat">Back to the User</span>
           <div class="cs-pillar-title">Scope Before Features</div>
           <div class="cs-pillar-body">
             <strong>Competitive analysis initially pulled me away from the core problem.</strong> I became distracted by feature-heavy products and started designing beyond what chefs had actually described in interviews. The research helped realign the MVP around one specific moment: <strong>the gap between order placement and delivery arrival.</strong>
           </div>
         </div>
+
+        <!-- 02 — Domain Knowledge as Design Input: chef's toque (kitchen expertise) -->
         <div class="cs-pillar">
-          <span class="cs-pillar-num">02</span>
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-sp02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#060f20"/>
+                  <stop offset="50%"  stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Chef's toque — puffy top dome -->
+              <path d="M14 26 C14 26 10 24 10 18 C10 12.5 15.5 8 22 8 C28.5 8 34 12.5 34 18 C34 24 30 26 30 26 Z"
+                    stroke="url(#lg-sp02)" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- Brim / band -->
+              <rect x="13" y="26" width="18" height="4" rx="1" stroke="url(#lg-sp02)" stroke-width="1.8"/>
+              <!-- Base rim -->
+              <rect x="13" y="30" width="18" height="4" rx="1" stroke="url(#lg-sp02)" stroke-width="1.8"/>
+              <!-- Inner folds on dome -->
+              <path d="M17 24 C17 20 16 14 22 11" stroke="url(#lg-sp02)" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+              <path d="M27 24 C27 20 28 14 22 11" stroke="url(#lg-sp02)" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+            </svg>
+          </span>
           <span class="cs-pillar-cat">The Niche Defines the Design</span>
           <div class="cs-pillar-title">Domain Knowledge as Design Input</div>
           <div class="cs-pillar-body">
             Kitchens under time pressure and high stress do not need an impressive interface. They need one that works. This shaped every design decision: no decorative elements, no complex flows, no hidden actions. <strong>Functional beats decorative.</strong> Seventeen years as a head pastry chef and cook in Michelin-starred restaurants was not a nice addition. It was the decisive advantage.
           </div>
         </div>
+
+        <!-- 03 — Language as Interface: pen writing on text lines (UX writing / scan pattern) -->
         <div class="cs-pillar">
-          <span class="cs-pillar-num">03</span>
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-sp03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#060f20"/>
+                  <stop offset="50%"  stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Text lines (F-pattern: long, long, short) -->
+              <line x1="6"  y1="12" x2="30" y2="12" stroke="url(#lg-sp03)" stroke-width="2"   stroke-linecap="round"/>
+              <line x1="6"  y1="20" x2="28" y2="20" stroke="url(#lg-sp03)" stroke-width="2"   stroke-linecap="round"/>
+              <line x1="6"  y1="28" x2="18" y2="28" stroke="url(#lg-sp03)" stroke-width="2"   stroke-linecap="round"/>
+              <!-- Pen / pencil writing -->
+              <path d="M32 30 L38 24 L40 26 L34 32 Z" stroke="url(#lg-sp03)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M38 24 L40 22 L42 24 L40 26 Z" stroke="url(#lg-sp03)" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="32" y1="30" x2="30" y2="34" stroke="url(#lg-sp03)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </span>
           <span class="cs-pillar-cat">UX Writing Is Not a Detail</span>
           <div class="cs-pillar-title">Language as Interface</div>
           <div class="cs-pillar-body">
             The first usability test showed that several terms were unclear or contradictory. Testers hesitated not because the interface was poorly structured, but because they were unsure what an action meant. <strong>A chef does not read, they scan.</strong> This forced a complete overhaul of the UX writing and visual hierarchy. The F-pattern layout stayed. The language was rebuilt from scratch.
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -813,27 +892,101 @@
       </h2>
 
       <div class="cs-lessons">
+
+        <!-- 01 — Tight Scope Is a Strategic Decision: funnel (narrowing to one core moment) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">01</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-sl01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#060f20"/>
+                  <stop offset="50%"  stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Funnel top bar -->
+              <line x1="4" y1="10" x2="40" y2="10" stroke="url(#lg-sl01)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Funnel sides converging -->
+              <path d="M4 10 L18 26 L18 38 L26 38 L26 26 L40 10" stroke="url(#lg-sl01)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Dot at the single output point -->
+              <circle cx="22" cy="38" r="2.2" fill="url(#lg-sl01)"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">Tight Scope Is a Strategic Decision</div>
           <div class="cs-lesson-body">
             The decision to focus on one single moment saved the product. A tight scope is not a weakness. It is the only way to build an honest MVP that delivers real value without overcomplicating execution.
           </div>
         </div>
+
+        <!-- 02 — Domain Knowledge Sharpens Methods: brain (domain expertise & knowledge) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">02</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-sl02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#060f20"/>
+                  <stop offset="50%"  stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Left hemisphere outline -->
+              <path d="M22 8 C19 6 12 6 8 10 C3 15 3 22 5 28 C7 33 13 39 20 39 L22 38"
+                    stroke="url(#lg-sl02)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <!-- Right hemisphere outline -->
+              <path d="M22 8 C25 6 32 6 36 10 C41 15 41 22 39 28 C37 33 31 39 24 39 L22 38"
+                    stroke="url(#lg-sl02)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <!-- Center fissure -->
+              <line x1="22" y1="8" x2="22" y2="14" stroke="url(#lg-sl02)" stroke-width="1.4" stroke-linecap="round"/>
+              <line x1="22" y1="32" x2="22" y2="38" stroke="url(#lg-sl02)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Left hemisphere gyri (folds) -->
+              <path d="M8 17 C10 15 15 15 16 18 C17 21 14 23 10 22"
+                    stroke="url(#lg-sl02)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M6 26 C9 24 14 24 15 27 C16 30 13 32 9 31"
+                    stroke="url(#lg-sl02)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <!-- Right hemisphere gyri (folds) -->
+              <path d="M36 17 C34 15 29 15 28 18 C27 21 30 23 34 22"
+                    stroke="url(#lg-sl02)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M38 26 C35 24 30 24 29 27 C28 30 31 32 35 31"
+                    stroke="url(#lg-sl02)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">Domain Knowledge Sharpens Methods</div>
           <div class="cs-lesson-body">
             Seventeen years in professional kitchens was not a nice addition to the research. It was the reason the interviews went deep and the design decisions held. Domain knowledge does not replace UX methods. It sharpens them.
           </div>
         </div>
+
+        <!-- 03 — Test with Lo-Fi Earlier: rough wireframe sketch (lo-fi prototype with placeholder shapes) -->
         <div class="cs-lesson">
-          <span class="cs-lesson-num">03</span>
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-sl03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#060f20"/>
+                  <stop offset="50%"  stop-color="#0f2552"/>
+                  <stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Screen / frame -->
+              <rect x="4" y="5" width="36" height="34" rx="3" stroke="url(#lg-sl03)" stroke-width="1.8"/>
+              <!-- Image placeholder box with X (lo-fi image block) -->
+              <rect x="9" y="10" width="14" height="11" rx="1.5" stroke="url(#lg-sl03)" stroke-width="1.5"/>
+              <line x1="9" y1="10" x2="23" y2="21" stroke="url(#lg-sl03)" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="23" y1="10" x2="9"  y2="21" stroke="url(#lg-sl03)" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Lo-fi text lines -->
+              <line x1="27" y1="12" x2="37" y2="12" stroke="url(#lg-sl03)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="27" y1="17" x2="37" y2="17" stroke="url(#lg-sl03)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="27" y1="22" x2="33" y2="22" stroke="url(#lg-sl03)" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Lo-fi button bar -->
+              <rect x="9" y="27" width="26" height="6" rx="2" stroke="url(#lg-sl03)" stroke-width="1.5"/>
+            </svg>
+          </span>
           <div class="cs-lesson-title">Test with Lo-Fi Earlier</div>
           <div class="cs-lesson-body">
             The first usability test came too late in the process. Two iteration rounds could have been saved. Low-fidelity testing surfaces language and flow problems before visual decisions lock them in.
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -864,8 +1017,9 @@
           </div>
         </a>
         <a href="index.html#footer" class="cs-more-card">
-          <div class="cs-more-img" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%); display:flex; align-items:center; justify-content:center;">
-            <span style="font-size: 3rem; font-weight: 900; color: rgba(255,255,255,0.15); letter-spacing: -0.05em;">JGV.</span>
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%); overflow:hidden; position:relative;">
+            <img src="assets/JGV-Pattern-01.svg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; opacity:0.55;" />
+            <img src="assets/logo-dark.svg" alt="JGV" aria-hidden="true" style="position:relative; z-index:1; width:120px; height:auto; display:block; filter:brightness(0) invert(1); opacity:0.92;" />
           </div>
           <div class="cs-more-info">
             <div class="cs-more-pills">
@@ -882,6 +1036,9 @@
       </div>
     </div>
   </section>
+
+    </div><!-- /cs-page-content -->
+  </div><!-- /cs-page-layout -->
 
   <!-- ── FOOTER ── -->
   <footer class="footer" id="footer">
@@ -921,11 +1078,28 @@
   <!-- ── QUICK NAV SCROLLSPY ── -->
   <script>
   (function () {
-    const quickNav  = document.getElementById('csQuickNav');
-    const hero      = document.querySelector('.cs-hero');
-    const toggle    = document.getElementById('csQnToggle');
-    const drawer    = document.getElementById('csQnDrawer');
-    const allItems  = document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item');
+    const quickNav    = document.getElementById('csQuickNav');
+    const pageLayout  = document.getElementById('csPageLayout');
+    const collapseBtn = document.getElementById('csQnCollapseBtn');
+    const toggle      = document.getElementById('csQnToggle');
+    const drawer      = document.getElementById('csQnDrawer');
+    const allItems    = document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item');
+
+    /* ── Collapse / expand ── */
+    const STORAGE_KEY = 'sp-qn-collapsed';
+    function setCollapsed(collapsed) {
+      quickNav.classList.toggle('is-collapsed', collapsed);
+      pageLayout && pageLayout.classList.toggle('is-collapsed', collapsed);
+      if (collapseBtn) {
+        collapseBtn.setAttribute('aria-expanded', String(!collapsed));
+        collapseBtn.setAttribute('aria-label', collapsed ? 'Expand navigation' : 'Collapse navigation');
+      }
+      localStorage.setItem(STORAGE_KEY, collapsed ? '1' : '0');
+    }
+    setCollapsed(localStorage.getItem(STORAGE_KEY) === '1');
+    collapseBtn && collapseBtn.addEventListener('click', () => {
+      setCollapsed(!quickNav.classList.contains('is-collapsed'));
+    });
 
     // collect section elements from sidebar links
     const sectionEls = Array.from(document.querySelectorAll('.cs-qn-item')).map(a =>
@@ -951,14 +1125,6 @@
       quickNav.classList.remove('cs-quicknav--open');
       toggle && toggle.setAttribute('aria-expanded', 'false');
       drawer.setAttribute('aria-hidden', 'true');
-    }
-
-    /* ── Show sidebar after hero scrolls out ── */
-    if (hero && quickNav) {
-      const heroObs = new IntersectionObserver(entries => {
-        quickNav.classList.toggle('cs-quicknav--visible', !entries[0].isIntersecting);
-      }, { threshold: 0.15 });
-      heroObs.observe(hero);
     }
 
     /* ── Scrollspy ── */

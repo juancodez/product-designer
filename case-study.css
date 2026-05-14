@@ -7,20 +7,48 @@
    QUICK NAV — sticky sidebar scrollspy
    ───────────────────────────────────────────── */
 
+/* ── Page Layout: sidebar column + content column ── */
+.cs-page-layout {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  align-items: start;
+  transition: grid-template-columns 0.3s cubic-bezier(.16, 1, .3, 1);
+}
+.cs-page-layout.is-collapsed {
+  grid-template-columns: 52px 1fr;
+}
+.cs-page-content { min-width: 0; }
+
 .cs-quicknav {
-  position: fixed;
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 200;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 20px 8px 20px 12px;
 }
-.cs-quicknav--visible {
-  opacity: 1;
-  pointer-events: auto;
+.cs-quicknav::-webkit-scrollbar { display: none; }
+
+/* ── Collapse toggle button ── */
+.cs-qn-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(6, 8, 16, 0.10);
+  background: rgba(255, 255, 255, 0.90);
+  color: rgba(6, 8, 16, 0.50);
+  cursor: pointer;
+  margin-bottom: 16px;
+  margin-left: auto;
+  transition: background 0.18s, color 0.18s, transform 0.3s cubic-bezier(.16, 1, .3, 1);
 }
+.cs-qn-collapse-btn:hover { background: rgba(6, 8, 16, 0.06); color: rgba(6, 8, 16, 0.88); }
+.cs-qn-collapse-btn:focus-visible { outline: 2px solid #1d5fcc; outline-offset: 2px; }
+.cs-quicknav.is-collapsed .cs-qn-collapse-btn { transform: rotate(180deg); margin-left: auto; margin-right: auto; }
 
 /* ── Desktop list ── */
 .cs-qn-list {
@@ -82,12 +110,48 @@
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  /* rgba(6,8,16,0.60) on white ≈ #656669 → contrast ~5.0:1 — passes WCAG AA */
   color: rgba(6, 8, 16, 0.60);
   white-space: nowrap;
-  transition: color 0.25s;
   line-height: 1.2;
+  overflow: hidden;
+  transition: color 0.25s, opacity 0.22s ease, max-width 0.28s cubic-bezier(.16, 1, .3, 1);
+  max-width: 160px;
 }
+
+/* ── Collapsed state ── */
+.cs-quicknav.is-collapsed .cs-qn-label {
+  opacity: 0;
+  max-width: 0;
+  pointer-events: none;
+}
+.cs-quicknav.is-collapsed .cs-qn-item {
+  justify-content: center;
+  gap: 0;
+  padding: 8px 6px;
+  position: relative;
+}
+.cs-quicknav.is-collapsed .cs-qn-item::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(6, 8, 16, 0.86);
+  color: #fff;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  padding: 5px 12px;
+  border-radius: 7px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s;
+  z-index: 300;
+}
+.cs-quicknav.is-collapsed .cs-qn-item:hover::after,
+.cs-quicknav.is-collapsed .cs-qn-item:focus-visible::after { opacity: 1; }
 .cs-qn-item.is-active .cs-qn-label,
 .cs-qn-item[aria-current="location"] .cs-qn-label {
   background: var(--btn-gradient);
@@ -117,9 +181,11 @@
 /* ── Mobile drawer (hidden on desktop) ── */
 .cs-qn-drawer { display: none; }
 
-/* ── Tablet (900 – 1279 px): dots only, label tooltip ── */
+/* ── Tablet (900 – 1279 px): auto-collapsed, dots + tooltip ── */
 @media (max-width: 1279px) {
-  .cs-quicknav { left: 18px; }
+  .cs-page-layout { grid-template-columns: 52px 1fr; }
+  .cs-quicknav { padding: 16px 4px; }
+  .cs-qn-collapse-btn { display: none; }
 
   .cs-qn-label { display: none; }
 
@@ -165,14 +231,19 @@
 
 /* ── Mobile (< 900 px): floating toggle + bottom drawer ── */
 @media (max-width: 899px) {
+  .cs-page-layout { grid-template-columns: 1fr; }
+  .cs-qn-collapse-btn { display: none; }
+
   .cs-quicknav {
+    position: fixed;
     left: auto;
     right: 20px;
     bottom: 24px;
     top: auto;
+    height: auto;
+    overflow: visible;
+    padding: 0;
     transform: none;
-    opacity: 1 !important;
-    pointer-events: auto !important;
   }
 
   .cs-qn-list { display: none; }
@@ -274,14 +345,16 @@
 
 /* ── Reduced motion: turn off fade/slide transitions ── */
 @media (prefers-reduced-motion: reduce) {
-  .cs-quicknav,
+  .cs-page-layout,
   .cs-qn-item,
   .cs-qn-dot,
   .cs-qn-label,
   .cs-qn-drawer,
-  .cs-qn-toggle { transition: none !important; }
+  .cs-qn-toggle,
+  .cs-qn-collapse-btn { transition: none !important; }
   .cs-qn-item.is-active .cs-qn-dot,
   .cs-qn-item[aria-current="location"] .cs-qn-dot { transform: none; }
+  .cs-quicknav.is-collapsed .cs-qn-collapse-btn { transform: rotate(180deg); }
 }
 
 /* ── Hide quicknav on very small screens ── */
@@ -658,8 +731,8 @@ strong { font-weight: 700; color: var(--text); }
   content: ''; width: 40px; height: 1px; background: var(--border); flex-shrink: 0;
 }
 .cs-quote-avatar {
-  width: 52px;
-  height: 52px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -746,9 +819,7 @@ strong { font-weight: 700; color: var(--text); }
 .cs-ba-img {
   border-radius: 12px; overflow: hidden;
   border: 1px solid var(--border);
-  aspect-ratio: 16/12.5;
   background: var(--bg-3);
-  display: flex; align-items: center; justify-content: center;
   font-size: 0.72rem; color: var(--text-3);
   letter-spacing: 0.1em; text-transform: uppercase;
 }
@@ -950,6 +1021,8 @@ strong { font-weight: 700; color: var(--text); }
   background-clip: text;
   margin-bottom: 8px; line-height: 1;
 }
+.cs-pillar-num svg { display: block; }
+
 .cs-pillar-cat {
   display: block;
   font-size: 0.65rem; font-weight: 600;
@@ -1133,22 +1206,53 @@ strong { font-weight: 700; color: var(--text); }
 .cs-bento-video-item {
   width: 300px;
   aspect-ratio: 9/17;
-  border-radius: 14px;
+  border-radius: 20px;
   overflow: hidden;
-  background: #eef4ff;            /* matches the light blue of the phone screen bg */
+  background: #ffffff;
+  border: 1px solid rgba(120, 130, 155, 0.22);
+  box-shadow: 0 4px 24px rgba(15, 37, 82, 0.06);
   flex-shrink: 0;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
-.cs-bento-video-item:hover { transform: scale(1.03); }
+.cs-bento-video-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 36px rgba(15, 37, 82, 0.12);
+}
+
+.cs-bento-video-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+}
+.cs-bento-video-title {
+  margin: 24px 0 0;
+  font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.2;
+}
+.cs-bento-video-label {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--text-2);
+  text-align: center;
+  line-height: 1.55;
+  letter-spacing: 0;
+  max-width: 260px;
+}
 
 .cs-bento-video-item video {
-  width: 92%;                     /* slight inset — video breathes inside container */
-  height: 92%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin: 4% auto 0;              /* center with top margin */
+  margin: 0;
+  background: #ffffff;            /* video bg matches placeholder/card bg */
 }
 
 /* ── Live button arrow rotation ─────────────── */
@@ -1166,6 +1270,27 @@ strong { font-weight: 700; color: var(--text); }
   .cs-process-step { border-bottom: 1px solid var(--border); }
   .cs-process-step:nth-child(2) { border-right: none; }
   .cs-lessons { grid-template-columns: repeat(2, 1fr); }
+  .cs-pillars { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── 960 px: collapse 2-col content before sidebar floats at 899px ── */
+@media (max-width: 960px) {
+  .cs-two-col,
+  .cs-two-col--6040,
+  .cs-two-col--4060 { grid-template-columns: 1fr; gap: 40px; }
+
+  .cs-hero-body { grid-template-columns: 1fr; gap: 24px; }
+
+  .cs-solution-row { grid-template-columns: 1fr; gap: 40px; }
+
+  .cs-ba-row { grid-template-columns: 1fr; gap: 32px; }
+
+  .cs-branding-row,
+  .cs-branding-row--reverse { grid-template-columns: 1fr; }
+  .cs-branding-row--reverse { direction: ltr; }
+  .cs-branding-placeholder { aspect-ratio: 16/9; min-height: 200px; }
+
+  .cs-metrics { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1193,4 +1318,120 @@ strong { font-weight: 700; color: var(--text); }
   .cs-bento-item--third { grid-column: span 1; }
   .cs-bento-videos { padding: 8px 20px 0; gap: 8px; }
   .cs-bento-video-item { width: 46%; }
+  .cs-branding-row,
+  .cs-branding-row--reverse { grid-template-columns: 1fr; }
+  .cs-branding-placeholder { aspect-ratio: 16/9; min-height: 220px; }
+}
+
+/* ─────────────────────────────────────────────
+   BRANDING STRATEGY & UI DECISIONS SECTION
+   3 rows × 2 columns, alternating layout
+───────────────────────────────────────────── */
+.cs-branding-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 72px;
+}
+.cs-branding-intro {
+  color: var(--text-2);
+  line-height: 1.78;
+  margin-top: 14px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Outer flex column */
+.cs-branding-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Each row: 2-column grid */
+.cs-branding-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Reverse: flip col order so placeholder goes left */
+.cs-branding-row--reverse {
+  direction: rtl;
+}
+.cs-branding-row--reverse > * {
+  direction: ltr;
+}
+
+/* Text side */
+.cs-branding-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.cs-branding-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+.cs-branding-body {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--text-2);
+  margin: 0;
+}
+
+/* Real image card */
+.cs-branding-img-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 37, 82, 0.1);
+  box-shadow: 0 4px 24px rgba(15, 37, 82, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cs-branding-img-wrap:hover {
+  box-shadow: 0 10px 40px rgba(15, 37, 82, 0.12);
+  transform: scale(1.015);
+}
+.cs-branding-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Placeholder card */
+.cs-branding-placeholder {
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  background: linear-gradient(145deg, var(--bg-2) 0%, var(--bg-3) 100%);
+  border: 1px solid rgba(15, 37, 82, 0.1);
+  box-shadow: 0 4px 24px rgba(15, 37, 82, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.cs-branding-placeholder:hover {
+  box-shadow: 0 8px 36px rgba(15, 37, 82, 0.09);
+  border-color: rgba(29, 95, 204, 0.18);
+}
+.cs-branding-placeholder-icon {
+  opacity: 0.35;
+}
+.cs-branding-placeholder-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  opacity: 0.6;
 }
