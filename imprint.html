@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imprint — Juan Gomez Vara</title>
+  <meta name="description" content="Legal notice and privacy policy for juangomezvara.com" />
+  <link rel="icon" type="image/svg+xml" href="assets/LogoJGV_favicon-32px.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+
+  <style>
+    /* ── Imprint page layout ── */
+    .imprint-section {
+      padding: 80px 0 140px;
+    }
+    .imprint-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* ── Language toggle ── */
+    .imprint-lang-switch {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 64px;
+    }
+    .imprint-lang-btn {
+      font-family: var(--font);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1.5px solid var(--border-hover);
+      background: transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .imprint-lang-btn.is-active {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+    .imprint-lang-btn:not(.is-active):hover {
+      border-color: var(--text-2);
+      color: var(--text-2);
+    }
+
+    /* ── Content panel visibility ── */
+    .imprint-content { display: none; }
+    .imprint-content.is-active { display: block; }
+
+    /* ── Individual blocks (sections) ── */
+    .imprint-block {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .imprint-block:first-child { padding-top: 0; }
+    .imprint-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .imprint-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px;
+    }
+
+    .imprint-block-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .imprint-block h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    .imprint-block h3:first-of-type { margin-top: 0; }
+
+    .imprint-block p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-2);
+      line-height: 1.78;
+      margin-bottom: 10px;
+    }
+    .imprint-block p:last-child { margin-bottom: 0; }
+
+    .imprint-block a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .imprint-block a:hover { color: var(--accent-2); }
+
+    .imprint-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .imprint-contact p { margin-bottom: 0; }
+
+    /* ── Divider between languages ── */
+    .imprint-lang-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 72px 0 64px;
+    }
+    .imprint-lang-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .imprint-lang-divider-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .imprint-inner { padding: 0 24px; }
+      .imprint-section { padding: 56px 0 100px; }
+      .imprint-block { padding: 32px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#work"  class="nav-link magnetic"><span>Projects</span></a>
+        <a href="index.html#about" class="nav-link magnetic"><span>About</span></a>
+      </div>
+      <a href="contact.html" class="btn-nav magnetic">
+        <span class="btn-text">Contact</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="index.html#work"  class="mobile-nav-link">Projects</a>
+      <a href="index.html#about" class="mobile-nav-link">About</a>
+      <a href="contact.html"     class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
+    <div class="hero-noise"></div>
+    <div class="cs-hero-inner">
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">Legal</span>
+        <span class="cs-tag">Berlin, Germany</span>
+        <span class="cs-tag">§ 5 TMG</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160">
+        Imprint.
+      </h1>
+
+      <div class="cs-hero-body">
+        <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Name</span>
+            <span class="cs-hero-meta-value">Juan Gomez Vara</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Location</span>
+            <span class="cs-hero-meta-value">Berlin, Germany</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Phone</span>
+            <span class="cs-hero-meta-value">+49 162 839 3885</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Email</span>
+            <span class="cs-hero-meta-value">
+              <a href="mailto:juangomezvara@gmail.com" style="color:inherit;">juangomezvara@gmail.com</a>
+            </span>
+          </div>
+        </div>
+
+        <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+          Legal notice, disclaimer, copyright and privacy policy for this website,
+          in compliance with German law (§&nbsp;5&nbsp;TMG and DSGVO/GDPR).
+          Available in <strong>English</strong> and <strong>Deutsch</strong>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTENT ── -->
+  <section class="imprint-section">
+    <div class="imprint-inner">
+
+      <!-- Language toggle -->
+      <div class="imprint-lang-switch" role="tablist" aria-label="Select language">
+        <button class="imprint-lang-btn is-active" data-lang="en" role="tab" aria-selected="true">English</button>
+        <button class="imprint-lang-btn" data-lang="de" role="tab" aria-selected="false">Deutsch</button>
+      </div>
+
+      <!-- ── ENGLISH ── -->
+      <div class="imprint-content is-active" id="lang-en" role="tabpanel">
+
+        <!-- Legal Notice -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Legal Notice</p>
+          <h2 class="imprint-block-title">Legal Notice pursuant to § 5 TMG</h2>
+          <div class="imprint-contact">
+            <p>Juan Gomez Vara</p>
+            <p>Berlin, Germany</p>
+            <p>Phone: <a href="tel:+491628393885">+49 162 839 3885</a></p>
+            <p>Email: <a href="mailto:juangomezvara@gmail.com">juangomezvara@gmail.com</a></p>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Disclaimer</p>
+          <h2 class="imprint-block-title">Liability for Links</h2>
+          <p>This website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content.</p>
+          <p>The linked pages were checked for possible legal violations at the time of linking — no illegal content was apparent at that time.</p>
+        </div>
+
+        <!-- Copyright -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Copyright</p>
+          <h2 class="imprint-block-title">Copyright Notice</h2>
+          <p>All content and works on this website created by me are subject to German copyright law. Any reproduction, editing, distribution or use outside the limits of copyright law requires my written consent. Downloads and copies of this page are only permitted for private, non-commercial use.</p>
+          <p>Where content on this website was not created by me, the copyrights of third parties are respected and marked accordingly. If you become aware of a copyright infringement, please let me know — upon becoming aware of such violations, I will remove the affected content immediately.</p>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Privacy Policy</p>
+          <h2 class="imprint-block-title">Data Protection</h2>
+          <p>The protection of your personal data is important to me. I handle personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.</p>
+
+          <h3>1. Responsible Party</h3>
+          <div class="imprint-contact">
+            <p>Juan Gomez Vara</p>
+            <p>Berlin, Germany</p>
+            <p>Email: <a href="mailto:juangomezvara@gmail.com">juangomezvara@gmail.com</a></p>
+          </div>
+
+          <h3>2. Collection and Processing of Personal Data</h3>
+          <p>When visiting this website, information (e.g. IP address, browser type, date and time) is automatically collected by the web server. This data is technically required to display the website correctly and is not used to draw conclusions about your identity. No further processing takes place.</p>
+          <p>If you contact me by email, the data you submit will be used exclusively to process your enquiry.</p>
+
+          <h3>3. Data Transfer</h3>
+          <p>Your data will not be passed on to third parties unless required by law.</p>
+
+          <h3>4. Your Rights</h3>
+          <p>You have the right at any time to request information about your stored personal data, its origin, recipients and the purpose of data processing. You also have the right to have this data corrected, blocked or deleted. Please contact the address given in the legal notice for this purpose.</p>
+
+          <h3>5. Hosting</h3>
+          <p>This website is hosted by a European hosting provider that stores data exclusively on servers within the EU and operates in compliance with the GDPR.</p>
+        </div>
+
+        <!-- Cookies -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Cookies</p>
+          <h2 class="imprint-block-title">Cookie Policy</h2>
+          <p>This website only uses technically necessary cookies that are required for the functionality of the site (e.g. for display on different devices). No tracking and no analysis of your usage behaviour takes place. Therefore, no consent is required.</p>
+        </div>
+
+      </div>
+
+      <!-- ── GERMAN ── -->
+      <div class="imprint-content" id="lang-de" role="tabpanel">
+
+        <!-- Impressum -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Impressum</p>
+          <h2 class="imprint-block-title">Angaben gemäß § 5 TMG</h2>
+          <div class="imprint-contact">
+            <p>Juan Gomez Vara</p>
+            <p>Berlin, Deutschland</p>
+            <p>Telefon: <a href="tel:+491628393885">+49 162 839 3885</a></p>
+            <p>E-Mail: <a href="mailto:juangomezvara@gmail.com">juangomezvara@gmail.com</a></p>
+          </div>
+        </div>
+
+        <!-- Haftungsausschluss -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Haftungsausschluss</p>
+          <h2 class="imprint-block-title">Haftung für Links</h2>
+          <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+          <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft – rechtswidrige Inhalte waren dabei nicht erkennbar.</p>
+        </div>
+
+        <!-- Urheberrecht -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Urheberrecht</p>
+          <h2 class="imprint-block-title">Urheberrecht</h2>
+          <p>Alle Inhalte und Werke auf dieser Website, die von mir erstellt wurden, unterliegen dem deutschen Urheberrecht. Jegliche Vervielfältigung, Bearbeitung, Verbreitung oder Verwertung außerhalb der Grenzen des Urheberrechts bedarf meiner schriftlichen Zustimmung. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+          <p>Soweit Inhalte auf dieser Website nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet und entsprechend gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, gib mir bitte Bescheid – bei Bekanntwerden entferne ich die betreffenden Inhalte umgehend.</p>
+        </div>
+
+        <!-- Datenschutzerklärung -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Datenschutzerklärung</p>
+          <h2 class="imprint-block-title">Datenschutzerklärung</h2>
+          <p>Der Schutz deiner persönlichen Daten ist mir wichtig. Ich behandle personenbezogene Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+
+          <h3>1. Verantwortliche Stelle</h3>
+          <div class="imprint-contact">
+            <p>Juan Gomez Vara</p>
+            <p>Berlin, Deutschland</p>
+            <p>E-Mail: <a href="mailto:juangomezvara@gmail.com">juangomezvara@gmail.com</a></p>
+          </div>
+
+          <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
+          <p>Beim Besuch dieser Website werden automatisch Informationen (z. B. IP-Adresse, Browsertyp, Datum und Uhrzeit) vom Webserver erhoben. Diese Daten sind technisch erforderlich, um die Website korrekt darzustellen, und werden nicht genutzt, um Rückschlüsse auf deine Person zu ziehen. Eine weitere Verarbeitung erfolgt nicht.</p>
+          <p>Wenn du mich per E-Mail kontaktierst, werden die von dir übermittelten Daten ausschließlich zur Bearbeitung deiner Anfrage verwendet.</p>
+
+          <h3>3. Weitergabe von Daten</h3>
+          <p>Eine Weitergabe deiner Daten an Dritte erfolgt nicht, es sei denn, dies ist gesetzlich vorgeschrieben.</p>
+
+          <h3>4. Deine Rechte</h3>
+          <p>Du hast jederzeit das Recht auf Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft, Empfänger und Zweck der Datenverarbeitung. Ebenso hast du ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wende dich dazu einfach an die im Impressum genannte Adresse.</p>
+
+          <h3>5. Hosting</h3>
+          <p>Die Website wird bei einem europäischen Hosting-Anbieter betrieben, der die Daten ausschließlich auf Servern innerhalb der EU speichert und DSGVO-konform arbeitet.</p>
+        </div>
+
+        <!-- Cookies -->
+        <div class="imprint-block">
+          <p class="imprint-eyebrow"><span class="eyebrow-dot"></span>Cookies</p>
+          <h2 class="imprint-block-title">Cookies</h2>
+          <p>Diese Website verwendet nur technisch notwendige Cookies, die für die Funktionalität der Seite erforderlich sind (z. B. zur Darstellung auf unterschiedlichen Endgeräten). Es erfolgt kein Tracking und keine Auswertung deines Nutzungsverhaltens. Eine Einwilligung ist daher nicht erforderlich.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label"><span class="eyebrow-dot"></span>Ready to work together?</p>
+        <h2 class="footer-cta-title"><span class="footer-cta-line">From complex problem</span><span class="footer-cta-line gradient-word">to shipped product.</span></h2>
+        <a href="contact.html" class="btn-primary magnetic large">
+          <span class="btn-text">Contact</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <div class="footer-copy-wrap">
+          <span class="footer-copy">© 2026 Juan Gomez Vara, all rights reserved</span>
+          <a href="imprint.html" class="footer-imprint">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /* ── Language toggle ── */
+    const langBtns = document.querySelectorAll('.imprint-lang-btn');
+    const langPanels = document.querySelectorAll('.imprint-content');
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.lang;
+
+        langBtns.forEach(b => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+        langPanels.forEach(panel => {
+          panel.classList.toggle('is-active', panel.id === `lang-${target}`);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
