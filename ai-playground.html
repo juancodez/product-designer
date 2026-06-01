@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Playground — Juan Gomez Vara</title>
+  <link rel="icon" type="image/svg+xml" href="assets/LogoJGV_favicon-32px.svg" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#work"  class="nav-link magnetic active"><span>Projects</span></a>
+        <a href="index.html#about" class="nav-link magnetic"><span>About</span></a>
+      </div>
+      <a href="contact.html" class="btn-nav magnetic">
+        <span class="btn-text">Contact</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="index.html#work"   class="mobile-nav-link">Projects</a>
+      <a href="index.html#about"  class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
+    <div class="hero-noise"></div>
+    <div class="cs-hero-inner">
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">AI</span>
+        <span class="cs-tag">Vibecoding</span>
+        <span class="cs-tag">Design Engineering</span>
+        <span class="cs-tag">Interactive</span>
+        <span class="cs-tag">Prototyping</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160" style="font-size: clamp(3.5rem, 9vw, 9rem);">AI<br />Playground</h1>
+
+      <div class="cs-hero-body">
+        <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Type</span>
+            <span class="cs-hero-meta-value">Living Personal Project</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Role</span>
+            <span class="cs-hero-meta-value">Product Designer · Vibe Coder</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Scope</span>
+            <span class="cs-hero-meta-value">Vibecoding · Design Engineering · AI Experiments</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Duration</span>
+            <span class="cs-hero-meta-value">Ongoing — growing collection</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Tools</span>
+            <span class="cs-hero-meta-value">Claude Code · Claude · Cursor · v0 · Figma Make</span>
+          </div>
+          <div class="cs-hero-meta-item">
+            <span class="cs-hero-meta-label">Status</span>
+            <span class="cs-hero-meta-value">Live and growing</span>
+          </div>
+        </div>
+
+        <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+          <strong>AI is everywhere. Instead of only reading about it, I decided to build with it.</strong><br /><br />
+          These projects are snapshots of that exploration: small experiments, games, prototypes, and ideas brought to life through AI-assisted creation. They're not meant to be perfect. They're meant to help me understand a new way of thinking, making, and designing.<br /><br />
+          A living archive of curiosity, experiments, and lessons learned along the way.
+        </p>
+      </div>
+
+      <div class="cs-hero-image" data-animate="fade-up" data-delay="480" style="aspect-ratio: 16/9;">
+        <img src="assets/ai-robots.jpg" alt="AI Playground — experiments, games and interactive prototypes" class="cs-hero-img" loading="eager" decoding="async" style="object-fit: cover; object-position: center;" />
+        <div class="cs-img-overlay" aria-hidden="true">
+          <span class="cs-img-overlay-title">AI Playground</span>
+          <span class="cs-img-overlay-desc">AI · Vibecoding · Design Engineering</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAGE LAYOUT: sticky sidebar + content ── -->
+  <div class="cs-page-layout" id="csPageLayout">
+
+    <!-- Collapsible sidebar -->
+    <aside class="cs-quicknav" id="csQuickNav" aria-label="Case study navigation">
+
+      <!-- Desktop collapse toggle -->
+      <button class="cs-qn-collapse-btn" id="csQnCollapseBtn" aria-label="Collapse navigation" aria-expanded="true">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop / tablet nav list -->
+      <nav class="cs-qn-list" id="csQnList">
+        <a href="#context"     class="cs-qn-item" data-section="context"     data-label="Context">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Context</span></a>
+        <a href="#what-i-build" class="cs-qn-item" data-section="what-i-build" data-label="What I Build"><span class="cs-qn-dot"></span><span class="cs-qn-label">What I Build</span></a>
+        <a href="#process"     class="cs-qn-item" data-section="process"     data-label="Process">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Process</span></a>
+        <a href="#experiments" class="cs-qn-item" data-section="experiments" data-label="Experiments"><span class="cs-qn-dot"></span><span class="cs-qn-label">Experiments</span></a>
+        <a href="#learning"    class="cs-qn-item" data-section="learning"    data-label="Learning">   <span class="cs-qn-dot"></span><span class="cs-qn-label">Learning</span></a>
+        <a href="#metrics"     class="cs-qn-item" data-section="metrics"     data-label="Metrics">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Metrics</span></a>
+        <a href="#lessons"     class="cs-qn-item" data-section="lessons"     data-label="Lessons">    <span class="cs-qn-dot"></span><span class="cs-qn-label">Lessons</span></a>
+      </nav>
+
+      <!-- Mobile: floating toggle -->
+      <button class="cs-qn-toggle" id="csQnToggle" aria-label="Open section navigation" aria-expanded="false" aria-controls="csQnDrawer">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <rect x="2" y="3"    width="12" height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="7.3"  width="8"  height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="11.5" width="10" height="1.5" rx="0.75" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <!-- Mobile: drawer -->
+      <div class="cs-qn-drawer" id="csQnDrawer" role="region" aria-label="Section navigation" aria-hidden="true">
+        <nav class="cs-qn-drawer-list">
+          <a href="#context"      class="cs-qn-drawer-item" data-section="context">Context</a>
+          <a href="#what-i-build" class="cs-qn-drawer-item" data-section="what-i-build">What I Build</a>
+          <a href="#process"      class="cs-qn-drawer-item" data-section="process">Process</a>
+          <a href="#experiments"  class="cs-qn-drawer-item" data-section="experiments">Experiments</a>
+          <a href="#learning"     class="cs-qn-drawer-item" data-section="learning">Learning</a>
+          <a href="#metrics"      class="cs-qn-drawer-item" data-section="metrics">Metrics</a>
+          <a href="#lessons"      class="cs-qn-drawer-item" data-section="lessons">Lessons</a>
+        </nav>
+      </div>
+
+    </aside>
+
+    <!-- All content sections -->
+    <div class="cs-page-content">
+
+  <!-- ── CONTEXT ── -->
+  <section id="context" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <div class="cs-two-col--6040 cs-two-col">
+        <div class="cs-col-head">
+          <span class="cs-eyebrow">Context</span>
+          <h2 class="cs-heading">
+            Building to learn.<br /><em>Shipping to understand.</em>
+          </h2>
+        </div>
+        <div class="cs-col-body">
+          <p>
+            Most designers learn AI by reading about it. I learn by building with it. <strong>The AI Playground is the lab where theory becomes practice.</strong> Every experiment answers a question I couldn't answer by watching a tutorial.
+          </p>
+          <p style="margin-top: 16px;">
+            The rule is simple: <strong>if I'm curious, I build it.</strong> If it works, I ship it. If it breaks, I learn from it. Nothing here is meant to be polished or complete — it's meant to be honest about the process of becoming better.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FULL-WIDTH IMAGE ── -->
+  <div style="width:100%; line-height:0;">
+    <img src="assets/claude-code-vibe.jpg" alt="Claude Code vibe coding session" style="width:100%; max-height:600px; object-fit:cover; object-position:center; display:block;" loading="lazy" decoding="async" />
+  </div>
+
+  <!-- ── WHAT I BUILD ── -->
+  <section id="what-i-build" class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <div style="text-align:center; max-width:640px; margin:0 auto 56px;">
+        <span class="cs-eyebrow">What I Build</span>
+        <h2 class="cs-heading">
+          Three types of<br /><em>experiments</em>
+        </h2>
+        <p style="color:var(--text-2);line-height:1.75;margin-top:12px;">
+          Every experiment in the playground falls into one of three categories. Each one builds a different muscle.
+        </p>
+      </div>
+
+      <div class="cs-pillars">
+
+        <!-- 01 — Games -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-wb01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="4" y="12" width="36" height="24" rx="5" stroke="url(#lg-wb01)" stroke-width="1.8"/>
+              <circle cx="14" cy="24" r="3" stroke="url(#lg-wb01)" stroke-width="1.6"/>
+              <line x1="30" y1="21" x2="30" y2="27" stroke="url(#lg-wb01)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="27" y1="24" x2="33" y2="24" stroke="url(#lg-wb01)" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="22" cy="8" r="2" stroke="url(#lg-wb01)" stroke-width="1.5"/>
+              <line x1="22" y1="10" x2="22" y2="12" stroke="url(#lg-wb01)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Interactive Games</span>
+          <div class="cs-pillar-title">Games &amp; Playful Interfaces</div>
+          <div class="cs-pillar-body">Small browser games built entirely through prompting. These push the limits of how much logic and interactivity I can extract from a single conversation, and teach me how to <strong>break complex mechanics into clear, buildable steps.</strong></div>
+        </div>
+
+        <!-- 02 — Interactive Portfolio -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-wb02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <!-- Suitcase / portfolio icon -->
+              <rect x="9" y="18" width="26" height="18" rx="3" stroke="url(#lg-wb02)" stroke-width="1.8"/>
+              <path d="M16 18v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" stroke="url(#lg-wb02)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="9" y1="27" x2="35" y2="27" stroke="url(#lg-wb02)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="22" y1="23" x2="22" y2="31" stroke="url(#lg-wb02)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Interactive Portfolio</span>
+          <div class="cs-pillar-title">A Portfolio You Travel Through</div>
+          <div class="cs-pillar-body">Instead of another scroll-down page, I built a 3D space repository where the user navigates my work like a game — moving through environments, discovering projects. <strong>A different way to experience a portfolio, built entirely through vibe coding.</strong></div>
+        </div>
+
+        <!-- 03 — Prototypes -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-wb03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="6" y="6" width="14" height="18" rx="2.5" stroke="url(#lg-wb03)" stroke-width="1.8"/>
+              <rect x="24" y="6" width="14" height="11" rx="2.5" stroke="url(#lg-wb03)" stroke-width="1.8"/>
+              <rect x="24" y="22" width="14" height="16" rx="2.5" stroke="url(#lg-wb03)" stroke-width="1.8"/>
+              <rect x="6" y="29" width="14" height="9" rx="2.5" stroke="url(#lg-wb03)" stroke-width="1.8"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Interactive Prototypes</span>
+          <div class="cs-pillar-title">Product &amp; UI Prototypes</div>
+          <div class="cs-pillar-body">Concept interfaces for products that don't exist yet — or rethinks of products that do. <strong>These bridge the gap between Figma and code,</strong> proving that a designer who can build prototypes in the browser is a faster, more credible collaborator.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section id="process" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Process</span>
+      <h2 class="cs-heading">
+        How vibe coding<br /><em>actually works</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        Vibe coding is not random. It requires the same design thinking skills applied to a different medium — and a stronger planning discipline than most people expect.
+      </p>
+
+      <div class="cs-lessons cs-lessons--2col" style="margin-top: 40px;">
+
+        <!-- Step 01 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-pr01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="22" cy="22" r="18" stroke="url(#lg-pr01)" stroke-width="1.8"/>
+              <line x1="22" y1="12" x2="22" y2="22" stroke="url(#lg-pr01)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="22" cy="28" r="1.4" fill="url(#lg-pr01)"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Define the Idea Precisely</div>
+          <div class="cs-lesson-body">
+            Before prompting anything, I write a one-paragraph brief: what is it, who uses it, what is the one thing it must do well. <strong>Vague ideas produce vague code.</strong> A precise brief produces a usable first draft.
+          </div>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-pr02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="6" y="8" width="32" height="28" rx="3" stroke="url(#lg-pr02)" stroke-width="1.8"/>
+              <line x1="12" y1="17" x2="32" y2="17" stroke="url(#lg-pr02)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="22" x2="26" y2="22" stroke="url(#lg-pr02)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="27" x2="20" y2="27" stroke="url(#lg-pr02)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Plan the Build in Layers</div>
+          <div class="cs-lesson-body">
+            I break the project into layers: structure → logic → styling → polish. <strong>I prompt one layer at a time.</strong> Jumping ahead creates compounding errors that are hard to trace back and fix.
+          </div>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-pr03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M36 22A14 14 0 1 1 28.5 9.5" stroke="url(#lg-pr03)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M24 6l5 4-5 4" stroke="url(#lg-pr03)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 16l10 6-10 6V16z" stroke="url(#lg-pr03)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Iterate Fast, Fix Small</div>
+          <div class="cs-lesson-body">
+            I test in the browser after every significant prompt. Small feedback loops catch drift early. When something breaks, <strong>I describe the specific failure, not the desired outcome.</strong> That distinction saves hours.
+          </div>
+        </div>
+
+        <!-- Step 04 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-pr04" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M12 36V24M20 36V18M28 36V26M36 36V14" stroke="url(#lg-pr04)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M8 36h32" stroke="url(#lg-pr04)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Ship and Reflect</div>
+          <div class="cs-lesson-body">
+            When the experiment is good enough to show, I ship it. Then I write a brief internal note: what worked, what I would do differently, what surprised me. <strong>Reflection is where the 200% growth happens.</strong> Building without it is just execution.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIMENTS ── -->
+  <section id="experiments" class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <div style="text-align:center; max-width:640px; margin:0 auto 56px;">
+        <span class="cs-eyebrow">Experiments</span>
+        <h2 class="cs-heading">
+          Select<br /><em>experiments</em>
+        </h2>
+        <p style="color:var(--text-2);line-height:1.75;margin-top:12px;">
+          A sample of things built in the playground. Each one started with a question. Each one left me knowing something I didn't know before.
+        </p>
+      </div>
+
+      <div class="cs-solution-rows">
+
+        <!-- Experiment 01 -->
+        <div class="cs-solution-row" data-animate="fade-up">
+          <div class="cs-solution-text">
+            <span class="cs-eyebrow">Interactive Portfolio</span>
+            <div class="cs-solution-title">Portfolio Quest</div>
+            <p class="cs-solution-desc">
+              What if a portfolio felt like a game? Inspired by interactive adventures and creative portfolio experiences, I transformed my portfolio into an explorable world where visitors discover my work through play. <strong>Built using open-source references and AI-assisted development</strong>, the project explores how storytelling and interaction can make a portfolio more memorable.
+            </p>
+            <a href="#" class="cs-solution-link" target="_blank" rel="noopener">Visit here →</a>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="cs-solution-img" style="height:360px; display:block;">
+            <img src="assets/portfolio-adventure.png" alt="Portfolio Quest — 3D explorable portfolio world" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover;" />
+          </a>
+        </div>
+
+        <!-- Experiment 02 -->
+        <div class="cs-solution-row" data-animate="fade-up">
+          <div class="cs-solution-text">
+            <span class="cs-eyebrow">Game</span>
+            <div class="cs-solution-title">Space Invaders — Pixel Art Game</div>
+            <p class="cs-solution-desc">
+              A fully playable classic-style 2D Space Invaders game with pixel-art visuals, built as a vibe coding experiment. <strong>One key learning: structured repository code and clear reference sources dramatically improve AI output quality.</strong> Providing better technical context made the generated code more consistent and the iteration faster.
+            </p>
+            <ul class="cs-solution-desc" style="margin-top:12px; padding-left:1.2em; list-style:disc;">
+              <li>How structured codebases improve AI code generation quality</li>
+              <li>How to translate game mechanics into clear prompts</li>
+              <li>The value of iterative prototyping when working with AI tools</li>
+            </ul>
+            <a href="#" class="cs-solution-link" target="_blank" rel="noopener">Visit here →</a>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="cs-solution-img" style="height:360px; display:block;">
+            <img src="assets/space-invaders.png" alt="Space Invaders pixel art game" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover;" />
+          </a>
+        </div>
+
+        <!-- Experiment 03 -->
+        <div class="cs-solution-row" data-animate="fade-up">
+          <div class="cs-solution-text">
+            <span class="cs-eyebrow">Game</span>
+            <div class="cs-solution-title">Tetris — AI Vibe Coding Experiment</div>
+            <p class="cs-solution-desc">
+              My first attempt at generating a game from a single prompt. The AI produced an impressive result on the first try — but the output was an interpretation of classic Tetris mechanics, not a faithful 1:1 recreation. <strong>That gap between expectation and output turned into the most valuable lesson of the experiment.</strong>
+            </p>
+            <ul class="cs-solution-desc" style="margin-top:12px; padding-left:1.2em; list-style:disc;">
+              <li>AI can rapidly generate functional prototypes from minimal input</li>
+              <li>Ambiguity in prompts leads to creative interpretation, not precision</li>
+              <li>Clear constraints are essential when aiming for faithful recreations</li>
+              <li>Imperfect output can still lead to useful learning outcomes</li>
+            </ul>
+            <a href="#" class="cs-solution-link" target="_blank" rel="noopener">Visit here →</a>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="cs-solution-img" style="height:360px; display:block;">
+            <img src="assets/tetris.png" alt="Tetris game built through AI vibe coding" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover;" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEARNING ── -->
+  <section id="learning" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Learning</span>
+      <h2 class="cs-heading">
+        What the playground<br /><em>actually teaches</em>
+      </h2>
+
+      <div class="cs-pillars cs-pillars--2col">
+
+        <!-- Prompting -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-lrn01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M6 7h32a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H20l-7 7v-7H6a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3z" stroke="url(#lg-lrn01)" stroke-width="1.8"/>
+              <line x1="12" y1="16" x2="32" y2="16" stroke="url(#lg-lrn01)" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="12" y1="23" x2="22" y2="23" stroke="url(#lg-lrn01)" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Communication with AI</span>
+          <div class="cs-pillar-title">Noticeably Stronger Prompting</div>
+          <div class="cs-pillar-body">Every experiment forces me to be more precise. I've learned to give AI the right context, the right constraints, and the right format for the answer I need. <strong>Good prompting is a design skill</strong> — you are designing the input to get the output you need.</div>
+        </div>
+
+        <!-- Planning -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-lrn02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="6" y="4" width="32" height="36" rx="3" stroke="url(#lg-lrn02)" stroke-width="1.8"/>
+              <line x1="12" y1="14" x2="32" y2="14" stroke="url(#lg-lrn02)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="20" x2="32" y2="20" stroke="url(#lg-lrn02)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="26" x2="22" y2="26" stroke="url(#lg-lrn02)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="30" cy="31" r="6" stroke="url(#lg-lrn02)" stroke-width="1.6"/>
+              <path d="M27.5 31l2 2 3-3" stroke="url(#lg-lrn02)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Project Structure</span>
+          <div class="cs-pillar-title">Stronger Planning Workflows</div>
+          <div class="cs-pillar-body">Vibe coding without a plan produces a mess fast. The playground taught me to <strong>define the spec before opening any tool</strong> — what it does, what it doesn't do, what done looks like. This discipline now transfers directly into every design project.</div>
+        </div>
+
+        <!-- Understanding AI -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-lrn03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="22" cy="18" r="12" stroke="url(#lg-lrn03)" stroke-width="1.8"/>
+              <line x1="22" y1="30" x2="22" y2="38" stroke="url(#lg-lrn03)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="16" y1="38" x2="28" y2="38" stroke="url(#lg-lrn03)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="22" y1="12" x2="22" y2="19" stroke="url(#lg-lrn03)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="22" cy="23" r="1.3" fill="url(#lg-lrn03)"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">AI Literacy</span>
+          <div class="cs-pillar-title">Real Understanding of AI Capabilities</div>
+          <div class="cs-pillar-body">Reading about AI tells you what it can do. Building with it tells you where it excels, where it drifts, and where it needs a human to steer it. <strong>This is knowledge that makes me a more credible collaborator</strong> on any team building with AI.</div>
+        </div>
+
+        <!-- Speed -->
+        <div class="cs-pillar">
+          <span class="cs-pillar-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-lrn04" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="22" cy="26" r="14" stroke="url(#lg-lrn04)" stroke-width="1.8"/>
+              <line x1="14" y1="6" x2="18" y2="6" stroke="url(#lg-lrn04)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="16" y1="6" x2="16" y2="10" stroke="url(#lg-lrn04)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="22" y1="26" x2="22" y2="18" stroke="url(#lg-lrn04)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="22" y1="26" x2="29" y2="26" stroke="url(#lg-lrn04)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="cs-pillar-cat">Speed to Concept</span>
+          <div class="cs-pillar-title">Faster from Idea to Prototype</div>
+          <div class="cs-pillar-body">The playground compressed months of learning into weeks of doing. I can now go <strong>from concept to interactive prototype in hours instead of days.</strong> That speed changes how I approach early-stage design work.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FULL-WIDTH IMAGE ── -->
+  <div style="width:100%; line-height:0;">
+    <img src="assets/warp_interface.png" alt="Warp terminal — vibe coding session" style="width:100%; max-height:600px; object-fit:cover; object-position:center top; display:block;" loading="lazy" decoding="async" />
+  </div>
+
+  <!-- ── METRICS ── -->
+  <section id="metrics" class="cs-section" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Metrics</span>
+      <h2 class="cs-heading">
+        What 200% growth<br /><em>looks like in practice</em>
+      </h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+        Growth in vibe coding is not measured in lines of code. It's measured in the quality of decisions made before, during, and after a build.
+      </p>
+
+      <div class="cs-metrics">
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">200%</span>
+          <div class="cs-metric-title">Learning Growth</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Self-assessed capability across prompting, planning, and shipping</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Projects that took days now take hours. Projects that failed now ship.</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Driver</span> Consistent building, iteration, and structured reflection</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">3×</span>
+          <div class="cs-metric-title">Prompt Quality</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Average revisions needed to reach a usable first draft</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Better context-setting and constraint definition upfront</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Driver</span> Treating prompts as design briefs, not search queries</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">↑</span>
+          <div class="cs-metric-title">Stronger Planning</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Measure</span> Time spent defining spec before building vs. rewriting after</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Fewer dead ends, less context loss, cleaner final output</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Driver</span> Learning that planning is not overhead — it's the product</div>
+        </div>
+        <div class="cs-metric-card">
+          <span class="cs-metric-num">Live</span>
+          <div class="cs-metric-title">Shipped Products</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Detail</span> Klaro, portfolio, Supply Pro landing — all deployed via Vercel</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Vibe coding produces real products, not just prototypes</div>
+          <div class="cs-metric-row"><span class="cs-metric-label">Driver</span> Treating every experiment as something worth shipping</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LESSONS LEARNED ── -->
+  <section id="lessons" class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">Lessons Learned</span>
+      <h2 class="cs-heading">
+        What the playground<br /><em>taught me</em>
+      </h2>
+
+      <div class="cs-lessons cs-lessons--2col">
+
+        <!-- 01 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <rect x="4" y="29" width="36" height="8" rx="2" stroke="url(#lg-ls01)" stroke-width="2"/>
+              <rect x="10" y="19" width="24" height="8" rx="2" stroke="url(#lg-ls01)" stroke-width="1.8"/>
+              <rect x="16" y="9" width="12" height="8" rx="2" stroke="url(#lg-ls01)" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Planning Is the Product</div>
+          <div class="cs-lesson-body">You can't prompt your way out of a bad plan. The cleaner the spec, the cleaner the output. <strong>The discipline of defining what done looks like</strong> before touching any tool — AI or otherwise — is the single biggest skill gain from the playground.</div>
+        </div>
+
+        <!-- 02 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <circle cx="8" cy="22" r="5" stroke="url(#lg-ls02)" stroke-width="1.8"/>
+              <circle cx="22" cy="22" r="5" stroke="url(#lg-ls02)" stroke-width="1.8"/>
+              <circle cx="36" cy="22" r="5" stroke="url(#lg-ls02)" stroke-width="1.8"/>
+              <line x1="13" y1="22" x2="17" y2="22" stroke="url(#lg-ls02)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="27" y1="22" x2="31" y2="22" stroke="url(#lg-ls02)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M15 20l2 2-2 2" stroke="url(#lg-ls02)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M29 20l2 2-2 2" stroke="url(#lg-ls02)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">AI Needs a Director, Not a Passenger</div>
+          <div class="cs-lesson-body">The experiments that went wrong all shared one pattern: I let the AI lead. The ones that shipped well had me in control — <strong>setting direction, reviewing output, catching drift, steering back.</strong> AI amplifies intent. It doesn't replace it.</div>
+        </div>
+
+        <!-- 03 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M36 22A14 14 0 1 1 28.5 9.5" stroke="url(#lg-ls03)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M24 6l5 4-5 4" stroke="url(#lg-ls03)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 16l10 6-10 6V16z" stroke="url(#lg-ls03)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Ship It — Even If It's Not Perfect</div>
+          <div class="cs-lesson-body">Every experiment that stayed in draft taught me less than every experiment that shipped. <strong>A live, imperfect prototype is a better teacher than a perfect plan.</strong> The playground only works if you actually press deploy.</div>
+        </div>
+
+        <!-- 04 -->
+        <div class="cs-lesson">
+          <span class="cs-lesson-num">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lg-ls04" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                </linearGradient>
+              </defs>
+              <path d="M22 5C15.4 5 10 10.4 10 17C10 21.2 12.2 24.9 15.5 27.3V31C15.5 31.6 15.9 32 16.5 32H27.5C28.1 32 28.5 31.6 28.5 31V27.3C31.8 24.9 34 21.2 34 17C34 10.4 28.6 5 22 5Z" stroke="url(#lg-ls04)" stroke-width="1.8"/>
+              <line x1="17" y1="36" x2="27" y2="36" stroke="url(#lg-ls04)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="19" y1="40" x2="25" y2="40" stroke="url(#lg-ls04)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="cs-lesson-title">Design Thinking Transfers Directly</div>
+          <div class="cs-lesson-body">The skills that make a good designer — empathy, clarity, systems thinking, iteration — are exactly the skills that make a good vibe coder. <strong>There is no gap between design and building.</strong> There is only the decision to close it.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MORE WORK ── -->
+  <section class="cs-section cs-section--dark" data-animate="fade-up">
+    <div class="cs-inner">
+      <span class="cs-eyebrow">More Work</span>
+      <h2 class="cs-heading">
+        You might also<br /><em>like these.</em>
+      </h2>
+      <div class="cs-more-grid">
+        <a href="project-supply-pro.html" class="cs-more-card">
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%);">
+            <img src="assets/alainpassard.webp" alt="Supply Pro" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;border-radius:inherit;" />
+          </div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">B2B SaaS</span>
+              <span class="cs-more-pill">Food Logistics</span>
+              <span class="cs-more-pill">Product Design</span>
+            </div>
+            <h3 class="cs-more-title">Supply Pro</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+        <a href="project-micro-casing.html" class="cs-more-card">
+          <div class="cs-more-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #0d1a2e 50%, #0f2552 100%);">
+            <img src="assets/Thumbnail-Micro-casing.webp" alt="Micro-casing App" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+          </div>
+          <div class="cs-more-info">
+            <div class="cs-more-pills">
+              <span class="cs-more-pill">Mobile App</span>
+              <span class="cs-more-pill">EdTech</span>
+              <span class="cs-more-pill">Branding</span>
+            </div>
+            <h3 class="cs-more-title">Micro-casing App</h3>
+            <div class="cs-more-cta">
+              View case study
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+    </div><!-- /cs-page-content -->
+  </div><!-- /cs-page-layout -->
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label"><span class="eyebrow-dot"></span>Ready to work together?</p>
+        <h2 class="footer-cta-title">From complex problem<br /><span class="gradient-word">to shipped product.</span></h2>
+        <a href="contact.html" class="btn-primary magnetic large">
+          <span class="btn-text">Contact</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <div class="footer-copy-wrap">
+          <span class="footer-copy">© 2026 JGV, all rights reserved</span>
+          <a href="imprint.html" class="footer-imprint">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- ── QUICK NAV SCROLLSPY ── -->
+  <script>
+  (function () {
+    const quickNav    = document.getElementById('csQuickNav');
+    const pageLayout  = document.getElementById('csPageLayout');
+    const collapseBtn = document.getElementById('csQnCollapseBtn');
+    const toggle      = document.getElementById('csQnToggle');
+    const drawer      = document.getElementById('csQnDrawer');
+    const allItems    = document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item');
+
+    const sectionEls = Array.from(document.querySelectorAll('.cs-qn-item')).map(a =>
+      document.getElementById(a.dataset.section)
+    ).filter(Boolean);
+
+    /* ── Collapse / expand ── */
+    const STORAGE_KEY = 'ap-qn-collapsed';
+    function setCollapsed(collapsed) {
+      quickNav.classList.toggle('is-collapsed', collapsed);
+      pageLayout && pageLayout.classList.toggle('is-collapsed', collapsed);
+      if (collapseBtn) {
+        collapseBtn.setAttribute('aria-expanded', String(!collapsed));
+        collapseBtn.setAttribute('aria-label', collapsed ? 'Expand navigation' : 'Collapse navigation');
+      }
+      localStorage.setItem(STORAGE_KEY, collapsed ? '1' : '0');
+    }
+    setCollapsed(localStorage.getItem(STORAGE_KEY) === '1');
+    collapseBtn && collapseBtn.addEventListener('click', () => {
+      setCollapsed(!quickNav.classList.contains('is-collapsed'));
+    });
+
+    /* ── helpers ── */
+    function setActive(id) {
+      allItems.forEach(item => {
+        const match = item.dataset.section === id;
+        item.classList.toggle('is-active', match);
+        if (match) item.setAttribute('aria-current', 'location');
+        else item.removeAttribute('aria-current');
+      });
+    }
+    function closeDrawer() {
+      if (!drawer) return;
+      quickNav.classList.remove('cs-quicknav--open');
+      toggle && toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    /* ── Scrollspy ── */
+    const spyObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sectionEls.forEach(s => spyObs.observe(s));
+
+    /* ── Smooth scroll ── */
+    document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.section);
+        if (!target) return;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+        closeDrawer();
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    /* ── Mobile drawer toggle ── */
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => {
+        const isOpen = quickNav.classList.toggle('cs-quicknav--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        drawer.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen) { const first = drawer.querySelector('.cs-qn-drawer-item'); first && first.focus(); }
+      });
+      document.addEventListener('click', e => { if (!quickNav.contains(e.target)) closeDrawer(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && quickNav.classList.contains('cs-quicknav--open')) { closeDrawer(); toggle.focus(); }
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
