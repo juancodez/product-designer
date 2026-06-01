@@ -17,7 +17,27 @@
 .cs-page-layout.is-collapsed {
   grid-template-columns: 52px 1fr;
 }
-.cs-page-content { min-width: 0; }
+.cs-page-content { min-width: 0; overflow-x: hidden; }
+
+/* Full-bleed image: escapes the content column and spans full viewport */
+.cs-section-bleed {
+  margin-left: -210px;
+  width: calc(100% + 210px);
+  line-height: 0;
+}
+/* Tablet: sidebar collapses to 52px */
+@media (max-width: 1279px) {
+  .cs-section-bleed { margin-left: -52px; width: calc(100% + 52px); }
+}
+/* When sidebar is manually collapsed (JS adds .is-collapsed) */
+.cs-page-layout.is-collapsed .cs-section-bleed {
+  margin-left: -52px;
+  width: calc(100% + 52px);
+}
+/* Mobile: no sidebar */
+@media (max-width: 899px) {
+  .cs-section-bleed { margin-left: 0; width: 100%; }
+}
 
 .cs-quicknav {
   position: sticky;
