@@ -77,8 +77,7 @@
       </h1>
 
       <p class="hero-sub" data-animate="fade-up" data-delay="450">
-        <strong>Juan Gomez Vara</strong>, Product Designer in Berlin.<br />
-        I read complex systems, find where they break, and redesign them for business, enterprise and people.
+        <span class="type-tag">&lt;p&gt;</span><span id="heroTypewriter"></span><span class="type-cursor" id="heroTypeCursor"></span><span class="type-tag type-tag--close" id="heroTypeClose"></span>
       </p>
 
       <div class="hero-actions" data-animate="fade-up" data-delay="600">
@@ -111,10 +110,13 @@
           <em>within the chaos.</em>
         </h2>
         <p class="about-bio">
-          <strong>I come from high-demand kitchens</strong>, where the head chef runs <strong>a system under pressure</strong>, reading the service in real time, spotting where it's about to break, keeping the team aligned. It was through <strong>branding</strong> that I understood the connection: <strong>the same logic as the kitchen</strong>, just different ingredients.
+          <strong>I'm a product designer who builds.</strong> My edge is seeing the full picture, from micro to macro, reading how systems connect, where they break, and what it takes to fix them.
         </p>
         <p class="about-bio">
-          Today I <strong>design digital products</strong> with that same philosophy. I step into <strong>complex systems</strong>, <strong>find the patterns</strong> that matter and connect business, users and technology. <strong>As fast and direct as the context demands.</strong>
+          <strong>My background is unconventional.</strong> Michelin-starred kitchens, brand systems, and now digital products. Each discipline gave me a different lens. Together they gave me pattern recognition most designers don't have.
+        </p>
+        <p class="about-bio">
+          <strong>Today my workflow is AI-augmented by design,</strong> not by accident. I build real products. Klaro, a tax declaration platform, is one I shipped from scratch. I adapt fast, move with the industry, and treat AI as infrastructure. Not a shortcut. A foundation.
         </p>
         <p class="about-bio" style="text-align: right; font-weight: 700;">Juan Gomez Vara</p>
 
@@ -165,7 +167,7 @@
       <!-- Left column -->
       <div class="projects-col">
 
-        <a href="project-supply-pro.html" class="project-card" data-animate="fade-up" data-delay="0">
+        <div class="project-card" data-animate="fade-up" data-delay="0" onclick="window.location='project-supply-pro.html'" role="link" tabindex="0">
           <article>
             <div class="project-card-img-wrap">
               <img src="assets/alainpassard.webp" alt="Supply Pro — B2B SaaS Food Logistics" class="project-card-img" loading="lazy" decoding="async" style="object-fit: cover; object-position: center bottom;" />
@@ -175,12 +177,18 @@
               </div>
             </div>
             <div class="project-card-meta-line">
-              <span>Role: Product Designer</span>
-              <span class="meta-scope">Scope: UX Research | Product Strategy | UI Design</span>
+              <div class="project-card-meta-left">
+                <span>Role: Product Designer</span>
+                <span class="meta-scope">Scope: UX Research | Product Strategy | UI Design</span>
+              </div>
+              <a href="https://supply-pro-ten.vercel.app/" target="_blank" rel="noopener" class="btn-ghost small view-project-btn magnetic" onclick="event.stopPropagation()">
+                <span class="btn-text">View live app</span>
+                <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
             </div>
-            <p class="project-card-desc">From kitchen chaos to smart logistics. An early warning system built for professional chefs.</p>
+            <p class="project-card-desc">Supply Pro is a B2B SaaS that helps restaurants recover up to €14,400 a year before poor supplier management reaches the kitchen.</p>
           </article>
-        </a>
+        </div>
 
         <div class="project-card project-card--soon" data-animate="fade-up" data-delay="120">
           <article>
@@ -194,11 +202,16 @@
               </div>
             </div>
             <div class="project-card-meta-line">
-              <!-- <span>Klaro App</span>
-              <span class="meta-sep">•</span> -->
-              <span>Role: Product Designer</span>
+              <div class="project-card-meta-left">
+                <span>Role: Product Designer</span>
+                <span class="meta-scope">Scope: UX Research | Product Manager | Product Builder</span>
+              </div>
+              <a href="https://klaro-es.com/" target="_blank" rel="noopener" class="btn-ghost small view-project-btn magnetic" onclick="event.stopPropagation()">
+                <span class="btn-text">View live app</span>
+                <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
             </div>
-            <p class="project-card-desc">Intelligent automation with real fiscal knowledge to help Spanish speakers in Germany with their taxes.</p>
+            <p class="project-card-desc">Klaro is the platform I built to help Spanish-speaking freelancers in Germany file their tax declaration without paying a Steuerberater. Designed to save between €300 and €1,000 a year per user.</p>
           </article>
         </div>
 
@@ -207,7 +220,7 @@
       <!-- Right column — offset for stagger effect -->
       <div class="projects-col projects-col--offset">
 
-        <a href="project-micro-casing.html" class="project-card" data-animate="fade-up" data-delay="60">
+        <div class="project-card" data-animate="fade-up" data-delay="60" onclick="window.location='project-micro-casing.html'" role="link" tabindex="0">
           <article>
             <div class="project-card-img-wrap">
               <img src="assets/Thumbnail-Micro-casing.webp" alt="Micro-casing-app — Strategic &amp; Clean" class="project-card-img" loading="lazy" decoding="async" width="600" height="600" />
@@ -217,16 +230,20 @@
               </div>
             </div>
             <div class="project-card-meta-line">
-              <!-- <span>Micro-casing App</span>
-              <span class="meta-sep">•</span> -->
-              <span>Role: Product Designer</span>
-              <span class="meta-scope">Scope: Branding | UX strategy | UI design</span>
+              <div class="project-card-meta-left">
+                <span>Role: Product Designer</span>
+                <span class="meta-scope">Scope: Branding | UX strategy | UI design</span>
+              </div>
+              <a href="https://apps.apple.com/gb/app/micro-casing/id6754453873" target="_blank" rel="noopener" class="btn-ghost small view-project-btn magnetic" onclick="event.stopPropagation()">
+                <span class="btn-text">View live app</span>
+                <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
             </div>
-            <p class="project-card-desc">From AI wireframes to developer-ready product in 2 weeks. 508%+ growth.</p>
+            <p class="project-card-desc">Micro-casing is the EdTech app that helps aspiring consultants land a spot at McKinsey, BCG or Bain. The redesign drove 508% growth.</p>
           </article>
-        </a>
+        </div>
 
-        <a href="ai-playground.html" class="project-card" data-animate="fade-up" data-delay="180">
+        <div class="project-card" data-animate="fade-up" data-delay="180" onclick="window.location='ai-playground.html'" role="link" tabindex="0">
           <article>
             <div class="project-card-img-wrap">
               <img src="assets/ai-robots.jpg" alt="AI Playground — experiments and interactive prototypes" class="project-card-img" loading="lazy" decoding="async" style="object-fit: cover; object-position: center;" />
@@ -236,12 +253,18 @@
               </div>
             </div>
             <div class="project-card-meta-line">
-              <span>Role: Product Designer</span>
-              <span class="meta-scope">Scope: Vibecoding · Design Engineer</span>
+              <div class="project-card-meta-left">
+                <span>Role: Product Designer</span>
+                <span class="meta-scope">Scope: Vibecoding · Design Engineer</span>
+              </div>
+              <a href="ai-playground.html" class="btn-ghost small view-project-btn magnetic" onclick="event.stopPropagation()">
+                <span class="btn-text">View AI Playground</span>
+                <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
             </div>
-            <p class="project-card-desc">Experiments, games, and interactive prototypes. 200%+ learning growth.</p>
+            <p class="project-card-desc">A personal playground where I experiment with AI tools, build interactive prototypes and occasionally break things on purpose.</p>
           </article>
-        </a>
+        </div>
 
       </div>
     </div>
@@ -291,5 +314,14 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- ── CRRT Feedback Widget ── -->
+  <script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js" crossorigin></script>
+  <script>window.jsxRuntime={jsx:React.jsx||React.createElement,jsxs:React.jsxs||React.createElement,Fragment:React.Fragment};</script>
+  <script src="vendor/crrt.umd.js"></script>
+  <script>
+    (function(){var e=document.createElement('div');e.id='crrt-root';document.body.appendChild(e);ReactDOM.createRoot(e).render(React.createElement(CRRT.FeedbackWidget,{projectId:'proj_your_app_name',apiBase:'https://crrt.ai/api'}));})();
+  </script>
 </body>
 </html>

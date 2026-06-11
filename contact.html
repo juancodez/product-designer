@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -595,5 +595,15 @@
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
+
+  <!-- ── CRRT Feedback Widget ── -->
+  <script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js" crossorigin></script>
+  <script>window.jsxRuntime={jsx:React.jsx||React.createElement,jsxs:React.jsxs||React.createElement,Fragment:React.Fragment};</script>
+  <script src="vendor/crrt.umd.js"></script>
+  <script>
+    (function(){var e=document.createElement('div');e.id='crrt-root';document.body.appendChild(e);ReactDOM.createRoot(e).render(React.createElement(CRRT.FeedbackWidget,{projectId:'proj_your_app_name',apiBase:'https://crrt.ai/api'}));})();
+  </script>
 </body>
 </html>
+

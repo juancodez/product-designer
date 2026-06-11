@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klaro — Juan Gomez Vara</title>
+  <link rel="icon" type="image/svg+xml" href="assets/LogoJGV_favicon-32px.svg" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+
+    /* ── Klaro pull quote ── */
+    .klaro-pull-quote {
+      text-align: center;
+      max-width: 800px;
+      margin: 56px auto 0;
+      padding: 48px 40px;
+      background: linear-gradient(135deg, #060f20 0%, #0f2552 100%);
+      border-radius: 20px;
+    }
+    .klaro-pull-quote p {
+      font-family: 'Satoshi', sans-serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0;
+    }
+    .klaro-pull-quote em { color: #1d5fcc; font-weight: 300; font-style: normal; }
+
+    /* ── JTBD cards ── */
+    .klaro-jtbd {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .kjtbd-card {
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      background: var(--card-bg);
+    }
+    .kjtbd-who {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .kjtbd-quote {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── Persona cards ── */
+    .klaro-personas {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .kp-persona {
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .kp-persona-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .kp-persona-body { padding: 20px; }
+    .kp-persona-name {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .kp-persona-meta {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .kp-persona-desc {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ── Charts ── */
+    .klaro-charts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .klaro-chart-wrap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .klaro-chart-wrap--full { margin-top: 24px; }
+    .klaro-chart-title {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .klaro-chart-sub {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .klaro-chart-insight {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: linear-gradient(135deg, #f4f7ff, #e8eeff);
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+
+    /* ── Funnel ── */
+    .klaro-funnel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 32px auto 0;
+      max-width: 560px;
+    }
+    .kf-stage {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-direction: row;
+      gap: 12px;
+    }
+    .kf-bar {
+      height: 54px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      transition: background 0.2s;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .kf-bar--w78 { width: 80%; }
+    .kf-bar--w44 { width: 50%; }
+    .kf-bar--w11 { width: 20%; min-width: 54px; background: var(--accent); border-color: var(--accent); }
+    .kf-bar--w11 .kf-num { color: #fff; }
+    .kf-num {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .kf-stage-label { font-size: 0.82rem; color: var(--text-2); line-height: 1.4; }
+    .kf-connector {
+      width: 2px;
+      height: 10px;
+      background: var(--border);
+      align-self: flex-start;
+      margin-left: calc(27px);
+    }
+
+    /* ── Pipeline diagram ── */
+    .klaro-pipeline {
+      margin: 48px auto 0;
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .kpipe-node {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 28px;
+      background: var(--bg);
+    }
+    .kpipe-node--clara {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, #f4f7ff, #e8eeff);
+    }
+    .kpipe-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .kpipe-title {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .kpipe-desc {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .kpipe-output {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .kpipe-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      color: var(--text-3);
+    }
+
+    /* ── Workflow comparison ── */
+    .klaro-workflow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 48px 0 0;
+    }
+    @media (max-width: 767px) { .klaro-workflow { grid-template-columns: 1fr; } }
+    .kw-col {
+      border-radius: 16px;
+      padding: 28px;
+      border: 1.5px solid var(--border);
+    }
+    .kw-col--old { background: var(--bg-2); }
+    .kw-col--new { background: linear-gradient(135deg, #f4f7ff, #e8eeff); border-color: var(--accent); }
+    .kw-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .kw-col--old .kw-label { color: var(--text-3); }
+    .kw-col--new .kw-label { color: var(--accent); }
+    .kw-steps { display: flex; flex-direction: column; gap: 8px; }
+    .kw-step {
+      font-size: 0.875rem;
+      padding: 9px 14px;
+      border-radius: 8px;
+    }
+    .kw-col--old .kw-step { color: var(--text-3); text-decoration: line-through; background: rgba(0,0,0,0.03); }
+    .kw-col--new .kw-step { color: var(--text-2); background: rgba(29,95,204,0.06); }
+    .kw-col--new .kw-step--highlight { background: var(--accent); color: #fff; font-weight: 700; }
+
+    /* ── AI phase grid ── */
+    .klaro-ai-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 48px;
+    }
+    .kai-card {
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      background: var(--bg);
+    }
+    .kai-phase {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .kai-tool {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .kai-desc { font-size: 0.8rem; color: var(--text-2); line-height: 1.55; }
+
+    /* ── AI split (accelerated / human) ── */
+    .klaro-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 767px) { .klaro-split { grid-template-columns: 1fr; } }
+    .ks-col {
+      border-radius: 16px;
+      padding: 28px;
+      border: 1.5px solid var(--border);
+    }
+    .ks-col--acc { background: var(--card-bg); }
+    .ks-col--human { background: linear-gradient(135deg, #060f20, #0f2552); border-color: var(--accent); }
+    .ks-title {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .ks-col--acc .ks-title { color: var(--text); }
+    .ks-col--human .ks-title { color: #fff; }
+    .ks-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .ks-list li {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .ks-col--acc .ks-list li { background: rgba(29,95,204,0.07); color: var(--text-2); }
+    .ks-col--human .ks-list li { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.85); }
+
+    /* ── North star ── */
+    .klaro-north-star {
+      margin-top: 56px;
+      border: 1.5px solid var(--accent);
+      border-radius: 20px;
+      padding: 48px 56px;
+      background: linear-gradient(135deg, #f4f7ff, #e8eeff);
+      text-align: center;
+    }
+    .klaro-north-star p {
+      font-family: 'Satoshi', sans-serif;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--text);
+      font-style: italic;
+      margin: 0;
+    }
+    @media (max-width: 767px) { .klaro-north-star { padding: 32px 24px; } }
+
+    /* ── Dovetail themes ── */
+    .klaro-themes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .kt-card {
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      background: var(--bg);
+    }
+    .kt-num {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .kt-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .kt-body { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
+    .kt-appeared { margin-top: 12px; font-size: 0.75rem; font-weight: 600; color: var(--accent); }
+
+    /* ── Usability table ── */
+    .klaro-table-wrap { overflow-x: auto; margin-top: 40px; }
+    .klaro-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      min-width: 600px;
+    }
+    .klaro-table th {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+    .klaro-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-2);
+      vertical-align: top;
+    }
+    .klaro-table tr:last-child td { border-bottom: none; }
+    .klaro-table tr:hover td { background: var(--card-bg); }
+    .t-check { color: #22C55E; font-weight: 700; }
+    .t-stuck { color: var(--accent); font-weight: 600; }
+    .t-hesitate { color: #F59E0B; font-weight: 600; }
+    .t-persona { font-weight: 700; color: var(--text); }
+
+    /* ── Competitor screenshots ── */
+    .klaro-screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .klaro-screenshots img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      object-position: top;
+      display: block;
+    }
+
+    /* ── Competitor block ── */
+    .klaro-competitor { margin-bottom: 56px; }
+    .klaro-competitor-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .klaro-competitor-name {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .klaro-competitor-gap {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: var(--card-bg);
+      border-left: 3px solid var(--border);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .klaro-competitor-gap strong { color: var(--text); }
+
+    /* ── Compare table ── */
+    .klaro-compare-wrap { overflow-x: auto; margin-top: 48px; }
+    .klaro-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+    .klaro-compare-table th {
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      color: var(--text);
+    }
+    .klaro-compare-table th:first-child { text-align: left; }
+    .klaro-compare-table th.th-klaro {
+      color: var(--accent);
+      background: linear-gradient(135deg, #f4f7ff, #e8eeff);
+    }
+    .klaro-compare-table td {
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-2);
+    }
+    .klaro-compare-table td:first-child { text-align: left; font-weight: 600; color: var(--text); }
+    .klaro-compare-table td.td-klaro {
+      background: linear-gradient(135deg, rgba(244,247,255,0.6), rgba(232,238,255,0.6));
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .klaro-compare-table tr:last-child td { border-bottom: none; }
+    .t-no { color: var(--text-3); }
+
+    /* ── Screen items ── */
+    .klaro-screens { display: flex; flex-direction: column; gap: 56px; margin-top: 56px; }
+    .klaro-screen-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 899px) { .klaro-screen-item { grid-template-columns: 1fr; } }
+    .ksi-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .ksi-title {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .ksi-desc { font-size: 0.875rem; color: var(--text-2); line-height: 1.7; }
+    .ksi-img {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+    }
+    .ksi-img img { width: 100%; display: block; }
+
+    /* ── Clara chat bubble ── */
+    .klaro-clara-bubble {
+      margin: 40px auto;
+      max-width: 680px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 32px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    }
+    .kcb-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .kcb-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .kcb-text {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ── Pipeline code block ── */
+    .klaro-code-block {
+      margin: 32px auto 0;
+      max-width: 580px;
+      background: #060f20;
+      border-radius: 14px;
+      padding: 28px 32px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+    }
+    .klaro-code-block .code-agent { color: #1d5fcc; font-weight: 700; }
+    .klaro-code-block .code-arrow { color: rgba(255,255,255,0.35); }
+    .klaro-code-block .code-desc { color: rgba(255,255,255,0.55); }
+    .klaro-code-block .code-output { color: #4d8ef0; }
+
+    /* ── Quantitative Research: chart dissolve entrance ── */
+    .klaro-chart-wrap {
+      opacity: 0;
+      transform: translateY(32px) scale(0.975);
+      filter: blur(5px);
+      transition:
+        opacity   0.75s cubic-bezier(.16, 1, .3, 1),
+        transform 0.75s cubic-bezier(.16, 1, .3, 1),
+        filter    0.60s ease;
+      will-change: opacity, transform, filter;
+    }
+    .klaro-chart-wrap.kl-chart-in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .klaro-chart-wrap { opacity: 1; transform: none; filter: none; transition: none; }
+    }
+
+    /* parallax inner — no overflow clip, just enables GPU layer */
+    #research .cs-inner { will-change: transform; max-width: none; }
+
+    /* Charts span full content-column width */
+    #research .klaro-charts-grid { max-width: none; width: 100%; }
+
+    /* Full-width image between sections */
+    .cs-full-img-wrap {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .cs-full-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+    }
+    @media (max-width: 768px) {
+      .cs-full-img-wrap { padding: 0 24px; margin-bottom: 56px; }
+      .cs-full-img { border-radius: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#work" class="nav-link magnetic active"><span>Projects</span></a>
+        <a href="index.html#about" class="nav-link magnetic"><span>About</span></a>
+      </div>
+      <a href="contact.html" class="btn-nav magnetic">
+        <span class="btn-text">Contact</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="index.html#work"  class="mobile-nav-link">Projects</a>
+      <a href="index.html#about" class="mobile-nav-link">About</a>
+      <a href="contact.html"     class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="cs-hero">
+    <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
+    <div class="hero-noise"></div>
+    <div class="cs-hero-inner">
+
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">AI Product</span>
+        <span class="cs-tag">Fiscal App</span>
+        <span class="cs-tag">Design Engineering</span>
+        <span class="cs-tag">Full-Stack</span>
+        <span class="cs-tag">Solo</span>
+      </div>
+
+      <h1 class="cs-title" data-animate="fade-up" data-delay="160">Klaro</h1>
+
+      <div class="cs-hero-meta cs-hero-meta--row" data-animate="fade-up" data-delay="240">
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Type</span>
+          <span class="cs-hero-meta-value">Solo Product · Design &amp; Engineering</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Role</span>
+          <span class="cs-hero-meta-value">Product Designer &amp; Developer</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Scope</span>
+          <span class="cs-hero-meta-value">UX Research · AI Architecture · Full-Stack Development</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Duration</span>
+          <span class="cs-hero-meta-value">3 Months</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Tools</span>
+          <span class="cs-hero-meta-value">Claude · Claude Code · PostHog · Supabase · Vercel</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Status</span>
+          <span class="cs-hero-meta-value">Live</span>
+        </div>
+      </div>
+
+      <div class="cs-hero-body">
+        <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+          Klaro is a fiscal AI advisor for <strong>Spanish-speaking freelancers in Germany.</strong> Built end-to-end — from UX research and product strategy to a live full-stack application — without a Figma file and without a team.
+        </p>
+      </div>
+
+      <div class="cs-hero-cta-wrap" data-animate="fade-up" data-delay="400">
+        <a href="https://klaro-landing.vercel.app" target="_blank" rel="noopener" class="btn-primary cs-live-btn view-project-btn magnetic">
+          <span class="btn-text">View live app</span>
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="cs-hero-image" data-animate="fade-up" data-delay="480" style="aspect-ratio: 16/9;">
+        <img src="assets/klaro-thumbnail.png" alt="Klaro — AI fiscal advisor dashboard for Spanish-speaking freelancers in Germany" class="cs-hero-img" loading="eager" decoding="async" style="object-position: left 65%;" />
+        <div class="cs-img-overlay" aria-hidden="true">
+          <span class="cs-img-overlay-title">Klaro</span>
+          <span class="cs-img-overlay-desc">AI Fiscal Advisor · Spanish-speaking Freelancers · Germany</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAGE LAYOUT ── -->
+  <div class="cs-page-layout" id="csPageLayout">
+
+    <aside class="cs-quicknav" id="csQuickNav" aria-label="Case study navigation">
+
+      <button class="cs-qn-collapse-btn" id="csQnCollapseBtn" aria-label="Collapse navigation" aria-expanded="true">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <nav class="cs-qn-list" id="csQnList">
+        <a href="#problem"      class="cs-qn-item" data-section="problem"><span class="cs-qn-dot"></span><span class="cs-qn-label">Problem</span></a>
+        <a href="#benchmark"    class="cs-qn-item" data-section="benchmark"><span class="cs-qn-dot"></span><span class="cs-qn-label">Benchmark</span></a>
+        <a href="#research"     class="cs-qn-item" data-section="research"><span class="cs-qn-dot"></span><span class="cs-qn-label">Research</span></a>
+        <a href="#user-research" class="cs-qn-item" data-section="user-research"><span class="cs-qn-dot"></span><span class="cs-qn-label">User Research</span></a>
+        <a href="#process"      class="cs-qn-item" data-section="process"><span class="cs-qn-dot"></span><span class="cs-qn-label">Process</span></a>
+        <a href="#solution"     class="cs-qn-item" data-section="solution"><span class="cs-qn-dot"></span><span class="cs-qn-label">Solution</span></a>
+        <a href="#prototype"    class="cs-qn-item" data-section="prototype"><span class="cs-qn-dot"></span><span class="cs-qn-label">Prototype</span></a>
+        <a href="#ai-design"    class="cs-qn-item" data-section="ai-design"><span class="cs-qn-dot"></span><span class="cs-qn-label">AI in Design</span></a>
+        <a href="#kpis"         class="cs-qn-item" data-section="kpis"><span class="cs-qn-dot"></span><span class="cs-qn-label">KPIs</span></a>
+        <a href="#outlook"      class="cs-qn-item" data-section="outlook"><span class="cs-qn-dot"></span><span class="cs-qn-label">Outlook</span></a>
+        <a href="#learnings"    class="cs-qn-item" data-section="learnings"><span class="cs-qn-dot"></span><span class="cs-qn-label">Learnings</span></a>
+      </nav>
+
+      <button class="cs-qn-toggle" id="csQnToggle" aria-label="Open section navigation" aria-expanded="false" aria-controls="csQnDrawer">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <rect x="2" y="3"    width="12" height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="7.3"  width="8"  height="1.5" rx="0.75" fill="currentColor"/>
+          <rect x="2" y="11.5" width="10" height="1.5" rx="0.75" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <div class="cs-qn-drawer" id="csQnDrawer" role="region" aria-label="Section navigation" aria-hidden="true">
+        <nav class="cs-qn-drawer-list">
+          <a href="#problem"       class="cs-qn-drawer-item" data-section="problem">Problem</a>
+          <a href="#benchmark"     class="cs-qn-drawer-item" data-section="benchmark">Benchmark</a>
+          <a href="#research"      class="cs-qn-drawer-item" data-section="research">Research</a>
+          <a href="#user-research" class="cs-qn-drawer-item" data-section="user-research">User Research</a>
+          <a href="#process"       class="cs-qn-drawer-item" data-section="process">Process</a>
+          <a href="#solution"      class="cs-qn-drawer-item" data-section="solution">Solution</a>
+          <a href="#prototype"     class="cs-qn-drawer-item" data-section="prototype">Prototype</a>
+          <a href="#ai-design"     class="cs-qn-drawer-item" data-section="ai-design">AI in Design</a>
+          <a href="#kpis"          class="cs-qn-drawer-item" data-section="kpis">KPIs</a>
+          <a href="#outlook"       class="cs-qn-drawer-item" data-section="outlook">Outlook</a>
+          <a href="#learnings"     class="cs-qn-drawer-item" data-section="learnings">Learnings</a>
+        </nav>
+      </div>
+
+    </aside>
+
+    <div class="cs-page-content">
+
+      <!-- ── 1. THE PROBLEM ── -->
+      <section id="problem" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <span class="cs-eyebrow">The Problem</span>
+            <h2 class="cs-heading">
+              The Language<br /><em>War.</em>
+            </h2>
+            <p style="color: var(--text-2); max-width: 580px; margin: 20px auto 0; line-height: 1.75;">
+              Every year, between January and July, Spanish-speaking freelancers in Germany face the same system: a tax declaration in legal German, designed for citizens who grew up understanding the Finanzamt. <strong style="color: var(--text);">The language is the wall.</strong> No tool exists specifically for them, in their language.
+            </p>
+          </div>
+
+          <div class="sp-rm-grid" role="list" aria-label="The language gap in numbers">
+
+            <div class="sp-rm-card" role="listitem">
+              <div class="sp-rm-num" aria-hidden="true">
+                <span class="kl-counter" data-target="354" data-decimals="0">0</span><span class="sp-rm-pct">K</span>
+              </div>
+              <div class="sp-rm-label">Spanish speakers at home</div>
+              <p class="sp-rm-desc"><strong>354,000 people speak Spanish</strong> at home in Germany — 0.4% of the population. Mikrozensus 2024.</p>
+            </div>
+
+            <div class="sp-rm-card" role="listitem">
+              <div class="sp-rm-num" aria-hidden="true">€300–800</div>
+              <div class="sp-rm-label">Steuerberater annual cost</div>
+              <p class="sp-rm-desc"><strong>What a tax advisor charges per year</strong> — not for advice, but for the peace of mind of having someone else responsible.</p>
+            </div>
+
+            <div class="sp-rm-card" role="listitem">
+              <div class="sp-rm-num" aria-hidden="true">
+                <span class="kl-counter" data-target="1.5" data-decimals="1">0</span><span class="sp-rm-pct">M</span>
+              </div>
+              <div class="sp-rm-label">Skilled foreign workers</div>
+              <p class="sp-rm-desc">As a high-end estimate, up to half of Spanish speakers in Germany could be self-employed — <strong>around 175,000 potential users.</strong></p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── FULL-WIDTH IMAGE: formularios ── -->
+      <div class="cs-full-img-wrap" data-animate="fade-up">
+        <img
+          src="assets/formularios.svg"
+          alt="German tax forms complexity — the problem visualised"
+          class="cs-full-img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <!-- ── 2. BENCHMARK ── -->
+      <section id="benchmark" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Benchmark</span>
+          <h2 class="cs-heading">
+            What already exists —<br /><em>and what's missing.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 600px; margin: 0 auto 56px; text-align: center; line-height: 1.7;">
+            Before defining what Klaro should be, I needed to understand what already existed. I analyzed the two main competitors in the German freelancer tax space.
+          </p>
+
+          <!-- Accountable -->
+          <div class="klaro-competitor">
+            <div class="klaro-competitor-header">
+              <span class="klaro-competitor-name">Accountable</span>
+              <span class="cs-tag" style="background: var(--bg-2); border: 1px solid var(--border);">Most complete</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-2); line-height: 1.7; margin-bottom: 16px;">
+              The most complete tool in the market. Covers income/expense tracking, VAT declarations, tax estimation, and recently added an AI tax advisor. Available on web and mobile.
+            </p>
+            <div class="klaro-screenshots" style="grid-template-columns: 1fr 1fr;">
+              <img src="assets/Accountable.jpg"       alt="Accountable dashboard" loading="lazy" />
+              <img src="assets/Accountable-home.jpg"  alt="Accountable homepage"  loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Sorted -->
+          <div class="klaro-competitor">
+            <div class="klaro-competitor-header">
+              <span class="klaro-competitor-name">Sorted</span>
+              <span class="cs-tag" style="background: var(--bg-2); border: 1px solid var(--border);">Cleaner UX</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-2); line-height: 1.7; margin-bottom: 16px;">
+              A cleaner, more focused tool. Guides freelancers through tax declarations in English. Good UX, clear language — but English only, no Spanish, and no AI advisor.
+            </p>
+            <div class="klaro-screenshots" style="grid-template-columns: 1fr 1fr;">
+              <img src="Sorted-01.jpg" alt="Sorted tax declaration" loading="lazy" />
+              <img src="Sorted-00.jpg" alt="Sorted onboarding flow" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Comparison table -->
+          <div class="klaro-compare-wrap">
+            <table class="klaro-compare-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Accountable</th>
+                  <th>Sorted</th>
+                  <th class="th-klaro">Klaro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Spanish language</td>
+                  <td><span class="t-no">✗</span></td>
+                  <td><span class="t-no">✗</span></td>
+                  <td class="td-klaro">✓</td>
+                </tr>
+                <tr>
+                  <td>AI advisor</td>
+                  <td>Premium only</td>
+                  <td><span class="t-no">✗</span></td>
+                  <td class="td-klaro">Core product</td>
+                </tr>
+                <tr>
+                  <td>Personalized profile</td>
+                  <td><span class="t-no">✗</span></td>
+                  <td><span class="t-no">✗</span></td>
+                  <td class="td-klaro">✓</td>
+                </tr>
+                <tr>
+                  <td>Emotional tone</td>
+                  <td>Friendly</td>
+                  <td>Neutral</td>
+                  <td class="td-klaro">Trusted advisor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- ── 3. QUANTITATIVE RESEARCH ── -->
+      <section id="research" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Quantitative Research</span>
+          <h2 class="cs-heading">
+            What the data<br /><em>actually revealed.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 600px; margin: 0 auto 8px; text-align: center; line-height: 1.7;">
+            Before writing a single line of code, I went out to listen. I ran a quantitative survey with Spanish-speaking freelancers living in Germany to validate the problem.
+          </p>
+
+          <!-- Chart row 1 -->
+          <div class="klaro-charts-grid">
+
+            <!-- Scatter plot -->
+            <div class="klaro-chart-wrap">
+              <div class="klaro-chart-title">More time ≠ more confidence</div>
+              <div class="klaro-chart-sub">Hours invested in tax preparation vs. perceived confidence (1–5)</div>
+              <div class="chart-canvas-wrap">
+                <canvas id="scatterChart"></canvas>
+              </div>
+              <div class="klaro-chart-insight">
+                <strong>The most surprising insight:</strong> time invested has no positive correlation with confidence. More effort doesn't solve the problem. Guided, personalized support does.
+              </div>
+            </div>
+
+            <!-- Donut -->
+            <div class="klaro-chart-wrap">
+              <div class="klaro-chart-title">The Spanish language gap</div>
+              <div class="klaro-chart-sub">Did you find useful information in Spanish about the Steuererklärung?</div>
+              <div class="chart-canvas-wrap">
+                <canvas id="donutChart"></canvas>
+              </div>
+              <div class="klaro-chart-insight">
+                <strong>5 out of 9 respondents</strong> found little or no useful information in Spanish. The clearest market gap of all.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Chart row 2 -->
+          <div class="klaro-charts-grid" style="margin-top: 24px;">
+
+            <!-- Funnel -->
+            <div class="klaro-chart-wrap">
+              <div class="klaro-chart-title">The abandonment funnel</div>
+              <div class="klaro-chart-sub">Of 9 respondents who knew about the process and searched for information</div>
+              <div class="klaro-funnel">
+                <div class="kf-stage">
+                  <div class="kf-bar">
+                    <span class="kf-num">9</span>
+                  </div>
+                  <span class="kf-stage-label">Knew about the Steuererklärung</span>
+                </div>
+                <div class="kf-connector"></div>
+                <div class="kf-stage">
+                  <div class="kf-bar">
+                    <span class="kf-num">9</span>
+                  </div>
+                  <span class="kf-stage-label">Searched for information</span>
+                </div>
+                <div class="kf-connector"></div>
+                <div class="kf-stage">
+                  <div class="kf-bar kf-bar--w78">
+                    <span class="kf-num">7</span>
+                  </div>
+                  <span class="kf-stage-label">Attempted the declaration</span>
+                </div>
+                <div class="kf-connector"></div>
+                <div class="kf-stage">
+                  <div class="kf-bar kf-bar--w44">
+                    <span class="kf-num">4</span>
+                  </div>
+                  <span class="kf-stage-label">Completed it</span>
+                </div>
+                <div class="kf-connector"></div>
+                <div class="kf-stage">
+                  <div class="kf-bar kf-bar--w11">
+                    <span class="kf-num">1</span>
+                  </div>
+                  <span class="kf-stage-label">With real certainty</span>
+                </div>
+              </div>
+              <div class="klaro-chart-insight">
+                <strong>8 out of 9 people never reach confident completion.</strong> That's the gap Klaro fills.
+              </div>
+            </div>
+
+            <!-- Bar chart -->
+            <div class="klaro-chart-wrap">
+              <div class="klaro-chart-title">Main obstacles</div>
+              <div class="klaro-chart-sub">What stopped you from filing with confidence?</div>
+              <div class="chart-canvas-wrap">
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 48px; text-align: center; max-width: 680px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1rem; line-height: 1.75; color: var(--text-2);">
+              The data confirmed what we suspected — but also revealed something we didn't expect: <strong style="color: var(--text);">the emotional dimension of the problem is as big as the technical one. Anxiety, not ignorance, is the real barrier.</strong>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── 4. USER RESEARCH ── -->
+      <section id="user-research" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Qualitative Research</span>
+          <h2 class="cs-heading">
+            What it actually<br /><em>felt like.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 600px; margin: 0 auto 8px; text-align: center; line-height: 1.7;">
+            The numbers told me there was a problem. The interviews told me what it actually felt like. I conducted qualitative interviews with Spanish-speaking freelancers in Germany across different profiles, experience levels, and cities. The goal wasn't to validate what I already knew — it was to understand the emotional texture of the problem.
+          </p>
+
+          <!-- JTBDs -->
+          <div style="text-align: center; margin-top: 56px;">
+            <span class="cs-eyebrow">Jobs To Be Done</span>
+            <h3 style="font-family: 'Satoshi', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--text); margin-top: 8px; margin-bottom: 4px;">What users actually needed, <em style="font-weight: 300;">in their own words</em></h3>
+          </div>
+
+
+          <p style="text-align: center; margin-top: 32px; font-size: 1.05rem; font-weight: 700; color: var(--text);">
+            None of them said they needed more information. They needed <span style="color: var(--accent);">certainty.</span>
+          </p>
+
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="cs-testimonial" data-animate="fade-up">
+        <span class="cs-quote-mark">"</span>
+        <p class="cs-quote-text">"Every year I finish with a knot in my stomach. I know I'm leaving money on the table, but I'd rather not risk it."</p>
+        <div class="cs-quote-attr">
+          <img class="cs-quote-avatar" src="assets/juan.jpg" alt="Portrait of Juan Nasra" loading="lazy" decoding="async" />
+          <span><a href="https://www.linkedin.com/in/juan-nasra-0629aa1b1/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Juan Nasra</a> · Freelance Designer | Filmmaker · Berlin</span>
+        </div>
+      </section>
+
+      <section class="cs-testimonial" data-animate="fade-up">
+        <span class="cs-quote-mark">"</span>
+        <p class="cs-quote-text">"I finished the declaration feeling like I'd signed something without reading it. I don't know if I did it right or if I'm losing money."</p>
+        <div class="cs-quote-attr">
+          <img class="cs-quote-avatar" src="assets/klaro-persona-ana.jpg" alt="Portrait of Ana" loading="lazy" decoding="async" />
+          <span>Ana · Berlin</span>
+        </div>
+      </section>
+
+      <section class="cs-testimonial" data-animate="fade-up">
+        <span class="cs-quote-mark">"</span>
+        <p class="cs-quote-text">"The chaos started when I went freelance. I felt like nobody explained anything for foreign self-employed people."</p>
+        <div class="cs-quote-attr">
+          <img class="cs-quote-avatar" src="assets/klaro-persona-laura.jpg" alt="Portrait of interview participant" loading="lazy" decoding="async" />
+          <span>Interview participant · Munich</span>
+        </div>
+      </section>
+
+      <!-- ── 5. PROCESS ── -->
+      <section id="process" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Process &amp; Key Decisions</span>
+          <h2 class="cs-heading">
+            Defining what Klaro<br /><em>had to stop trying to be.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 600px; margin: 0 auto; text-align: center; line-height: 1.7;">
+            With the research done and the benchmark clear, I had everything I needed to define what Klaro had to be.
+          </p>
+
+          <div class="cs-pillars" style="margin-top: 56px;">
+
+            <!-- Decision 1: USP -->
+            <div class="cs-pillar">
+              <span class="cs-pillar-num">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lg-kl01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%"   stop-color="#060f20"/>
+                      <stop offset="50%"  stop-color="#0f2552"/>
+                      <stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="22" cy="22" r="18" stroke="url(#lg-kl01)" stroke-width="1.8"/>
+                  <circle cx="22" cy="22" r="11" stroke="url(#lg-kl01)" stroke-width="1.8"/>
+                  <circle cx="22" cy="22" r="4"  stroke="url(#lg-kl01)" stroke-width="1.8"/>
+                  <line x1="22" y1="2"  x2="22" y2="8"  stroke="url(#lg-kl01)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="22" y1="36" x2="22" y2="42" stroke="url(#lg-kl01)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="2"  y1="22" x2="8"  y2="22" stroke="url(#lg-kl01)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="36" y1="22" x2="42" y2="22" stroke="url(#lg-kl01)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="cs-pillar-cat">Defining the USP</span>
+              <div class="cs-pillar-title">Compete on segment, not features</div>
+              <div class="cs-pillar-body">
+                The benchmark showed that competing on features was the wrong move. Accountable already does invoicing, expense tracking, VAT declarations. Building the same thing in Spanish wasn't a product strategy — it was a translation project. <strong>The real opportunity was sitting in the research data the whole time.</strong>
+              </div>
+            </div>
+
+            <!-- Decision 2: AI Architecture -->
+            <div class="cs-pillar">
+              <span class="cs-pillar-num">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lg-kl02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%"   stop-color="#060f20"/>
+                      <stop offset="50%"  stop-color="#0f2552"/>
+                      <stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="6" y="8" width="14" height="10" rx="2" stroke="url(#lg-kl02)" stroke-width="1.8"/>
+                  <rect x="6" y="26" width="14" height="10" rx="2" stroke="url(#lg-kl02)" stroke-width="1.8"/>
+                  <rect x="24" y="17" width="14" height="10" rx="2" stroke="url(#lg-kl02)" stroke-width="1.8"/>
+                  <path d="M20 13h4M20 31h4M20 22h4" stroke="url(#lg-kl02)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="cs-pillar-cat">AI Architecture Decision</span>
+              <div class="cs-pillar-title">Three agents, not a chatbot</div>
+              <div class="cs-pillar-body">
+                Most tax apps treat AI as a chatbot — a generic assistant that knows nothing about you. I designed a different approach: a <strong>three-agent pipeline</strong> where Clara receives a fully built fiscal profile before she says a single word. Diagnóstico Agent builds your profile → Validador Agent checks for risks → Clara responds with full context. That's not a chatbot. That's an advisor that already knows you.
+              </div>
+            </div>
+
+            <!-- Decision 3: Clara's tone -->
+            <div class="cs-pillar">
+              <span class="cs-pillar-num">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lg-kl03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%"   stop-color="#060f20"/>
+                      <stop offset="50%"  stop-color="#0f2552"/>
+                      <stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M8 32 Q8 8 22 8 Q36 8 36 20 Q36 32 22 32 L10 38 Z" stroke="url(#lg-kl03)" stroke-width="1.8" stroke-linejoin="round"/>
+                  <line x1="15" y1="18" x2="29" y2="18" stroke="url(#lg-kl03)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="15" y1="24" x2="24" y2="24" stroke="url(#lg-kl03)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="cs-pillar-cat">Clara's Voice</span>
+              <div class="cs-pillar-title">A knowledgeable friend, not a form</div>
+              <div class="cs-pillar-body">
+                The most deliberate design decision was how Clara speaks. Not like a tax form. Not like a legal document. <strong>Like a knowledgeable friend who happens to understand German tax law</strong> — and explains it in plain Spanish, with German terminology preserved inline where it matters. Always in Spanish. German terms preserved but always explained. Never overpromising.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Clara chat bubble example -->
+          <div class="klaro-clara-bubble" style="margin-top: 56px;">
+            <img class="kcb-avatar" src="assets/clara-bot.jpg" alt="Clara AI avatar" loading="lazy" />
+            <div>
+              <div class="kcb-name">Clara</div>
+              <div class="kcb-text">"Tu UStVA — que es básicamente tu declaración periódica de IVA — vence el 10 de cada mes. Como estás en el régimen trimestral, la próxima es en julio."</div>
+            </div>
+          </div>
+
+          <!-- MVP scope -->
+          <div style="margin-top: 56px; text-align: center;">
+            <span class="cs-eyebrow">MVP Scope</span>
+            <h3 style="font-family: 'Satoshi', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin: 8px 0 32px;">Four features. Everything else deliberately left out.</h3>
+          </div>
+
+          <div class="cs-metrics cs-metrics--3col" style="--metric-cols: 4; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g-mvp01" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="18" cy="12" r="5" stroke="url(#g-mvp01)" stroke-width="2"/>
+                  <path d="M6 30c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="url(#g-mvp01)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="24" y1="6" x2="30" y2="6" stroke="url(#g-mvp01)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="24" y1="10" x2="28" y2="10" stroke="url(#g-mvp01)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="cs-metric-title">Onboarding + Diagnóstico</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Personalized fiscal profile from day one</div>
+            </div>
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g-mvp02" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M6 8h24a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H20l-4 4-4-4H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" stroke="url(#g-mvp02)" stroke-width="2"/>
+                  <circle cx="12" cy="16" r="1.5" fill="url(#g-mvp02)"/>
+                  <circle cx="18" cy="16" r="1.5" fill="url(#g-mvp02)"/>
+                  <circle cx="24" cy="16" r="1.5" fill="url(#g-mvp02)"/>
+                </svg>
+              </span>
+              <div class="cs-metric-title">Clara</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Conversational AI advisor, available to all users — not behind a paywall</div>
+            </div>
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g-mvp03" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="6" width="28" height="26" rx="3" stroke="url(#g-mvp03)" stroke-width="2"/>
+                  <line x1="4" y1="14" x2="32" y2="14" stroke="url(#g-mvp03)" stroke-width="2"/>
+                  <line x1="12" y1="4" x2="12" y2="10" stroke="url(#g-mvp03)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="24" y1="4" x2="24" y2="10" stroke="url(#g-mvp03)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="10" y1="21" x2="20" y2="21" stroke="url(#g-mvp03)" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="10" y1="26" x2="16" y2="26" stroke="url(#g-mvp03)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="cs-metric-title">Fiscal Deadlines Engine</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> UStVA, Einkommensteuer, EÜR tracked per profile</div>
+            </div>
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g-mvp04" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#060f20"/><stop offset="50%" stop-color="#0f2552"/><stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="4" width="12" height="12" rx="2" stroke="url(#g-mvp04)" stroke-width="2"/>
+                  <rect x="20" y="4" width="12" height="12" rx="2" stroke="url(#g-mvp04)" stroke-width="2"/>
+                  <rect x="4" y="20" width="12" height="12" rx="2" stroke="url(#g-mvp04)" stroke-width="2"/>
+                  <rect x="20" y="20" width="12" height="12" rx="2" stroke="url(#g-mvp04)" stroke-width="2"/>
+                </svg>
+              </span>
+              <div class="cs-metric-title">Profile Dashboard</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Fiscal status, active obligations, open alerts</div>
+            </div>
+          </div>
+
+          <p style="text-align: center; margin-top: 24px; font-size: 0.85rem; color: var(--text-2);">
+            Everything else — bank integration, direct ELSTER submission, invoice generation — was deliberately left out of MVP.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- ── 7. SOLUTION ── -->
+      <section id="solution" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">How it was built</span>
+          <h2 class="cs-heading">
+            No Figma.<br /><em>Just a live product.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 640px; margin: 0 auto; text-align: center; line-height: 1.7;">
+            Klaro was built differently from the start. There was no Figma file. No handoff document. No gap between design and code. Every screen was designed and shipped simultaneously using Claude Code — an AI-native development workflow where product decisions, visual design, and implementation happen in the same cycle.
+          </p>
+
+          <!-- Workflow comparison -->
+          <div class="klaro-workflow">
+            <div class="kw-col kw-col--old">
+              <div class="kw-label">Traditional workflow</div>
+              <div class="kw-steps">
+                <div class="kw-step">Research</div>
+                <div class="kw-step">Wireframes</div>
+                <div class="kw-step">Figma</div>
+                <div class="kw-step">Handoff</div>
+                <div class="kw-step">Development</div>
+                <div class="kw-step">QA</div>
+                <div class="kw-step">Launch</div>
+              </div>
+            </div>
+            <div class="kw-col kw-col--new">
+              <div class="kw-label">Klaro's workflow</div>
+              <div class="kw-steps">
+                <div class="kw-step">Research</div>
+                <div class="kw-step">Claude Code</div>
+                <div class="kw-step kw-step--highlight">Live product →</div>
+              </div>
+            </div>
+          </div>
+
+          <p style="text-align: center; margin-top: 28px; font-size: 0.875rem; color: var(--text-2); max-width: 560px; margin-left: auto; margin-right: auto;">
+            Every iteration happened directly in the browser. Design decisions were validated against real data from Supabase, not static mockups.
+          </p>
+
+          <!-- Key screens -->
+          <div style="margin-top: 64px;">
+            <span class="cs-eyebrow">Key Screens</span>
+            <h3 style="font-family: 'Satoshi', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin: 8px 0;">Five surfaces. One coherent system.</h3>
+          </div>
+
+          <div class="klaro-screens">
+
+            <div class="klaro-screen-item">
+              <div>
+                <div class="ksi-num">01</div>
+                <div class="ksi-title">Dashboard</div>
+                <div class="ksi-desc">Fiscal status at a glance. Profile type, active tax obligations, upcoming deadlines with countdown, and any open alerts from the Validador. Blocked until the Diagnóstico is complete — no misleading numbers.</div>
+              </div>
+              <div class="ksi-img">
+                <img src="assets/dashboard-klaro.png" alt="Klaro dashboard screen" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="klaro-screen-item">
+              <div>
+                <div class="ksi-num">02</div>
+                <div class="ksi-title">Clara</div>
+                <div class="ksi-desc">The main interface. A chat UI where users ask anything about German taxes in Spanish. Clara already knows who you are. German terms preserved inline, always explained in context. 3 suggested questions on first load, based on the fiscal profile.</div>
+              </div>
+              <div class="ksi-img">
+                <img src="assets/clara-chat-bot.png" alt="Clara AI chat interface" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="klaro-screen-item">
+              <div>
+                <div class="ksi-num">03–05</div>
+                <div class="ksi-title">Facturas · Gastos · Impuestos</div>
+                <div class="ksi-desc">Invoice creation with Kleinunternehmer lock — if you're under the €22,000 threshold, tax rate is forced to 0. Expense tracking with receipt upload. EÜR with year selector (2024/2025/2026) and real German tax brackets. UStVA quarterly tracking.</div>
+              </div>
+              <div class="ksi-img">
+                <img src="assets/klaro-impuestos.png" alt="Klaro impuestos screen" loading="lazy" />
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── PROTOTYPE ── -->
+      <section id="prototype" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Prototype</span>
+          <h2 class="cs-heading">
+            See it in<br /><em>action.</em>
+          </h2>
+
+          <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.07);">
+            <video autoplay muted loop playsinline style="width: 100%; display: block;">
+              <source src="assets/klaro-prototipo.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── 8. AI IN DESIGN ── -->
+      <section id="ai-design" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">AI in the Design Process</span>
+          <h2 class="cs-heading">
+            One tool per<br /><em>phase of the process</em>
+          </h2>
+          <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+            AI was not a single tool. It was a system of specialized tools — one matched to each phase of the Design Thinking process.
+          </p>
+
+          <!-- Full-width AI workflow diagram -->
+          <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(6,8,16,0.08);">
+            <img src="assets/SP-userflow-01.svg" alt="AI workflow across the design process" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 9. KPIs ── -->
+      <section id="kpis" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">KPIs</span>
+          <h2 class="cs-heading">
+            Three metrics that<br /><em>actually matter.</em>
+          </h2>
+
+          <div class="cs-metrics">
+            <div class="cs-metric-card">
+              <div class="cs-metric-title">Diagnóstico Completion Rate</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> GA4: custom event — <code>diagnostico_completed</code></div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> Without a complete profile, Clara can't be personalized — the core product promise fails. This is the activation gate for everything else.</div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="cs-metric-title">Clara Messages per Active User</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> GA4: custom event — <code>clara_message_sent</code></div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> More messages means more trust — users are asking real questions. This is the engagement signal that tells us Clara is actually replacing the Steuerberater, not just supplementing it.</div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="cs-metric-title">Free → Paid Conversion Rate</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> GA4: custom event — <code>upgrade_clicked</code></div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> Conversion from free tier to Invoicing Plus (€12/month). The business signal — and a proxy for trust. Users don't pay for a tax tool they don't believe in.</div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- ── 10. OUTLOOK ── -->
+      <section id="outlook" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Product Outlook</span>
+          <h2 class="cs-heading">
+            The MVP is live.<br /><em>Here's where it goes next.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 600px; margin: 0 auto; text-align: center; line-height: 1.7;">
+            Klaro is live. The core pipeline works. But the MVP is just the beginning.
+          </p>
+
+          <div class="cs-metrics cs-metrics--3col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;">
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">Phase 2</span>
+              <div class="cs-metric-title">Gmail + Google Calendar Integration</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Clara reads Finanzamt notifications and syncs fiscal deadlines automatically to the user's calendar</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Goal</span> Zero missed deadlines, zero panic-reading German letters alone</div>
+            </div>
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">Phase 3</span>
+              <div class="cs-metric-title">ELSTER Export</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Structured PDF export of the user's fiscal summary — EÜR, deductions, profile — for use with ELSTER or a Steuerberater</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Goal</span> Reduce Steuerberater dependency from full delegation to a single verification call</div>
+            </div>
+            <div class="cs-metric-card">
+              <span class="cs-metric-num">Phase 4</span>
+              <div class="cs-metric-title">Mobile</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> React Native version — Clara on mobile without rebuilding the product from scratch</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> Research showed users interact with tax questions on the go — forwarding letters, asking quick questions between meetings</div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- ── 11. LEARNINGS ── -->
+      <section id="learnings" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Lessons Learned</span>
+          <h2 class="cs-heading">
+            What this project<br /><em>taught me.</em>
+          </h2>
+
+          <div class="cs-lessons">
+
+            <div class="cs-lesson">
+              <span class="cs-lesson-num">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lg-ll01" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%"   stop-color="#060f20"/>
+                      <stop offset="50%"  stop-color="#0f2552"/>
+                      <stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="22" cy="22" r="18" stroke="url(#lg-ll01)" stroke-width="1.8"/>
+                  <path d="M13 22l6 6 12-14" stroke="url(#lg-ll01)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="cs-lesson-title">End-to-end ownership changes how you think about design</div>
+              <div class="cs-lesson-body">
+                Building Klaro from scratch — PRD, research, architecture, code, launch — gave me something a UI-only project never could: a complete view of the product ecosystem. Design stopped being about interfaces and became about decisions. Every screen is a choice that influences the user's next choice, which influences a business outcome, which feeds back into the product. Working end-to-end made that chain visible. I can't un-see it.
+              </div>
+            </div>
+
+            <div class="cs-lesson">
+              <span class="cs-lesson-num">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lg-ll02" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%"   stop-color="#060f20"/>
+                      <stop offset="50%"  stop-color="#0f2552"/>
+                      <stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="6" y="6" width="32" height="32" rx="4" stroke="url(#lg-ll02)" stroke-width="1.8"/>
+                  <line x1="14" y1="14" x2="30" y2="14" stroke="url(#lg-ll02)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="20" x2="30" y2="20" stroke="url(#lg-ll02)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="26" x2="22" y2="26" stroke="url(#lg-ll02)" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="32" cy="32" r="6" fill="url(#lg-ll02)"/>
+                  <path d="M29.5 32l1.5 1.5 3-3" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="cs-lesson-title">No design system was a deliberate experiment</div>
+              <div class="cs-lesson-body">
+                Klaro was intentionally built without a predefined design system to observe how AI interprets visual decisions when left without constraints. The result confirmed the hypothesis: without tokens, components and clear visual rules, AI fills the gaps with its own interpretation — and those interpretations accumulate and drift across screens. The conclusion is clear: <strong>in any future AI-native project, the design system comes first. Not as a deliverable — as the foundation.</strong>
+              </div>
+            </div>
+
+            <div class="cs-lesson">
+              <span class="cs-lesson-num">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lg-ll03" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%"   stop-color="#060f20"/>
+                      <stop offset="50%"  stop-color="#0f2552"/>
+                      <stop offset="100%" stop-color="#1d5fcc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="10" width="36" height="24" rx="3" stroke="url(#lg-ll03)" stroke-width="1.8"/>
+                  <path d="M4 18h36" stroke="url(#lg-ll03)" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="10" cy="14" r="1.5" fill="url(#lg-ll03)"/>
+                  <circle cx="16" cy="14" r="1.5" fill="url(#lg-ll03)"/>
+                </svg>
+              </span>
+              <div class="cs-lesson-title">Frontend is great. Backend is greater.</div>
+              <div class="cs-lesson-body">
+                The most unexpected shift in this project was discovering that the most interesting design decisions didn't live in the UI — they lived in the architecture. How the three agents communicate. What context Clara receives before the first message. How the Validador shapes what the user sees on the dashboard. <strong>Understanding the backend made me a better designer because I finally understood what I was actually designing: not screens, but a system.</strong> That wider view is the most valuable thing this project gave me.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── LINKS ── -->
+      <section id="links" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">Sources &amp; Links</span>
+          <h2 class="cs-heading">
+            Explore the<br /><em>Full Work</em>
+          </h2>
+          <div class="cs-links-grid">
+            <a href="https://www.notion.so/KLARO-Product-Requirements-Document-329e0dea8e01818087dbfa4d064a12fe?source=copy_link" target="_blank" rel="noopener" class="cs-link-btn magnetic">Documentation ↗</a>
+            <a href="https://klaro-es.com/" target="_blank" rel="noopener" class="cs-link-btn magnetic">View Live App ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── MORE WORK ── -->
+      <section class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">More Work</span>
+          <h2 class="cs-heading">
+            You might also<br /><em>like these.</em>
+          </h2>
+          <div class="cs-more-grid">
+            <a href="project-supply-pro.html" class="cs-more-card">
+              <div class="cs-more-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #0d1a2e 50%, #0f2552 100%);">
+                <img src="assets/sp-cover-02.png" alt="Supply Pro" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+              </div>
+              <div class="cs-more-info">
+                <div class="cs-more-pills">
+                  <span class="cs-more-pill">B2B SaaS</span>
+                  <span class="cs-more-pill">Food Logistics</span>
+                  <span class="cs-more-pill">Product Design</span>
+                </div>
+                <h3 class="cs-more-title">Supply Pro</h3>
+                <div class="cs-more-cta">
+                  View case study
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+            <a href="project-micro-casing.html" class="cs-more-card">
+              <div class="cs-more-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #0d1a2e 50%, #0f2552 100%);">
+                <img src="assets/Thumbnail-Micro-casing.webp" alt="Micro-casing App" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;" />
+              </div>
+              <div class="cs-more-info">
+                <div class="cs-more-pills">
+                  <span class="cs-more-pill">Mobile App</span>
+                  <span class="cs-more-pill">EdTech</span>
+                  <span class="cs-more-pill">Branding</span>
+                </div>
+                <h3 class="cs-more-title">Micro-casing App</h3>
+                <div class="cs-more-cta">
+                  View case study
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /cs-page-content -->
+  </div><!-- /cs-page-layout -->
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <canvas class="footer-dot-canvas" id="footerDotGrid"></canvas>
+    <div class="footer-top">
+      <div class="footer-cta" data-animate="fade-up">
+        <p class="footer-cta-label"><span class="eyebrow-dot"></span>Ready to work together?</p>
+        <h2 class="footer-cta-title">From complex problem<br /><span class="gradient-word">to shipped product.</span></h2>
+        <a href="contact.html" class="btn-primary magnetic large">
+          <span class="btn-text">Contact</span>
+          <span class="btn-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <span class="footer-logo">JGV<span class="logo-dot">.</span></span>
+        <div class="footer-copy-wrap">
+          <span class="footer-copy">© 2026 JGV, all rights reserved</span>
+          <a href="imprint.html" class="footer-imprint">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/juan-gomez-vara-0b409470/" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://medium.com/@juangomezvara" target="_blank" rel="noopener" class="social-link magnetic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.285 7.269a.733.733 0 0 0-.24-.619L2.275 4.517v-.32h5.498l4.25 9.32 3.736-9.32H21v.319l-1.515 1.453a.44.44 0 0 0-.168.425v10.666a.44.44 0 0 0 .168.425l1.479 1.453v.319h-7.436v-.319l1.53-1.489c.152-.15.152-.194.152-.424V8.401l-3.994 10.137h-.575L5.417 8.401v6.793c-.041.305.07.612.3.833l1.99 2.415v.32H2.003v-.32l1.99-2.415c.227-.22.333-.53.292-.832z"/></svg>
+          <span>Medium</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- ── CRRT Feedback Widget ── -->
+  <script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js" crossorigin></script>
+  <script>window.jsxRuntime={jsx:React.jsx||React.createElement,jsxs:React.jsxs||React.createElement,Fragment:React.Fragment};</script>
+  <script src="vendor/crrt.umd.js"></script>
+  <script>
+    (function(){var e=document.createElement('div');e.id='crrt-root';document.body.appendChild(e);ReactDOM.createRoot(e).render(React.createElement(CRRT.FeedbackWidget,{projectId:'proj_your_app_name',apiBase:'https://crrt.ai/api'}));})();
+  </script>
+
+  <!-- ── QUICK NAV SCROLLSPY ── -->
+  <script>
+  (function () {
+    const quickNav    = document.getElementById('csQuickNav');
+    const pageLayout  = document.getElementById('csPageLayout');
+    const collapseBtn = document.getElementById('csQnCollapseBtn');
+    const toggle      = document.getElementById('csQnToggle');
+    const drawer      = document.getElementById('csQnDrawer');
+    const allItems    = document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item');
+
+    const STORAGE_KEY = 'klaro-qn-collapsed';
+    function setCollapsed(collapsed) {
+      quickNav.classList.toggle('is-collapsed', collapsed);
+      pageLayout && pageLayout.classList.toggle('is-collapsed', collapsed);
+      if (collapseBtn) {
+        collapseBtn.setAttribute('aria-expanded', String(!collapsed));
+        collapseBtn.setAttribute('aria-label', collapsed ? 'Expand navigation' : 'Collapse navigation');
+      }
+      localStorage.setItem(STORAGE_KEY, collapsed ? '1' : '0');
+    }
+    setCollapsed(localStorage.getItem(STORAGE_KEY) === '1');
+    collapseBtn && collapseBtn.addEventListener('click', () => {
+      setCollapsed(!quickNav.classList.contains('is-collapsed'));
+    });
+
+    const sectionEls = Array.from(document.querySelectorAll('.cs-qn-item')).map(a =>
+      document.getElementById(a.dataset.section)
+    ).filter(Boolean);
+
+    function setActive(id) {
+      allItems.forEach(item => {
+        const match = item.dataset.section === id;
+        item.classList.toggle('is-active', match);
+        if (match) item.setAttribute('aria-current', 'location');
+        else item.removeAttribute('aria-current');
+      });
+    }
+
+    function closeDrawer() {
+      if (!drawer) return;
+      quickNav.classList.remove('cs-quicknav--open');
+      toggle && toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    const spyObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+    sectionEls.forEach(s => spyObs.observe(s));
+
+    document.querySelectorAll('.cs-qn-item, .cs-qn-drawer-item').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.section);
+        if (!target) return;
+        const top = target.getBoundingClientRect().top + window.scrollY - 88;
+        window.scrollTo({ top, behavior: 'smooth' });
+        closeDrawer();
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => {
+        const isOpen = quickNav.classList.toggle('cs-quicknav--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        drawer.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen) {
+          const first = drawer.querySelector('.cs-qn-drawer-item');
+          first && first.focus();
+        }
+      });
+      document.addEventListener('click', e => {
+        if (!quickNav.contains(e.target)) closeDrawer();
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && quickNav.classList.contains('cs-quicknav--open')) {
+          closeDrawer();
+          toggle.focus();
+        }
+      });
+    }
+
+    /* ── Problem stat cards — scroll reveal + count-up ── */
+    const klCards = document.querySelectorAll('.sp-rm-card');
+    if (klCards.length) {
+      function klCountUp(el, target, decimals, duration) {
+        const startTime = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const val = eased * target;
+          el.textContent = decimals > 0 ? val.toFixed(decimals) : Math.round(val).toString();
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const klObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const card = entry.target;
+          card.classList.add('sp-revealed');
+          const counter = card.querySelector('.kl-counter');
+          if (counter) {
+            const target = parseFloat(counter.dataset.target);
+            const decimals = parseInt(counter.dataset.decimals || '0', 10);
+            const duration = decimals > 0 ? 1200 : Math.min(400 + target * 2, 1200);
+            klCountUp(counter, target, decimals, duration);
+          }
+          klObs.unobserve(card);
+        });
+      }, { threshold: 0.3 });
+
+      klCards.forEach(el => klObs.observe(el));
+    }
+  })();
+  </script>
+
+  <!-- ── CHARTS ── -->
+  <script>
+  (function () {
+    Chart.defaults.font.family = "'Satoshi', sans-serif";
+    Chart.defaults.color = '#3d4f6e';
+
+    const accent  = '#1d5fcc';
+    const accent2 = '#4d8ef0';
+    const navy    = '#060f20';
+    const muted   = 'rgba(29,95,204,0.15)';
+
+    /* Scatter — Time vs Confidence */
+    const scatterCtx = document.getElementById('scatterChart');
+    if (scatterCtx) {
+      new Chart(scatterCtx, {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: 'Respondents',
+            data: [
+              {x: 0.5, y: 5},
+              {x: 1,   y: 5},
+              {x: 1.5, y: 4},
+              {x: 2,   y: 4},
+              {x: 3,   y: 3},
+              {x: 4,   y: 4},
+              {x: 5,   y: 2},
+              {x: 6,   y: 3},
+              {x: 8,   y: 3},
+              {x: 10,  y: 3},
+              {x: 12,  y: 2},
+            ],
+            backgroundColor: accent,
+            pointRadius: 7,
+            pointHoverRadius: 9,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: ctx => `${ctx.parsed.x}h · confidence ${ctx.parsed.y}/5`
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Hours spent on tax preparation', color: '#3d4f6e', font: { size: 11 } },
+              grid: { color: 'rgba(0,0,0,0.05)' },
+              ticks: { font: { size: 11 } }
+            },
+            y: {
+              title: { display: true, text: 'Confidence (1–5)', color: '#3d4f6e', font: { size: 11 } },
+              min: 0, max: 6,
+              ticks: { stepSize: 1, font: { size: 11 } },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            }
+          }
+        }
+      });
+    }
+
+    /* Donut — Language gap */
+    const donutCtx = document.getElementById('donutChart');
+    if (donutCtx) {
+      new Chart(donutCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['No, little or nothing', 'Yes, a little', 'Yes, a lot', "Didn't look in Spanish"],
+          datasets: [{
+            data: [55, 22, 11, 11],
+            backgroundColor: [accent, accent2, navy, '#c4c4c4'],
+            borderWidth: 0,
+            hoverOffset: 6,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '62%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { padding: 14, font: { size: 11 }, boxWidth: 12, boxHeight: 12 }
+            },
+            tooltip: {
+              callbacks: {
+                label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    /* Horizontal bar — Obstacles */
+    const barCtx = document.getElementById('barChart');
+    if (barCtx) {
+      new Chart(barCtx, {
+        type: 'bar',
+        data: {
+          labels: [
+            'Not knowing deductible expenses',
+            'Fear of errors / fines',
+            'Incomprehensible German forms',
+            'Process too long / tedious',
+            'Language blocked me completely',
+          ],
+          datasets: [{
+            data: [33, 22, 22, 11, 11],
+            backgroundColor: [accent, accent2, accent2, muted, muted],
+            borderRadius: 6,
+            borderSkipped: false,
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: ctx => ` ${ctx.parsed.x}% of respondents`
+              }
+            }
+          },
+          scales: {
+            x: {
+              max: 40,
+              ticks: { callback: v => v + '%', font: { size: 11 } },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            },
+            y: {
+              ticks: { font: { size: 11 } },
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+  })();
+  </script>
+
+  <!-- ── Research: parallax + chart dissolve ── -->
+  <script>
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    /* --- Chart dissolve: fade + blur + slide in on enter --- */
+    const wraps = document.querySelectorAll('.klaro-chart-wrap');
+    if (wraps.length) {
+      const chartObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el    = entry.target;
+          const delay = +(el.dataset.klDelay || 0);
+          setTimeout(() => el.classList.add('kl-chart-in'), delay);
+          chartObs.unobserve(el);
+        });
+      }, { threshold: 0.12 });
+
+      wraps.forEach((el, i) => {
+        el.dataset.klDelay = i * 130;
+        chartObs.observe(el);
+      });
+    }
+
+    /* --- Parallax: section inner floats ±22px as user scrolls --- */
+    const section = document.getElementById('research');
+    const inner   = section && section.querySelector('.cs-inner');
+    if (!inner) return;
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect   = section.getBoundingClientRect();
+        const vh     = window.innerHeight;
+        const norm   = (rect.top + rect.height / 2 - vh / 2) / (vh / 2);
+        const clamped = Math.max(-1, Math.min(1, norm));
+        inner.style.transform = `translateY(${clamped * 22}px)`;
+        ticking = false;
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

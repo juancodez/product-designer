@@ -368,6 +368,41 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 
 .hero-actions { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 64px; }
 
+/* Typewriter */
+.type-tag {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1d5fcc 0%, #4d8ef0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+.type-tag--close {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.type-tag--close.visible {
+  opacity: 1;
+}
+.type-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  background: var(--accent);
+  vertical-align: middle;
+  margin: 0 1px;
+  animation: typeBlink 0.85s step-end infinite;
+}
+.type-cursor.done {
+  display: none;
+}
+@keyframes typeBlink {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 0;   }
+}
+
 /* Buttons */
 .btn-primary {
   display: inline-flex; align-items: center; gap: 10px;
@@ -927,16 +962,54 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
 
 .project-card-meta-line {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   font-size: clamp(0.78rem, 1.1vw, 1.05rem);
   color: var(--text-2);
   margin-bottom: 8px;
 }
+.project-card-meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 .meta-scope {
   font-size: 0.78rem;
   color: var(--text-3);
+}
+@property --shimmer-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.view-project-btn {
+  flex-shrink: 0;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    conic-gradient(
+      from var(--shimmer-angle),
+      #1d5fcc 0%,
+      #4d8ef0 25%,
+      #bfdbfe 45%,
+      #ffffff 50%,
+      #bfdbfe 55%,
+      #4d8ef0 75%,
+      #1d5fcc 100%
+    ) border-box;
+  transition: color 0.2s;
+  animation: viewBtnShimmer 3s linear infinite;
+}
+.view-project-btn:hover {
+  border: 1.5px solid rgba(6,8,16,0.75);
+  background: rgba(6,8,16,0.06);
+  animation-play-state: paused;
+}
+@keyframes viewBtnShimmer {
+  to { --shimmer-angle: 360deg; }
 }
 
 .meta-sep { margin: 0 8px; color: var(--text-3); }

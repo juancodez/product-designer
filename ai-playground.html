@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -65,34 +65,26 @@
 
       <h1 class="cs-title" data-animate="fade-up" data-delay="160" style="font-size: clamp(3.5rem, 9vw, 9rem);">AI<br />Playground</h1>
 
-      <div class="cs-hero-body">
-        <div class="cs-hero-meta" data-animate="fade-up" data-delay="240">
-          <div class="cs-hero-meta-item">
-            <span class="cs-hero-meta-label">Type</span>
-            <span class="cs-hero-meta-value">Living Personal Project</span>
-          </div>
-          <div class="cs-hero-meta-item">
-            <span class="cs-hero-meta-label">Role</span>
-            <span class="cs-hero-meta-value">Product Designer · Vibe Coder</span>
-          </div>
-          <div class="cs-hero-meta-item">
-            <span class="cs-hero-meta-label">Scope</span>
-            <span class="cs-hero-meta-value">Vibecoding · Design Engineering · AI Experiments</span>
-          </div>
-          <div class="cs-hero-meta-item">
-            <span class="cs-hero-meta-label">Duration</span>
-            <span class="cs-hero-meta-value">Ongoing — growing collection</span>
-          </div>
-          <div class="cs-hero-meta-item">
-            <span class="cs-hero-meta-label">Tools</span>
-            <span class="cs-hero-meta-value">Claude Code · Claude · Cursor · v0 · Figma Make</span>
-          </div>
-          <div class="cs-hero-meta-item">
-            <span class="cs-hero-meta-label">Status</span>
-            <span class="cs-hero-meta-value">Live and growing</span>
-          </div>
+      <div class="cs-hero-meta cs-hero-meta--row" data-animate="fade-up" data-delay="240">
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Type</span>
+          <span class="cs-hero-meta-value">Living Personal Project</span>
         </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Role</span>
+          <span class="cs-hero-meta-value">Product Designer · Vibe Coder</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Scope</span>
+          <span class="cs-hero-meta-value">Vibecoding · Design Engineering · AI Experiments</span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Duration</span>
+          <span class="cs-hero-meta-value">Ongoing — growing collection</span>
+        </div>
+      </div>
 
+      <div class="cs-hero-body">
         <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
           <strong>AI is everywhere. Instead of only reading about it, I decided to build with it.</strong><br /><br />
           These projects are snapshots of that exploration: small experiments, games, prototypes, and ideas brought to life through AI-assisted creation. They're not meant to be perfect. They're meant to help me understand a new way of thinking, making, and designing.<br /><br />
@@ -845,5 +837,15 @@
     }
   })();
   </script>
+
+  <!-- ── CRRT Feedback Widget ── -->
+  <script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js" crossorigin></script>
+  <script>window.jsxRuntime={jsx:React.jsx||React.createElement,jsxs:React.jsxs||React.createElement,Fragment:React.Fragment};</script>
+  <script src="vendor/crrt.umd.js"></script>
+  <script>
+    (function(){var e=document.createElement('div');e.id='crrt-root';document.body.appendChild(e);ReactDOM.createRoot(e).render(React.createElement(CRRT.FeedbackWidget,{projectId:'proj_your_app_name',apiBase:'https://crrt.ai/api'}));})();
+  </script>
 </body>
 </html>
+
