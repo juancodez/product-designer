@@ -1079,13 +1079,13 @@ body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; h
    ============================================ */
 .page-transition {
   position: fixed; inset: 0; z-index: 9999;
-  background: var(--bg);
+  background: var(--text);
   pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.5s var(--ease-out);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.5s var(--ease-in-out);
 }
-.page-transition.exit { opacity: 0; }
-.page-transition.enter { opacity: 1; pointer-events: all; }
+.page-transition.enter { transform: scaleY(1); transform-origin: bottom; pointer-events: all; }
+.page-transition.exit  { transform: scaleY(0); transform-origin: top; }
 
 /* ============================================
    MAGNETIC EFFECT (handled via JS)
@@ -1236,15 +1236,3 @@ body.menu-open { overflow: hidden; }
   .footer-social { align-self: flex-start; }
 }
 
-/* ============================================
-   PAGE TRANSITION
-   ============================================ */
-.page-transition {
-  position: fixed; inset: 0; z-index: 9000;
-  background: var(--text);
-  transform: scaleY(0); transform-origin: bottom;
-  transition: transform 0.5s var(--ease-in-out);
-  pointer-events: none;
-}
-.page-transition.enter { transform: scaleY(1); transform-origin: bottom; }
-.page-transition.exit { transform: scaleY(0); transform-origin: top; }

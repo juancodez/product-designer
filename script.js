@@ -394,6 +394,14 @@
   // Entrance animation
   setTimeout(() => { transition.classList.add('exit'); }, 100);
 
+  // Fix: when browser restores page from bfcache (back button), clear any stuck overlay
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      transition.classList.remove('enter');
+      transition.classList.add('exit');
+    }
+  });
+
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     // Only intercept local page links
