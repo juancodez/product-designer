@@ -1171,18 +1171,33 @@ strong { font-weight: 700; color: var(--text); }
 
 /* ── Metrics Cards ─────────────────────────── */
 .cs-metrics {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 24px;
   margin-top: 56px;
   max-width: 880px;
   margin-left: auto;
   margin-right: auto;
 }
-/* 3-col variant (Product Outlook) — collapses to 1 col on tablet + mobile */
-.cs-metrics--3col { grid-template-columns: repeat(3, 1fr); }
+.cs-metric-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+/* num + title + 2 rows = 4 tracks; num + title + 4 rows = 6 tracks */
+.cs-metric-pair--2 { grid-template-rows: repeat(4, auto); }
+.cs-metric-pair--4 { grid-template-rows: repeat(6, auto); }
+.cs-metric-pair > .cs-metric-card {
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  align-content: start;
+}
+/* 3-col variant (Product Outlook) — overrides flex with grid, collapses to 1 col on tablet + mobile */
+.cs-metrics--3col { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1000px; }
 @media (max-width: 1024px) {
-  .cs-metrics--3col { grid-template-columns: 1fr; }
+  .cs-metrics--3col { grid-template-columns: 1fr; max-width: 520px; }
 }
 .cs-metric-card {
   padding: 32px 28px;
@@ -1218,7 +1233,7 @@ strong { font-weight: 700; color: var(--text); }
 .cs-metric-label {
   font-size: 0.65rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--accent); flex-shrink: 0; min-width: 36px;
+  color: var(--accent); flex-shrink: 0; width: 72px; min-width: 72px;
 }
 
 /* ── Lessons Grid ──────────────────────────── */
@@ -1455,7 +1470,7 @@ strong { font-weight: 700; color: var(--text); }
   .cs-branding-row--reverse { direction: ltr; }
   .cs-branding-placeholder { aspect-ratio: 16/9; min-height: 200px; }
 
-  .cs-metrics { grid-template-columns: repeat(2, 1fr); }
+  .cs-metric-pair { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1471,7 +1486,8 @@ strong { font-weight: 700; color: var(--text); }
   .cs-process { grid-template-columns: 1fr; }
   .cs-process-step { border-right: none; }
   .cs-pillars { grid-template-columns: 1fr; }
-  .cs-metrics { grid-template-columns: 1fr; }
+  .cs-metric-pair { grid-template-columns: 1fr; grid-template-rows: none; }
+  .cs-metric-pair > .cs-metric-card { grid-row: auto; display: block; }
   .cs-lessons { grid-template-columns: 1fr; }
   .cs-bento-grid {
     grid-template-columns: 1fr;
