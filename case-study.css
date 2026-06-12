@@ -1155,6 +1155,20 @@ strong { font-weight: 700; color: var(--text); }
 }
 .cs-pillar-link:hover { opacity: 0.7; }
 
+/* Inline body links — hero desc, pillar body, quote attr */
+.cs-hero-desc a,
+.cs-pillar-body a,
+.cs-quote-attr a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.2s;
+}
+.cs-hero-desc a:hover,
+.cs-pillar-body a:hover,
+.cs-quote-attr a:hover { opacity: 0.65; }
+
 /* ── Metrics Cards ─────────────────────────── */
 .cs-metrics {
   display: grid;
