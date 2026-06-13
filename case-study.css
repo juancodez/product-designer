@@ -1194,6 +1194,11 @@ strong { font-weight: 700; color: var(--text); }
   row-gap: 0;
   align-content: start;
 }
+/* 2-col variant (KPIs 2×2) */
+.cs-metrics--2col { display: grid; grid-template-columns: 1fr 1fr; max-width: 750px; }
+@media (max-width: 768px) {
+  .cs-metrics--2col { grid-template-columns: 1fr; max-width: 100%; }
+}
 /* 3-col variant (Product Outlook) — overrides flex with grid, collapses to 1 col on tablet + mobile */
 .cs-metrics--3col { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1000px; }
 @media (max-width: 1024px) {
