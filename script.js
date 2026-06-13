@@ -7,7 +7,7 @@
 
   // ============================================
   // INTERACTIVE DOT GRID
-  // Ported from the original Framer component:
+  // Ported from the original Framer component:h
   // dots scatter randomly inside distortionRadius,
   // lerp back to origin when cursor leaves.
   // ============================================
@@ -405,7 +405,7 @@
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     // Only intercept local page links
-    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+    if (!href || href.startsWith('#') || href.includes('#') || href.startsWith('http') || href.startsWith('mailto')) return;
 
     link.addEventListener('click', (e) => {
       e.preventDefault();
