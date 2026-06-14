@@ -192,8 +192,8 @@
 
         <div class="project-card" data-animate="fade-up" data-delay="120" onclick="window.location='project-micro-casing.html'" role="link" tabindex="0">
           <article>
-            <div class="project-card-img-wrap" style="aspect-ratio: 960/680;">
-              <video class="project-card-img" autoplay muted loop playsinline preload="metadata" style="object-fit: cover; object-position: center top;">
+            <div class="project-card-img-wrap" style="aspect-ratio: 960/640;">
+              <video class="project-card-img js-card-video" muted playsinline preload="metadata" style="object-fit: cover; object-position: center top;">
                 <source src="assets/mca-thumbnail-001-clean.mp4" type="video/mp4" />
               </video>
               <div class="project-card-overlay">
@@ -314,6 +314,25 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var videos = document.querySelectorAll('.js-card-video');
+      if (!videos.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) {
+            v.currentTime = 0;
+            v.play();
+          } else {
+            v.pause();
+            v.currentTime = 0;
+          }
+        });
+      }, { threshold: 0.4 });
+      videos.forEach(function (v) { observer.observe(v); });
+    })();
+  </script>
 
   <!-- ── CRRT Feedback Widget ── -->
   <script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
