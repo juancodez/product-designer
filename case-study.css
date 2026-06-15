@@ -1622,3 +1622,31 @@ strong { font-weight: 700; color: var(--text); }
   color: var(--text-3);
   opacity: 0.6;
 }
+
+/* ── SOURCES & LINKS ── */
+.cs-links-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 40px;
+}
+.cs-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border, rgba(15,37,82,0.12));
+  background: var(--bg-1, #fff);
+  color: var(--text-1);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+.cs-link-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(29, 95, 204, 0.10);
+}
