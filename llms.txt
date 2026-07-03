@@ -1,0 +1,30 @@
+# Juan Gomez Vara — Product Designer
+
+> Product Designer based in Berlin specializing in complex systems, UX research, and AI-augmented product design.
+
+## About
+
+Juan Gomez Vara is a product designer who builds. His edge is seeing the full picture — from micro to macro — reading how systems connect, where they break, and what it takes to fix them. Background spans Michelin-starred kitchens, brand systems, and digital products, giving him pattern recognition most designers lack.
+
+Today his workflow is AI-augmented by design, not by accident. He builds real products and treats AI as infrastructure, not a shortcut.
+
+## Projects
+
+- [Klaro](https://www.juangomezvara.com/project-klaro.html): AI fiscal advisor for Spanish-speaking freelancers in Germany. Full-stack product designed and built from scratch. Stack: Next.js, Claude AI, Supabase. Duration: 3 months.
+
+- [Supply Pro](https://www.juangomezvara.com/project-supply-pro.html): B2B platform connecting professional chefs with suppliers. UX research, product strategy, UI design. Duration: 4 months.
+
+- [Micro-casing App](https://www.juangomezvara.com/project-micro-casing.html): Complete UX and brand redesign of a gamified interview coaching app for Cerebral Games. UX strategy, branding, UI design. Duration: 2-week sprint.
+
+- [AI Playground](https://www.juangomezvara.com/ai-playground.html): Interactive experiments, games, and AI-powered prototypes built as design explorations.
+
+## Contact
+
+- Website: https://www.juangomezvara.com
+- Contact: https://www.juangomezvara.com/contact.html
+- LinkedIn: https://www.linkedin.com/in/juan-gomez-vara-0b409470/
+- Location: Berlin, Germany
+
+## Expertise
+
+UX Research · Product Strategy · UI Design · Design Systems · AI-augmented Design · Full-Stack Development · Figma · Next.js · Prototyping

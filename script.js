@@ -216,29 +216,42 @@
   }
 
   // ============================================
-  // CUSTOM CURSOR
+  // CUSTOM CURSOR — spring-physics single dot (Framer CursorDotTrail)
+  // stiffness: 300 / damping: ~25  →  STIFFNESS=0.12, DAMPING=0.76
   // ============================================
   const cursor = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
   let mx = -100, my = -100;
-  let fx = -100, fy = -100;
+  let x = -100, y = -100;
+  let vx = 0, vy = 0;
+  const STIFFNESS = 0.12;
+  const DAMPING   = 0.76;
 
-  if (cursor && follower) {
+  if (cursor) {
     document.addEventListener('mousemove', (e) => {
       mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
     });
 
-    // Smooth follower
-    const animateFollower = () => {
-      fx += (mx - fx) * 0.12;
-      fy += (my - fy) * 0.12;
-      follower.style.left = fx + 'px';
-      follower.style.top = fy + 'px';
-      requestAnimationFrame(animateFollower);
+    const tick = () => {
+      vx += (mx - x) * STIFFNESS; vx *= DAMPING; x += vx;
+      vy += (my - y) * STIFFNESS; vy *= DAMPING; y += vy;
+      cursor.style.left = x + 'px';
+      cursor.style.top  = y + 'px';
+      requestAnimationFrame(tick);
     };
-    animateFollower();
+    tick();
+
+    // Hover: scale up on buttons, subtle grow on links
+    const interactives = 'a, button, [role="button"], .btn-primary, .btn-ghost, .btn-nav, .magnetic, .project-card, .social-link, .nav-link';
+    const linkOnly = 'a:not(.btn-primary):not(.btn-ghost):not(.btn-nav):not(.social-link):not(.mobile-nav-link)';
+
+    document.querySelectorAll(interactives).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add(el.matches(linkOnly) ? 'cursor-link' : 'cursor-hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hovering', 'cursor-link');
+      });
+    });
   }
 
   // ============================================

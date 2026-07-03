@@ -52,32 +52,22 @@ img { display: block; max-width: 100%; }
    CUSTOM CURSOR
    ============================================ */
 .cursor {
-  width: 8px; height: 8px;
+  width: 14px; height: 14px;
   background: var(--accent);
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
-  mix-blend-mode: difference;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.2s cubic-bezier(0.23,1,0.32,1), opacity 0.2s;
+  will-change: left, top, transform;
 }
-.cursor-follower {
-  width: 32px; height: 32px;
-  border: 1px solid var(--text-2);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.12s var(--ease-out), width 0.3s var(--ease-out), height 0.3s var(--ease-out), opacity 0.3s;
-  opacity: 0.6;
-}
-body:has(.btn-primary:hover, .btn-ghost:hover, .btn-nav:hover) .cursor { width: 48px; height: 48px; opacity: 0.15; }
-body:has(.btn-primary:hover, .btn-ghost:hover, .btn-nav:hover) .cursor-follower { opacity: 0; }
-body:has(.project-row:hover) .cursor { background: var(--accent); width: 12px; height: 12px; }
+.cursor-follower { display: none; }
+
+/* Hover states — scale transforms only */
+body.cursor-hovering .cursor { transform: translate(-50%, -50%) scale(2.2); opacity: 0.35; }
+body.cursor-link .cursor    { transform: translate(-50%, -50%) scale(1.5); opacity: 0.7; }
 
 /* ============================================
    NAVIGATION
