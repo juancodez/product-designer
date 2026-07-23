@@ -797,3 +797,12 @@
   if (footerCanvas) new FooterDotGrid(footerCanvas);
 
 })();
+
+function copyEmail(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  navigator.clipboard.writeText('juangomezvara@gmail.com');
+  const el = e.currentTarget;
+  el.classList.add('copied');
+  setTimeout(() => el.classList.remove('copied'), 2000);
+}

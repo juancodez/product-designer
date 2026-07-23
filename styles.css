@@ -722,6 +722,36 @@ body.cursor-link .cursor    { transform: translate(-50%, -50%) scale(1.5); opaci
   display: block;
   white-space: nowrap;
 }
+.footer-email-link {
+  display: inline-flex; align-items: center; gap: 0.35em;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900; letter-spacing: -0.04em; line-height: 1;
+  text-decoration: none; cursor: none;
+}
+.footer-email-text {
+  color: var(--navy);
+  padding: 0.15em 0.05em 0.3em;
+  line-height: 1.15;
+  transition: color 0.3s;
+  display: inline-block;
+  overflow: visible;
+}
+.footer-email-link:hover .footer-email-text {
+  background: linear-gradient(135deg, #060f20 0%, #0f2552 50%, #1d5fcc 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-copy-icon {
+  display: inline-flex; align-items: center;
+  color: var(--navy); opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s; cursor: pointer;
+  flex-shrink: 0;
+}
+.footer-copy-icon:hover { opacity: 1; color: #060f20; }
+.footer-copy-icon .icon-check { display: none; }
+.footer-copy-icon.copied { opacity: 1; color: #15803d; }
+.footer-copy-icon.copied .icon-copy { display: none; }
+.footer-copy-icon.copied .icon-check { display: block; }
 
 /* Footer dot canvas */
 .footer-dot-canvas {
