@@ -27,7 +27,7 @@
         dotSpacing        : parseFloat(d.dotSpacing)         || 22,
         distortionRadius  : parseFloat(d.distortionRadius)   || 110,
         distortionStrength: parseFloat(d.distortionStrength) || 32,
-        animationSpeed    : parseFloat(d.animationSpeed)     || 0.055,
+        animationSpeed    : parseFloat(d.animationSpeed)     || 0.032,
       };
 
       this._onResize = this._resize.bind(this);
@@ -223,8 +223,8 @@
   let mx = -100, my = -100;
   let x = -100, y = -100;
   let vx = 0, vy = 0;
-  const STIFFNESS = 0.12;
-  const DAMPING   = 0.76;
+  const STIFFNESS = 0.07;
+  const DAMPING   = 0.82;
 
   if (cursor) {
     document.addEventListener('mousemove', (e) => {
@@ -304,7 +304,7 @@
     const typeCursor = document.getElementById('heroTypeCursor');
     const typeClose  = document.getElementById('heroTypeClose');
     if (typeEl && typeCursor && typeClose) {
-      const fullText = 'Juan Gomez Vara, Product Designer in Berlin.\nI read complex systems, find where they break, and redesign them for business, enterprise and people.';
+      const fullText = 'Juan Gomez Vara, Product Designer in Berlin.\nIdentifying gaps in complex systems, finding where they break, and adapting them for business, enterprises and people.';
       const BOLD_END = 'Juan Gomez Vara, Product Designer'.length;
       let typed = '';
       let idx = 0;
