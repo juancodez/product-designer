@@ -421,14 +421,16 @@ body.cursor-link .cursor    { transform: translate(-50%, -50%) scale(1.5); opaci
 .btn-primary:hover { color: #fff; }
 .btn-primary.large { padding: 18px 36px; font-size: 1rem; }
 
-/* Arrow rotates –45° (diagonal ↗) on hover — all primary & nav buttons */
+/* Primary button arrow rotates on hover; nav arrow nudges down softly */
 .btn-primary .btn-arrow svg,
 .btn-nav .btn-arrow svg {
-  transition: transform 0.25s var(--ease-out);
+  transition: transform 0.3s var(--ease-out);
 }
-.btn-primary:hover .btn-arrow svg,
-.btn-nav:hover .btn-arrow svg {
+.btn-primary:hover .btn-arrow svg {
   transform: rotate(-45deg);
+}
+.btn-nav:hover .btn-arrow svg {
+  transform: translateY(3px);
 }
 
 .btn-ghost {
