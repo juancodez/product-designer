@@ -977,26 +977,11 @@ body.cursor-link .cursor    { transform: translate(-50%, -50%) scale(1.5); opaci
 
 .view-project-btn {
   flex-shrink: 0;
-  border: 1.5px solid transparent;
-  background:
-    linear-gradient(#fff, #fff) padding-box,
-    conic-gradient(
-      from var(--shimmer-angle),
-      #1d5fcc 0%,
-      #4d8ef0 25%,
-      #bfdbfe 45%,
-      #ffffff 50%,
-      #bfdbfe 55%,
-      #4d8ef0 75%,
-      #1d5fcc 100%
-    ) border-box;
-  transition: color 0.2s;
-  animation: viewBtnShimmer 3s linear infinite;
+  border: 1.5px solid #1d5fcc;
 }
 .view-project-btn:hover {
-  border: 1.5px solid rgba(6,8,16,0.75);
+  border-color: rgba(6,8,16,0.75);
   background: rgba(6,8,16,0.06);
-  animation-play-state: paused;
 }
 @keyframes viewBtnShimmer {
   to { --shimmer-angle: 360deg; }
