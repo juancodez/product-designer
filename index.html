@@ -367,6 +367,12 @@
       100% { transform: scaleY(1)    scaleX(1);    filter: brightness(1); }
     }
     #corner-signal-wrap { transform-origin: center center; }
+    @media (max-width: 768px) {
+      #corner-signal-wrap { width: 160px !important; bottom: 16px !important; right: 16px !important; }
+    }
+    @media (max-width: 480px) {
+      #corner-signal-wrap { width: 110px !important; bottom: 12px !important; right: 12px !important; }
+    }
   </style>
   <div id="corner-signal-wrap" style="
     position: fixed;

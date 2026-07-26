@@ -1220,6 +1220,8 @@ body.menu-open { overflow: hidden; }
   .work-grid { grid-template-columns: 1fr; }
   .work-head { flex-direction: column; align-items: flex-start; gap: 16px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-email-link { font-size: clamp(1.1rem, 5.5vw, 2rem); flex-wrap: wrap; }
+  .footer-email-text { word-break: break-all; }
   .page-header { padding: 120px 24px 40px; }
   .projects-masonry { grid-template-columns: 1fr; padding: 0 24px; }
   .projects-col--offset { padding-top: 0; }
@@ -1228,12 +1230,13 @@ body.menu-open { overflow: hidden; }
   .cta-card { padding: 32px 24px; }
   .cursor, .cursor-follower { display: none; }
   body { cursor: auto; }
-  .btn-primary, .btn-ghost, .social-link, .theme-toggle { cursor: pointer; }
+  .btn-primary, .btn-ghost, .social-link, .theme-toggle, .nav-link, .btn-nav, .mobile-nav-link, .project-card, a, button { cursor: pointer; }
 }
 
 @media (max-width: 420px) {
   .footer-cta-title { font-size: clamp(1.75rem, 8vw, 2.4rem); }
   .footer-cta-line { white-space: normal; }
+  .footer-email-link { font-size: clamp(0.9rem, 4.5vw, 1.2rem); }
 }
 
 @media (max-width: 400px) {
