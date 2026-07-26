@@ -48,6 +48,8 @@ body {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
+a, button, [role="button"], [role="link"], [tabindex="0"], .btn-primary, .btn-ghost, .btn-nav, .nav-link, .social-link, .theme-toggle, .mobile-nav-link, .project-card, .magnetic { cursor: pointer; }
+
 /* ============================================
    CUSTOM CURSOR
    ============================================ */
