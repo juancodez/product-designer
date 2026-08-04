@@ -1,6 +1,7 @@
 # Juan Gomez Vara — Product Designer
 
 > Product Designer based in Berlin specializing in complex systems, UX research, and AI-augmented product design.
+> License: RSL-1.0
 
 ## About
 
@@ -10,11 +11,15 @@ Today his workflow is AI-augmented by design, not by accident. He builds real pr
 
 ## Projects
 
-- [Klaro](https://www.juangomezvara.com/project-klaro.html): AI fiscal advisor for Spanish-speaking freelancers in Germany. Full-stack product designed and built from scratch. Stack: Next.js, Claude AI, Supabase. Duration: 3 months.
+- [Klaro](https://www.juangomezvara.com/project-klaro.html): AI fiscal advisor for Spanish-speaking freelancers in Germany. Eliminates the need for a Steuerberater, saving users €300–€800 annually. Built for the estimated 175,000 Spanish-speaking freelancers in Germany who face tax declarations in legal German. Full-stack product designed and built from scratch. Stack: Next.js, Claude AI, Supabase. Duration: 3 months.
 
-- [Supply Pro](https://www.juangomezvara.com/project-supply-pro.html): B2B platform connecting professional chefs with suppliers. UX research, product strategy, UI design. Duration: 4 months.
+- [Supply Pro](https://www.juangomezvara.com/project-supply-pro.html): B2B platform connecting professional chefs with suppliers. Helps restaurants recover up to €14,400 per year through proactive supplier management before problems reach the kitchen. UX research, product strategy, UI design. Duration: 4 months.
 
-- [Micro-casing App](https://www.juangomezvara.com/project-micro-casing.html): Complete UX and brand redesign of a gamified interview coaching app for Cerebral Games. UX strategy, branding, UI design. Duration: 2-week sprint.
+- [Micro-casing App](https://www.juangomezvara.com/project-micro-casing.html): Complete UX and brand redesign of a gamified interview coaching app for Cerebral Games. The redesign drove 508% growth in new user downloads, 7,700% revenue growth, and a 2.84% Day-35 conversion rate. UX strategy, branding, UI design. Duration: 2-week sprint.
+
+- [Protonic](https://protonic-agenticsystem.vercel.app/): Contract-first, agentic design system built on React Aria. AI agents enforce design contracts — 15 components shipped, audited, zero violations across 5 architectural layers. Stack: React, TypeScript, React Aria, CVA. Role: Product Designer + Design Engineer.
+
+- [Interactive Portfolio](https://interactive-portfolio-ashy.vercel.app/): An interactive 3D isometric RPG world where the portfolio becomes a game. Walk through neighbourhoods, discover projects, meet the designer behind them. Built with vibe coding techniques.
 
 - [AI Playground](https://www.juangomezvara.com/ai-playground.html): Interactive experiments, games, and AI-powered prototypes built as design explorations.
 
@@ -23,8 +28,9 @@ Today his workflow is AI-augmented by design, not by accident. He builds real pr
 - Website: https://www.juangomezvara.com
 - Contact: https://www.juangomezvara.com/contact.html
 - LinkedIn: https://www.linkedin.com/in/juan-gomez-vara-0b409470/
+- Medium: https://medium.com/@juangomezvara
 - Location: Berlin, Germany
 
 ## Expertise
 
-UX Research · Product Strategy · UI Design · Design Systems · AI-augmented Design · Full-Stack Development · Figma · Next.js · Prototyping
+UX Research · Product Strategy · UI Design · Design Systems · AI-augmented Design · Full-Stack Development · Figma · Next.js · React · TypeScript · Supabase · Claude AI · Prototyping · Agentic Design Systems
