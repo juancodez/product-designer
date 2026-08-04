@@ -13,22 +13,33 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .error-section {
+    .error-hero {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      gap: 40px;
+      padding: 120px 60px 80px;
+      position: relative;
+    }
+    .error-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .error-text {
+      padding-top: 20px;
     }
     .error-video-wrap {
-      width: min(480px, 90vw);
       border-radius: 20px;
       overflow: hidden;
       aspect-ratio: 9 / 16;
+      max-height: 72vh;
+      width: 100%;
       background: #000;
+      justify-self: center;
     }
     .error-video {
       width: 100%;
@@ -36,8 +47,39 @@
       object-fit: cover;
       display: block;
     }
-    .error-back {
-      margin-top: 8px;
+    @keyframes crt-off {
+      0%   { transform: scaleY(1)    scaleX(1);    filter: brightness(1); }
+      35%  { transform: scaleY(0.03) scaleX(1);    filter: brightness(4); }
+      62%  { transform: scaleY(0.03) scaleX(0.07); filter: brightness(2); }
+      85%  { transform: scaleY(0.06) scaleX(0.06); filter: brightness(3); }
+      100% { transform: scaleY(0.06) scaleX(0.06); filter: brightness(2); }
+    }
+    @keyframes crt-on {
+      0%   { transform: scaleY(0.06) scaleX(0.06); filter: brightness(4); }
+      30%  { transform: scaleY(0.03) scaleX(1);    filter: brightness(3); }
+      65%  { transform: scaleY(1.05) scaleX(1);    filter: brightness(1.5); }
+      100% { transform: scaleY(1)    scaleX(1);    filter: brightness(1); }
+    }
+    #signal-404-wrap { transform-origin: center center; }
+
+    @media (max-width: 860px) {
+      .error-hero {
+        padding: 90px 24px 40px;
+      }
+      .error-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .error-text {
+        padding-top: 8px;
+      }
+      .error-text .hero-sub {
+        padding-bottom: 0;
+      }
+      .error-video-wrap {
+        max-height: 60vw;
+        aspect-ratio: 16 / 9;
+      }
     }
   </style>
 </head>
@@ -81,40 +123,103 @@
     </nav>
   </div>
 
-  <!-- 404 Section -->
-  <section class="error-section">
+  <!-- 404 Section — .hero class triggers load-based animation in script.js -->
+  <section class="hero error-hero" id="hero">
+    <canvas class="dot-grid-canvas" id="dotGrid"></canvas>
+    <div class="hero-noise"></div>
 
-    <div class="hero-content" style="text-align: center;">
-      <h1 class="hero-title">
-        <div class="hero-line">
-          <span>Oops, the Wifi</span>
-        </div>
-        <div class="hero-line">
-          <span>is <span class="gradient-word">gone.</span></span>
-        </div>
-      </h1>
-      <p class="hero-sub" style="margin-top: 16px;">
-        A 404 is here. Stay until the connection comes back.
-      </p>
+    <div class="error-grid">
+
+      <!-- Left: text -->
+      <div class="hero-content error-text">
+        <h1 class="hero-title">
+          <div class="hero-line" data-animate="reveal" data-delay="100">
+            <span>Oops, the Wifi</span>
+          </div>
+          <div class="hero-line" data-animate="reveal" data-delay="250">
+            <span>is <span class="gradient-word">gone.</span></span>
+          </div>
+        </h1>
+
+        <p class="hero-sub" data-animate="fade-up" data-delay="450">
+          <span class="type-tag">&lt;p&gt;</span><span id="errorTypewriter"></span><span class="type-cursor" id="errorTypeCursor"></span><span class="type-tag type-tag--close" id="errorTypeClose"></span>
+        </p>
+
+      </div>
+
+      <!-- Right: video -->
+      <div id="signal-404-wrap" class="error-video-wrap" data-animate="fade-up" data-delay="200">
+        <video id="signal-404" class="error-video" autoplay muted playsinline>
+          <source src="assets/juan-signal.mp4" type="video/mp4" />
+        </video>
+      </div>
+
     </div>
-
-    <div class="error-video-wrap">
-      <video class="error-video" autoplay muted loop playsinline>
-        <source src="assets/juan-signal.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-    <div class="error-back">
-      <a href="index.html" class="btn-nav magnetic">
-        <span class="btn-text">Back to home</span>
-        <span class="btn-arrow">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </a>
-    </div>
-
   </section>
 
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const typeEl     = document.getElementById('errorTypewriter');
+      const typeCursor = document.getElementById('errorTypeCursor');
+      const typeClose  = document.getElementById('errorTypeClose');
+      if (!typeEl) return;
+
+      const fullText = 'A 404 is here. Stay until the connection comes back.';
+      let idx = 0;
+
+      function typeNext() {
+        if (idx >= fullText.length) {
+          typeCursor.classList.add('done');
+          typeClose.textContent = '</p>';
+          typeClose.classList.add('visible');
+          return;
+        }
+        typeEl.textContent += fullText[idx];
+        idx++;
+        setTimeout(typeNext, 26 + Math.random() * 20);
+      }
+
+      setTimeout(typeNext, 1450);
+    });
+  </script>
+  <script>
+    (function () {
+      var wrap = document.getElementById('signal-404-wrap');
+      var vid  = document.getElementById('signal-404');
+
+      function enterDot() {
+        wrap.style.animation = '';
+        wrap.style.transform = '';
+        wrap.style.filter    = '';
+        vid.style.visibility = 'hidden';
+        wrap.style.borderRadius = '50%';
+        wrap.style.background   = 'rgba(255,255,255,0.85)';
+        wrap.style.boxShadow    = '0 0 16px 6px rgba(255,255,255,0.4)';
+        setTimeout(exitDot, 600);
+      }
+
+      function exitDot() {
+        vid.currentTime         = 0;
+        wrap.style.borderRadius = '20px';
+        wrap.style.background   = '#000';
+        wrap.style.boxShadow    = '';
+        vid.style.visibility    = '';
+        wrap.style.animation    = 'crt-on 0.55s ease-out forwards';
+        wrap.addEventListener('animationend', function () {
+          wrap.style.animation = '';
+          wrap.style.transform = '';
+          wrap.style.filter    = '';
+          vid.play();
+        }, { once: true });
+      }
+
+      vid.addEventListener('ended', function () {
+        wrap.style.animation = 'crt-off 0.65s ease-in forwards';
+        wrap.addEventListener('animationend', enterDot, { once: true });
+      });
+    })();
+  </script>
+
 </body>
 </html>
