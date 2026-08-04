@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Juan Gomez Vara</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="assets/LogoJGV_favicon-32px.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .error-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      gap: 40px;
+    }
+    .error-video-wrap {
+      width: min(480px, 90vw);
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      background: #000;
+    }
+    .error-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .error-back {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Juan Gomez Vara">
+      <img class="logo-img" src="assets/logo-dark.svg" alt="JGV" width="44" height="44" />
+      <span class="nav-name">Juan Gomez Vara</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html#work" class="nav-link magnetic"><span>Projects</span></a>
+        <a href="index.html#about" class="nav-link magnetic"><span>About</span></a>
+      </div>
+      <a href="index.html#footer" class="btn-nav magnetic">
+        <span class="btn-text">Contact</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="index.html#work" class="mobile-nav-link">Projects</a>
+      <a href="index.html#about" class="mobile-nav-link">About</a>
+      <a href="index.html#footer" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- 404 Section -->
+  <section class="error-section">
+
+    <div class="hero-content" style="text-align: center;">
+      <h1 class="hero-title">
+        <div class="hero-line">
+          <span>Oops, the Wifi</span>
+        </div>
+        <div class="hero-line">
+          <span>is <span class="gradient-word">gone.</span></span>
+        </div>
+      </h1>
+      <p class="hero-sub" style="margin-top: 16px;">
+        A 404 is here. Stay until the connection comes back.
+      </p>
+    </div>
+
+    <div class="error-video-wrap">
+      <video class="error-video" autoplay muted loop playsinline>
+        <source src="assets/juan-signal.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="error-back">
+      <a href="index.html" class="btn-nav magnetic">
+        <span class="btn-text">Back to home</span>
+        <span class="btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
