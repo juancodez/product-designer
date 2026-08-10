@@ -241,7 +241,7 @@
     tick();
 
     // Hover: scale up on buttons, subtle grow on links
-    const interactives = 'a, button, [role="button"], .btn-primary, .btn-ghost, .btn-nav, .magnetic, .project-card, .social-link, .nav-link';
+    const interactives = 'a, button, [role="button"], .btn-primary, .btn-ghost, .btn-nav, .magnetic, .project-card, .social-link, .nav-link, #corner-signal-wrap';
     const linkOnly = 'a:not(.btn-primary):not(.btn-ghost):not(.btn-nav):not(.social-link):not(.mobile-nav-link)';
 
     document.querySelectorAll(interactives).forEach(el => {
@@ -302,8 +302,7 @@
     // Hero typewriter — starts after hero-sub fade-in completes (450ms delay + 100 load + 800ms anim)
     const typeEl     = document.getElementById('heroTypewriter');
     const typeCursor = document.getElementById('heroTypeCursor');
-    const typeClose  = document.getElementById('heroTypeClose');
-    if (typeEl && typeCursor && typeClose) {
+    if (typeEl && typeCursor) {
       const fullText = 'Juan Gomez Vara, Product Designer in Berlin.\nIdentifying gaps in complex systems, finding where they break, and adapting them for business, enterprises and people.';
       const BOLD_END = 'Juan Gomez Vara, Product Designer'.length;
       let typed = '';
@@ -319,8 +318,6 @@
       function typeNext() {
         if (idx >= fullText.length) {
           typeCursor.classList.add('done');
-          typeClose.textContent = '</p>';
-          typeClose.classList.add('visible');
           return;
         }
         typed += fullText[idx];
