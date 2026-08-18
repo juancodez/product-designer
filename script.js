@@ -299,6 +299,35 @@
       setTimeout(() => el.classList.add('animated'), delay + 100);
     });
 
+    // Hero typewriter — starts after hero-sub fade-in completes (450ms delay + 100 load + 800ms anim)
+    const typeEl     = document.getElementById('heroTypewriter');
+    const typeCursor = document.getElementById('heroTypeCursor');
+    if (typeEl && typeCursor) {
+      const fullText = 'Juan Gomez Vara, Product Designer in Berlin.\nIdentifying gaps in complex systems, finding where they break, and adapting them for business, enterprises and people.';
+      const BOLD_END = 'Juan Gomez Vara, Product Designer'.length;
+      let typed = '';
+      let idx = 0;
+
+      function renderTyped(t) {
+        if (t.length <= BOLD_END) {
+          return `<strong>${t}</strong>`;
+        }
+        return `<strong>${t.slice(0, BOLD_END)}</strong>${t.slice(BOLD_END).replace(/\n/g, '<br>')}`;
+      }
+
+      function typeNext() {
+        if (idx >= fullText.length) {
+          typeCursor.classList.add('done');
+          return;
+        }
+        typed += fullText[idx];
+        typeEl.innerHTML = renderTyped(typed);
+        idx++;
+        setTimeout(typeNext, 26 + Math.random() * 20);
+      }
+
+      setTimeout(typeNext, 1450);
+    }
   });
 
   // ============================================
