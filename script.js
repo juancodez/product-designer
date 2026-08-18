@@ -303,7 +303,7 @@
     const typeEl     = document.getElementById('heroTypewriter');
     const typeCursor = document.getElementById('heroTypeCursor');
     if (typeEl && typeCursor) {
-      const fullText = 'Juan Gomez Vara, Product Designer in Berlin.\nIdentifying gaps in complex systems, finding where they break, and adapting them for business, enterprises and people.';
+      const fullText = 'Juan Gomez Vara, Product Designer.\nIdentifying gaps in complex systems, finding where they break, and adapting them for business, enterprises and people.';
       const BOLD_END = 'Juan Gomez Vara, Product Designer'.length;
       let typed = '';
       let idx = 0;
