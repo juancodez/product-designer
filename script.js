@@ -222,9 +222,6 @@
   const cursor = document.getElementById('cursor');
   let mx = -100, my = -100;
   let x = -100, y = -100;
-  let vx = 0, vy = 0;
-  const STIFFNESS = 0.07;
-  const DAMPING   = 0.82;
 
   if (cursor) {
     document.addEventListener('mousemove', (e) => {
@@ -232,8 +229,8 @@
     });
 
     const tick = () => {
-      vx += (mx - x) * STIFFNESS; vx *= DAMPING; x += vx;
-      vy += (my - y) * STIFFNESS; vy *= DAMPING; y += vy;
+      x += (mx - x) * 0.15;
+      y += (my - y) * 0.15;
       cursor.style.left = x + 'px';
       cursor.style.top  = y + 'px';
       requestAnimationFrame(tick);
