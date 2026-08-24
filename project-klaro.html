@@ -29,94 +29,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
 
-    .cs-hero-inner .cs-title {
-      margin: 0;
-      padding-top: 20px;
-    }
-    .cs-subtitle {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
-      font-weight: 400;
-      color: var(--text-2);
-      line-height: 1.5;
-      margin: 8px auto 28px;
-      padding: 0;
-      max-width: 560px;
-      text-align: center;
-    }
-
-    /* ── Story strip ── */
-    .klaro-story-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .klaro-story-item {
-      border-left: 2px solid var(--accent);
-      padding-left: 16px;
-    }
-    .klaro-story-label {
-      display: block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .klaro-story-text {
-      font-size: 0.9rem;
-      color: var(--text-2);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .klaro-story-text em { color: var(--text); font-style: italic; }
-    @media (max-width: 640px) {
-      .klaro-story-strip { grid-template-columns: 1fr; gap: 20px; }
-    }
-
-    /* ── Impact strip ── */
-    .klaro-impact-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      margin: 32px auto 0;
-      max-width: 560px;
-    }
-    .klaro-impact-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-    .klaro-impact-num {
-      font-family: 'Satoshi', sans-serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-    .klaro-impact-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--text-2);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      text-align: center;
-    }
-    .klaro-impact-divider {
-      width: 1px;
-      height: 36px;
-      background: var(--border);
-      flex-shrink: 0;
-    }
-    @media (max-width: 480px) {
-      .klaro-impact-strip { gap: 20px; }
-      .klaro-impact-num { font-size: 1.2rem; }
-    }
-
     /* ── Klaro pull quote ── */
     .klaro-pull-quote {
       text-align: center;
@@ -774,31 +686,20 @@
   </div>
 
   <!-- ── HERO ── -->
-  <section class="cs-hero" style="padding-bottom: 0;">
+  <section class="cs-hero">
     <canvas class="dot-grid-canvas" id="dotGrid" data-dot-spacing="28"></canvas>
     <div class="hero-noise"></div>
     <div class="cs-hero-inner">
 
-
-
-      <div data-animate="fade-up" data-delay="120" style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.07);">
-        <video autoplay muted loop playsinline style="width: 100%; display: block;">
-          <source src="assets/klaro-prototipo.mp4" type="video/mp4" />
-        </video>
+      <div class="cs-tags" data-animate="fade-up" data-delay="80">
+        <span class="cs-tag">AI Product</span>
+        <span class="cs-tag">Fiscal App</span>
+        <span class="cs-tag">Design Engineering</span>
+        <span class="cs-tag">Full-Stack</span>
+        <span class="cs-tag">Solo</span>
       </div>
 
       <h1 class="cs-title" data-animate="fade-up" data-delay="160">Klaro</h1>
-
-      <p class="cs-subtitle" data-animate="fade-up" data-delay="190">An AI fiscal advisor for Spanish-speaking freelancers drowning in German tax bureaucracy</p>
-
-      <div class="cs-hero-cta-wrap" data-animate="fade-up" data-delay="210" style="display: flex; justify-content: center;">
-        <a href="https://klaro-landing.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-ghost small view-project-btn magnetic">
-          <span class="btn-text">View live app</span>
-          <span class="btn-arrow">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-      </div>
 
       <div class="cs-hero-meta cs-hero-meta--row" data-animate="fade-up" data-delay="240">
         <div class="cs-hero-meta-item">
@@ -819,7 +720,28 @@
         </div>
       </div>
 
+      <div class="cs-hero-body">
+        <p class="cs-hero-desc" data-animate="fade-up" data-delay="320">
+          Klaro was born out of a problem I watched repeat itself every year in Berlin. <strong>Spanish-speaking freelancers who had built real careers in Germany would hit the same wall every spring: a tax declaration in legal German,</strong> designed for people who grew up understanding what the Finanzamt wants. Most of them did not try to learn the system. <strong>They paid someone else to deal with it. Between €300 and €800 a year,</strong> not for expert advice, but for the psychological relief of having another person be responsible if something went wrong. The ones who tried to do it themselves spent hours reading forms they could not fully parse, in a language that was not theirs, never sure if they were doing it right.<br /><br /><strong>A Spanish-first fiscal AI advisor that saves each user between €300 and €800 a year and replaces the anxiety of the process with a guided, personalized experience in their own language.</strong>
+        </p>
+      </div>
 
+      <div class="cs-hero-cta-wrap" data-animate="fade-up" data-delay="400">
+        <a href="https://klaro-landing.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-ghost small view-project-btn magnetic">
+          <span class="btn-text">View live app</span>
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="cs-hero-image" data-animate="fade-up" data-delay="480" style="aspect-ratio: 1482/967; width: 100%;">
+        <img src="assets/klaro-clara-002.webp" alt="Klaro — AI fiscal advisor dashboard for Spanish-speaking freelancers in Germany" class="cs-hero-img" loading="eager" decoding="async" style="object-fit: cover; object-position: center top; width: 100%; height: 100%;" />
+        <div class="cs-img-overlay" aria-hidden="true">
+          <span class="cs-img-overlay-title">Klaro</span>
+          <span class="cs-img-overlay-desc">AI Fiscal Advisor · Spanish-speaking Freelancers · Germany</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -840,7 +762,9 @@
         <a href="#research"     class="cs-qn-item" data-section="research"><span class="cs-qn-dot"></span><span class="cs-qn-label">Research</span></a>
         <a href="#user-research" class="cs-qn-item" data-section="user-research"><span class="cs-qn-dot"></span><span class="cs-qn-label">User Research</span></a>
         <a href="#process"      class="cs-qn-item" data-section="process"><span class="cs-qn-dot"></span><span class="cs-qn-label">Process</span></a>
+        <a href="#solution"     class="cs-qn-item" data-section="solution"><span class="cs-qn-dot"></span><span class="cs-qn-label">Solution</span></a>
         <a href="#prototype"    class="cs-qn-item" data-section="prototype"><span class="cs-qn-dot"></span><span class="cs-qn-label">Prototype</span></a>
+        <a href="#ai-design"    class="cs-qn-item" data-section="ai-design"><span class="cs-qn-dot"></span><span class="cs-qn-label">AI in Design</span></a>
         <a href="#kpis"         class="cs-qn-item" data-section="kpis"><span class="cs-qn-dot"></span><span class="cs-qn-label">KPIs</span></a>
         <a href="#outlook"      class="cs-qn-item" data-section="outlook"><span class="cs-qn-dot"></span><span class="cs-qn-label">Outlook</span></a>
         <a href="#learnings"    class="cs-qn-item" data-section="learnings"><span class="cs-qn-dot"></span><span class="cs-qn-label">Learnings</span></a>
@@ -862,7 +786,9 @@
           <a href="#research"      class="cs-qn-drawer-item" data-section="research">Research</a>
           <a href="#user-research" class="cs-qn-drawer-item" data-section="user-research">User Research</a>
           <a href="#process"       class="cs-qn-drawer-item" data-section="process">Process</a>
+          <a href="#solution"      class="cs-qn-drawer-item" data-section="solution">Solution</a>
           <a href="#prototype"     class="cs-qn-drawer-item" data-section="prototype">Prototype</a>
+          <a href="#ai-design"     class="cs-qn-drawer-item" data-section="ai-design">AI in Design</a>
           <a href="#kpis"          class="cs-qn-drawer-item" data-section="kpis">KPIs</a>
           <a href="#outlook"       class="cs-qn-drawer-item" data-section="outlook">Outlook</a>
           <a href="#learnings"     class="cs-qn-drawer-item" data-section="learnings">Learnings</a>
@@ -878,11 +804,12 @@
       <section id="problem" class="cs-section" data-animate="fade-up">
         <div class="cs-inner">
           <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <span class="cs-eyebrow">The Problem</span>
             <h2 class="cs-heading">
-              Filing taxes in a language <em style="white-space: nowrap;">that is not yours is paralyzing.</em>
+              The Language<br /><em>War.</em>
             </h2>
-            <p style="color: var(--text-2); max-width: 560px; margin: 20px auto 0; line-height: 1.75;">
-              Every year, Spanish-speaking freelancers in Germany can generate losses between €2,000 and €4,000. They pay a tax advisor to avoid those mistakes — but tax advisors are not easy to afford either. No tool is designed in Spanish to solve this.
+            <p style="color: var(--text-2); max-width: 580px; margin: 20px auto 0; line-height: 1.75;">
+              Every year, between January and July, Spanish-speaking freelancers in Germany face the same system: a tax declaration in legal German, with no translation, no guidance, and no margin for error. Most of them pay a Steuerberater between €300 and €800 a year. Not because they need a tax expert, but because they need someone to feel responsible for the outcome. That is not a tax problem. <strong style="color: var(--text);">That is a confidence problem.</strong> And <strong style="color: var(--text);">no tool was designed to solve it in Spanish.</strong>
             </p>
           </div>
 
@@ -892,17 +819,22 @@
               <div class="sp-rm-num" aria-hidden="true">
                 <span class="kl-counter" data-target="354" data-decimals="0">0</span><span class="sp-rm-pct">K</span>
               </div>
-              <div class="sp-rm-label">Spanish speakers at home in Germany</div>
+              <div class="sp-rm-label">Spanish speakers at home</div>
+              <p class="sp-rm-desc"><strong>354,000 people speak Spanish</strong> at home in Germany. 0.4% of the population. Mikrozensus 2024.</p>
             </div>
 
             <div class="sp-rm-card" role="listitem">
-              <div class="sp-rm-num" aria-hidden="true">€<span class="kl-counter" data-target="300" data-decimals="0">0</span>–800</div>
-              <div class="sp-rm-label">Tax advisor annual cost</div>
+              <div class="sp-rm-num" aria-hidden="true">€300–800</div>
+              <div class="sp-rm-label">Steuerberater annual cost</div>
+              <p class="sp-rm-desc"><strong>What a tax advisor charges per year.</strong> Not for advice, but for the peace of mind of having someone else responsible.</p>
             </div>
 
             <div class="sp-rm-card" role="listitem">
-              <div class="sp-rm-num" aria-hidden="true">€<span class="kl-counter" data-target="2" data-decimals="0">0</span>K–4K</div>
-              <div class="sp-rm-label">Lost yearly in unclaimed expenses</div>
+              <div class="sp-rm-num" aria-hidden="true">
+                <span class="kl-counter" data-target="175" data-decimals="0">0</span><span class="sp-rm-pct">K</span>
+              </div>
+              <div class="sp-rm-label">Potential users</div>
+              <p class="sp-rm-desc">Of an estimated 1.5 million foreign freelancers in Germany, around 175,000 are Spanish speakers. <strong>No tool existed for any of them.</strong></p>
             </div>
 
           </div>
@@ -910,21 +842,27 @@
         </div>
       </section>
 
-
-      <div class="cs-hero-image" data-animate="fade-up" style="aspect-ratio: 1482/967; width: 100%;">
-        <img src="assets/klaro-clara-002.webp" alt="Klaro — AI fiscal advisor dashboard for Spanish-speaking freelancers in Germany" class="cs-hero-img" loading="eager" decoding="async" style="object-fit: cover; object-position: center top; width: 100%; height: 100%;" />
-        <div class="cs-img-overlay" aria-hidden="true">
-          <span class="cs-img-overlay-title">Klaro</span>
-          <span class="cs-img-overlay-desc">AI Fiscal Advisor · Spanish-speaking Freelancers · Germany</span>
-        </div>
+      <!-- ── FULL-WIDTH IMAGE: formularios ── -->
+      <div class="cs-full-img-wrap" data-animate="fade-up">
+        <img
+          src="assets/formularios.svg"
+          alt="German tax forms complexity — the problem visualised"
+          class="cs-full-img"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <!-- ── 2. BENCHMARK ── -->
       <section id="benchmark" class="cs-section" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Benchmark</span>
           <h2 class="cs-heading">
-            The chatbot of Klaro, Clara is <em>the USP against the competitors.</em>
+            What already exists <em>and what's missing.</em>
           </h2>
+          <p style="color: var(--text-2); max-width: 600px; margin: 0 auto 56px; text-align: center; line-height: 1.7;">
+            Before defining what Klaro should be, I needed to understand what already existed. <strong>I analyzed the two main competitors in the German freelancer tax space.</strong>
+          </p>
 
           <!-- Accountable -->
           <div class="klaro-competitor">
@@ -1003,8 +941,9 @@
       <!-- ── 3. QUANTITATIVE RESEARCH ── -->
       <section id="research" class="cs-section cs-section--dark" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Quantitative Research</span>
           <h2 class="cs-heading">
-            The surveys prove that 1 of 9 Spanish-speaking freelancers<br /><em>complete the tax declaration in Germany with certainty.</em>
+            What the data<br /><em>actually revealed.</em>
           </h2>
           <p style="color: var(--text-2); max-width: 600px; margin: 0 auto 8px; text-align: center; line-height: 1.7;">
             Before writing a single line of code, I went out to listen. I ran a quantitative survey with Spanish-speaking freelancers living in Germany to validate the problem.
@@ -1013,6 +952,17 @@
           <!-- Chart row 1 -->
           <div class="klaro-charts-grid">
 
+            <!-- Scatter plot -->
+            <div class="klaro-chart-wrap">
+              <div class="klaro-chart-title">More time does not mean more confidence</div>
+              <div class="klaro-chart-sub">Hours invested in tax preparation vs. perceived confidence (1 to 5)</div>
+              <div class="chart-canvas-wrap">
+                <canvas id="scatterChart"></canvas>
+              </div>
+              <div class="klaro-chart-insight">
+                <strong>The most surprising insight:</strong> time invested has no positive correlation with confidence. More effort doesn't solve the problem. Guided, personalized support does.
+              </div>
+            </div>
 
             <!-- Donut -->
             <div class="klaro-chart-wrap">
@@ -1099,8 +1049,9 @@
       <!-- ── 4. USER RESEARCH ── -->
       <section id="user-research" class="cs-section cs-section--dark" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Qualitative Research</span>
           <h2 class="cs-heading">
-            The interviews reveal the fear of making mistakes<br /><em>filling the German tax declaration.</em>
+            What it actually<br /><em>felt like.</em>
           </h2>
           <p style="color: var(--text-2); max-width: 600px; margin: 0 auto 8px; text-align: center; line-height: 1.7;">
             The numbers told me there was a problem. <strong>The interviews told me what it actually felt like.</strong> I conducted qualitative interviews with Spanish-speaking freelancers in Germany across different profiles, experience levels, and cities. The goal was not to validate what I already knew. <strong>It was to understand the emotional texture of the problem.</strong>
@@ -1132,8 +1083,9 @@
       <!-- ── 5. PROCESS ── -->
       <section id="process" class="cs-section cs-section--dark" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Process &amp; Key Decisions</span>
           <h2 class="cs-heading">
-            Clara the chatbot of Klaro,<br /><em>with a friendly tonality giving confidence to the users.</em>
+            Defining what Klaro<br /><em>had to stop trying to be.</em>
           </h2>
           <p style="color: var(--text-2); max-width: 600px; margin: 0 auto; text-align: center; line-height: 1.7;">
             With the research done and the benchmark clear, I had everything I needed to define what Klaro had to be.
@@ -1220,9 +1172,99 @@
         </div>
       </section>
 
+      <!-- ── 7. SOLUTION ── -->
+      <section id="solution" class="cs-section cs-section--dark" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">How it was built</span>
+          <h2 class="cs-heading">
+            No Figma.<br /><em>Just a live product.</em>
+          </h2>
+          <p style="color: var(--text-2); max-width: 640px; margin: 0 auto; text-align: center; line-height: 1.7;">
+            Klaro was built differently from the start. There was no Figma file. No handoff document. No gap between design and code. Every screen was designed and shipped simultaneously using Claude Code, an AI-native development workflow where product decisions, visual design, and implementation happened in the same cycle.
+          </p>
+
+          <!-- Workflow comparison -->
+          <div class="klaro-workflow">
+            <div class="kw-col kw-col--old">
+              <div class="kw-label">Traditional workflow</div>
+              <div class="kw-steps">
+                <div class="kw-step">Research</div>
+                <div class="kw-step">Wireframes</div>
+                <div class="kw-step">Figma</div>
+                <div class="kw-step">Handoff</div>
+                <div class="kw-step">Development</div>
+                <div class="kw-step">QA</div>
+                <div class="kw-step">Launch</div>
+              </div>
+            </div>
+            <div class="kw-col kw-col--new">
+              <div class="kw-label">Klaro's workflow</div>
+              <div class="kw-steps">
+                <div class="kw-step">Research</div>
+                <div class="kw-step">Claude Code</div>
+                <div class="kw-step kw-step--highlight">Live product →</div>
+              </div>
+            </div>
+          </div>
+
+          <p style="text-align: center; margin-top: 28px; font-size: 0.875rem; color: var(--text-2); max-width: 560px; margin-left: auto; margin-right: auto;">
+            Every iteration happened directly in the browser. Design decisions were validated against real data from Supabase, not static mockups.
+          </p>
+
+          <div style="margin-top: 56px; border-radius: 16px; overflow: hidden;">
+            <img src="assets/klaro-hero-00.png" alt="Klaro AI fiscal advisor dashboard for Spanish-speaking freelancers in Germany" class="cs-hero-img" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block; object-position: left 65%;" />
+          </div>
+
+          <!-- Key screens -->
+          <div style="margin-top: 64px;">
+            <span class="cs-eyebrow">Key Screens</span>
+            <h3 style="font-family: 'Satoshi', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin: 8px 0;">Five surfaces. One coherent system.</h3>
+          </div>
+
+          <div class="klaro-screens">
+
+            <div class="klaro-screen-item">
+              <div>
+                <div class="ksi-num">01</div>
+                <div class="ksi-title">Dashboard</div>
+                <div class="ksi-desc">Fiscal status at a glance. Profile type, active tax obligations, upcoming deadlines with countdown, and any open alerts from the Validador. Blocked until the Diagnóstico is complete. No misleading numbers.</div>
+              </div>
+              <div class="ksi-img">
+                <img src="assets/klaro-dashboard-00.png" alt="Klaro dashboard screen" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="klaro-screen-item">
+              <div>
+                <div class="ksi-num">02</div>
+                <div class="ksi-title">Clara</div>
+                <div class="ksi-desc">The main interface. A chat UI where users ask anything about German taxes in Spanish. Clara already knows who you are. German terms preserved inline, always explained in context. Three suggested questions on first load, based on the fiscal profile.</div>
+              </div>
+              <div class="ksi-img">
+                <img src="assets/klaro-clara-00.png" alt="Clara AI chat interface" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="klaro-screen-item">
+              <div>
+                <div class="ksi-num">03–05</div>
+                <div class="ksi-title">Invoices · Expenses · Taxes</div>
+                <div class="ksi-desc">Invoice creation with Kleinunternehmer lock: if you are under the €22,000 threshold, tax rate is forced to 0. Expense tracking with receipt upload. EÜR with year selector (2024/2025/2026) and real German tax brackets. UStVA quarterly tracking.</div>
+              </div>
+              <div class="ksi-img">
+                <img src="assets/klaro-impuestos-00.png" alt="Klaro impuestos screen" loading="lazy" />
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       <!-- ── PROTOTYPE ── -->
       <section id="prototype" class="cs-section" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Prototype</span>
           <h2 class="cs-heading">
             See it in<br /><em>action.</em>
           </h2>
@@ -1236,10 +1278,28 @@
         </div>
       </section>
 
+      <!-- ── 8. AI IN DESIGN ── -->
+      <section id="ai-design" class="cs-section" data-animate="fade-up">
+        <div class="cs-inner">
+          <span class="cs-eyebrow">AI in the Design Process</span>
+          <h2 class="cs-heading">
+            One tool per<br /><em>phase of the process</em>
+          </h2>
+          <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 8px; margin-left: auto; margin-right: auto; text-align: center;">
+            AI was not a single tool. It was a system of specialized tools, one matched to each phase of the Design Thinking process.
+          </p>
+
+          <!-- Full-width AI workflow diagram -->
+          <div style="margin-top: 56px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(6,8,16,0.08);">
+            <img src="assets/AI-Workflow-klaro.webp" alt="AI workflow across the design process" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
 
       <!-- ── 9. KPIs ── -->
       <section id="kpis" class="cs-section cs-section--dark" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">KPIs</span>
           <h2 class="cs-heading">
             Four metrics that<br /><em>actually matter.</em>
           </h2>
@@ -1255,7 +1315,7 @@
               <span class="cs-metric-num">Must KPI for Product</span>
               <div class="cs-metric-title">Conversational Engagement Rate</div>
               <div class="cs-metric-row"><span class="cs-metric-label">Signal</span> GA4 custom event <code>clara_message_sent</code></div>
-              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> More messages means more trust. Users are asking real questions. This is the signal that tells us Clara is replacing the tax advisor, not just supplementing it.</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> More messages means more trust. Users are asking real questions. This is the signal that tells us Clara is replacing the Steuerberater, not just supplementing it.</div>
             </div>
             <div class="cs-metric-card">
               <span class="cs-metric-num">Metrics for Business</span>
@@ -1267,7 +1327,7 @@
               <span class="cs-metric-num">Metrics for Impact</span>
               <div class="cs-metric-title">Cost Saved per User €300–800</div>
               <div class="cs-metric-row"><span class="cs-metric-label">Period</span> Per year</div>
-              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> What each user stops paying a tax advisor once Klaro replaces the need. Not a projection. The actual cost of the problem Klaro eliminates.</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Why</span> What each user stops paying a Steuerberater once Klaro replaces the need. Not a projection. The actual cost of the problem Klaro eliminates.</div>
             </div>
           </div>
 
@@ -1278,6 +1338,7 @@
       <!-- ── 10. OUTLOOK ── -->
       <section id="outlook" class="cs-section" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Product Outlook</span>
           <h2 class="cs-heading">
             The MVP is live.<br /><em>This is where it goes next.</em>
           </h2>
@@ -1293,8 +1354,8 @@
             </div>
             <div class="cs-metric-card">
               <div class="cs-metric-num" style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">ELSTER Export</div>
-              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Structured PDF export of the user's fiscal summary: EÜR, deductions, profile, for use with ELSTER or a tax advisor</div>
-              <div class="cs-metric-row"><span class="cs-metric-label">Goal</span> Reduce tax advisor dependency from full delegation to a single verification call</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Feature</span> Structured PDF export of the user's fiscal summary: EÜR, deductions, profile, for use with ELSTER or a Steuerberater</div>
+              <div class="cs-metric-row"><span class="cs-metric-label">Goal</span> Reduce Steuerberater dependency from full delegation to a single verification call</div>
             </div>
             <div class="cs-metric-card">
               <div class="cs-metric-num" style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">Mobile</div>
@@ -1311,6 +1372,7 @@
       <!-- ── 11. LEARNINGS ── -->
       <section id="learnings" class="cs-section cs-section--dark" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Lessons Learned</span>
           <h2 class="cs-heading">
             What this project<br /><em>taught me.</em>
           </h2>
@@ -1390,6 +1452,7 @@
       <!-- ── LINKS ── -->
       <section id="links" class="cs-section" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">Sources &amp; Links</span>
           <h2 class="cs-heading">
             Explore the<br /><em>Full Work</em>
           </h2>
@@ -1403,6 +1466,7 @@
       <!-- ── MORE WORK ── -->
       <section class="cs-section cs-section--dark" data-animate="fade-up">
         <div class="cs-inner">
+          <span class="cs-eyebrow">More Work</span>
           <h2 class="cs-heading">
             You might also<br /><em>like these.</em>
           </h2>
